@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>Project Tiferet is up and running! </h1>
+<h1>Project Tiferet Homepage</h1>
 
 <h2>Barcode Generator</h2>
 <?php
