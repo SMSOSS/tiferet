@@ -14,7 +14,10 @@ if ($locker > 10){
         echo "Valid Food ID detected and food is stored in locker $locker";
 }
 
+echo "<br> <br>";
 ?>
+
+<button onclick="history.go(-1);">Back </button>
 
 </body>
 </html>
