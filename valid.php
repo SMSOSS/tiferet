@@ -1,6 +1,6 @@
 <html>
 <body>
-
+<title>Project Tiferet FID Calculator</title>
 <h1>Project Tiferet FID Calculator</h1>
 
 <?php

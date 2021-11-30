@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+<title>Project Tiferet Homepage</title>
 <h1>Project Tiferet Homepage</h1>
 
 <h2>Barcode Generator</h2>
