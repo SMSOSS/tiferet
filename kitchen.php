@@ -11,8 +11,8 @@ include("db.php");
 db_open();
 
 /* start function and variable */
-$count = db_query("SELECT COUNT(baseid) as total FROM food;");
-$pending = db_query("SELECT foodname FROM food");
+$count = db_query("SELECT COUNT(baseid) as total FROM food WHERE NOT iscooked='1';");
+$pending = db_query("SELECT foodname FROM food WHERE NOT iscooked='1';");
 $prows = db_num_rows($pending);
 
 $countr=db_fetch_array($count);
