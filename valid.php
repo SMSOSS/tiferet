@@ -14,7 +14,6 @@ if ($locker > 10){
         echo "Invalid Food ID detected <br>";
 } elseif ($locker = 1){
         echo "Invalid Food ID detected <br>";
-}
 } else {
         echo "Valid Food ID detected and food is stored in locker $locker";
 }
