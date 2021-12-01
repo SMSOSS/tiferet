@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-<title>food is order complet</title>
-<h1>Confirm page</h1>
 
 <?php
 /* import start */
@@ -19,8 +17,10 @@ $food = $_GET["fname"];
 /* real bug trigger. save all data into db */
 db_open();
 db_query("INSERT INTO food (locker, baseid, foodid, isdeliver, istaken, foodname) VALUES ($locker, $baseid, $foodid, 0, 0, '$food')");
-echo "Done";
+echo "Processing...";
 ?>
+
+<meta http-equiv = "refresh" content = "3; url = genbc.php" />
 
 </body>
 </html>
