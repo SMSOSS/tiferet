@@ -2,7 +2,7 @@
 $dbhost = 'localhost';
 $dbuser = 'user';
 $dbpass = 'password'; // idgaf
-$dbname = 'TiDB';
+$dbname = 'tiferet';
 
 function db_open()
 {
