@@ -16,7 +16,7 @@ $food = $_GET["fname"];
 
 /* real bug trigger. save all data into db */
 db_open();
-db_query("INSERT INTO food (locker, baseid, foodid, isdeliver, istaken, foodname) VALUES ($locker, $baseid, $foodid, 0, 0, '$food')");
+db_query("INSERT INTO food (locker, baseid, foodid, iscooked, isdeliver, istaken, foodname) VALUES ($locker, $baseid, $foodid, 0, 0, 0, '$food')");
 echo "Processing...";
 ?>
 
