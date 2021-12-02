@@ -17,11 +17,26 @@ include("vars.php");
 db_open();
 
 /* variable start */
-$cook = db_query("SELECT foodname, baseid FROM food WHERE foodname='$food';");
+$timestamp = $_GET["baseid"];
+$cook = db_query("SELECT iscooked, isdeliver FROM food WHERE baseid='$timestamp';");
 $prows = db_num_rows($cook);
 $food = $_GET["food"];
 
-echo "Your food $food is undergoing delivery. Please wait.";
+if ($prows > 0) {
+        while($row = $cook->fetch_assoc()) {
+                $iscook = $row['iscooked'];
+                $isdeliver = $row['isdeliver'];
+        }
+}
+
+if ($iscook == 0) {
+        echo "Your $food is being prepared. Please be patient.";
+} elseif ($deliver = 1) {
+        echo "Your $food is ready.";
+} elseif ($deliver == 0) {
+        echo "Your $food is being delivered. Please be patient.";
+}
+
 // echo "$fook";
 ?>
 

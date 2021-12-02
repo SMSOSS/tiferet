@@ -9,7 +9,7 @@ include("vars.php");
                 global $food;
                 $food = $_POST["fname"];
                 db_query("INSERT INTO food (locker, baseid, foodid, iscooked, isdeliver, istaken, foodname) VALUES ($locker, $baseid, $foodid, 0, 0, 0, '$food')");
-                echo "<script>location.replace('user.php?food=$food&');</script>";
+                echo "<script>location.replace('user.php?food=$food&baseid=$baseid');</script>";
         } else {
 
 ?>
