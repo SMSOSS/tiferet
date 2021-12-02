@@ -8,7 +8,7 @@ include("vars.php");
         if (isset($_POST["submitdone"])) {
                 global $food;
                 $food = $_POST["fname"];
-                db_query("INSERT INTO food (locker, baseid, foodid, iscooked, isdeliver, istaken, foodname) VALUES ($locker, $baseid, $foodid, 0, 0, 0, '$food')");
+                db_query("INSERT INTO food (locker, baseid, foodid, iscooked, isdeliver, istaken, foodname, password) VALUES ($locker, $baseid, $foodid, 0, 0, 0, '$food', '$pass')");
                 echo "<script>location.replace('user.php?food=$food&baseid=$baseid');</script>";
         } else {
 

@@ -43,7 +43,6 @@ if ($rcount == 0){
                         echo $temp;
                         echo "</form>";
                         echo "<br>";
-                        $i++;
                 }
         }
         echo "<br>";

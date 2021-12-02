@@ -13,6 +13,7 @@ global $dummy;
 $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
 $baseid = strtotime("now");
 $locker = 9; 
+$pass = mt_rand(1000,9999);
 $foodid = $baseid * $locker * 1014 * 29;
 
 /* real bug trigger. save all data into db */
