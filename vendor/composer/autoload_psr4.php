@@ -6,5 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Zxing\\' => array($vendorDir . '/libern/qr-code-reader/src/lib'),
     'Picqer\\Barcode\\' => array($vendorDir . '/picqer/php-barcode-generator/src'),
+    'Libern\\QRCodeReader\\' => array($vendorDir . '/libern/qr-code-reader/src'),
 );

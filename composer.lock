@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41e5304e55c0cdeeb9c47c204d80dd9e",
+    "content-hash": "dcb4de0eac6f1694d021e4949dc14ed5",
     "packages": [
+        {
+            "name": "libern/qr-code-reader",
+            "version": "v1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libern/qr-code-reader.git",
+                "reference": "4589a5e1535e49fc72e0e4a2334f067b4c662eb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libern/qr-code-reader/zipball/4589a5e1535e49fc72e0e4a2334f067b4c662eb3",
+                "reference": "4589a5e1535e49fc72e0e4a2334f067b4c662eb3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Libern\\QRCodeReader\\": "src/",
+                    "Zxing\\": "src/lib/"
+                },
+                "files": [
+                    "src/lib/common/customFunctions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Libern Lin",
+                    "email": "libernlin@gmail.com"
+                }
+            ],
+            "description": "Simple PHP QR Code Reader / Decoder",
+            "homepage": "https://github.com/libern/qr-code-reader",
+            "keywords": [
+                "laravel",
+                "qr code decoder",
+                "qr code reader"
+            ],
+            "time": "2020-12-10T06:12:07+00:00"
+        },
         {
             "name": "picqer/php-barcode-generator",
             "version": "v2.2.0",

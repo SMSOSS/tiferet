@@ -6,17 +6,37 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit39e73e1c509ec45a92e67a43c6b98dbc
 {
+    public static $files = array (
+        '74f78b6b99713ff89d56028b614df71a' => __DIR__ . '/..' . '/libern/qr-code-reader/src/lib/common/customFunctions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
+        'Z' => 
+        array (
+            'Zxing\\' => 6,
+        ),
         'P' => 
         array (
             'Picqer\\Barcode\\' => 15,
         ),
+        'L' => 
+        array (
+            'Libern\\QRCodeReader\\' => 20,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Zxing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/libern/qr-code-reader/src/lib',
+        ),
         'Picqer\\Barcode\\' => 
         array (
             0 => __DIR__ . '/..' . '/picqer/php-barcode-generator/src',
+        ),
+        'Libern\\QRCodeReader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/libern/qr-code-reader/src',
         ),
     );
 
