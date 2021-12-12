@@ -35,7 +35,7 @@ include("vars.php");
                 $locker = $row['lockerid'];
         }
 }
-        if ($qcount >= 5) {
+        if ($qcount >= $lcount) {
                 echo "There are no more lockers. Ordering stopped.";
                 echo "<br>";
         }

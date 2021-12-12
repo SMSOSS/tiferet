@@ -15,6 +15,7 @@ $baseid = strtotime("now");
 // $locker = 9; 
 $pass = mt_rand(1000,9999);
 $foodid = $baseid * 1014 * 29;
+$lcount = 2; // number of lockers
 
 /* real bug trigger. save all data into db */
 db_open();
