@@ -16,7 +16,7 @@ include("vars.php");
                                 $locker = $row['lockerid'];
                         }
                 } else {
-                        echo "<script>location.replace('sad.php?food=$food');</script>";
+                        // echo "<script>location.replace('sad.php?food=$food');</script>";
                 }
                 db_query("INSERT INTO food (locker, baseid, foodid, iscooked, isdeliver, istaken, foodname, password) VALUES ($locker, $baseid, $foodid, 0, 0, 0, '$food', '$pass')");
                 db_query("UPDATE lockerdata SET isoccupy='1' WHERE lockerid='$locker'");
@@ -24,7 +24,7 @@ include("vars.php");
         } else {
 ?>
 <title>order food</title>
-<h2>What you wanna eat today :3</h2>
+<h2>order food here :3</h2>
 
 <?php
         $qlocker = db_query("SELECT lockerid FROM lockerdata WHERE isoccupy=1;");
