@@ -65,6 +65,7 @@ if (isset($_POST["baseid"])) {
         echo "The food $food goes to locker $locker.";
         // db_query("UPDATE food SET isdeliver=1 WHERE baseid=$base");
 } else {
+        echo "no pending orders. yay";
         echo '<meta http-equiv="refresh" content="10">';
 }
 /*
