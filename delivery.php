@@ -34,7 +34,7 @@ if ($pcount > 0) {
                 $locker = $row['locker'];
                 $food = $row['foodname'];
                 $pass = $row['password'];
-                $rpass = $pass+3;
+                $rpass = $pass+10000;
                 echo "$food that goes to $locker";
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='baseid' value='" . $row['baseid'] . "'>";
