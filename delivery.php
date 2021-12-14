@@ -8,6 +8,7 @@
 
 <title>Deliver Panel</title>
 <h1>Deliver Panel</h1>
+<h2>refresh page to check new order </h2>
 
 <?php
 /* include global vars */
