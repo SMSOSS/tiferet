@@ -49,6 +49,7 @@ if ($pcount > 0) {
 if (isset($_POST["baseid"])) {
         $base = $_POST["baseid"];
         $pending = db_query("SELECT foodname, baseid, locker, password FROM food WHERE baseid='$base';");
+        echo "<script>location.replace('cfmd.php?baseid=$base');</script>";
         if ($pcount > 0) {
                 $base = 0;
                 while($row = $pending->fetch_assoc()) {
@@ -60,9 +61,9 @@ if (isset($_POST["baseid"])) {
                         $pass = $row['password'];
                 }
         }
-        echo "<script>event.preventDefault();</script>";
-        echo "<img src='https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$rpass&choe=UTF-8%22%20title=%22your%20order%20is%20ready%22' />";
-        echo "The food $food goes to locker $locker.";
+        // echo "<script>event.preventDefault();</script>";
+        // echo "<img src='https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$rpass&choe=UTF-8%22%20title=%22your%20order%20is%20ready%22' />";
+        // echo "The food $food goes to locker $locker.";
         // db_query("UPDATE food SET isdeliver=1 WHERE baseid=$base");
 } else {
         echo "no pending orders. yay";
