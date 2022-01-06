@@ -2,13 +2,33 @@
 <html>
 
 <head>
+<style>
+
+@font-face { font-family: HarmonyBold; src: url('fonts/bold.ttf'); } 
+@font-face { font-family: HarmonyReg; src: url('fonts/regular.ttf'); } 
+@font-face { font-family: HarmonyLight; src: url('fonts/light.ttf'); } 
+h1 {
+        text-align: center;
+        font-family: HarmonyBold
+}
+
+h3 {
+        text-align: center;
+        font-family: HarmonyLight
+}
+
+a {
+        font-family: HarmonyReg
+}
+
+</style>
 </head>
 
 <body>
 
 <title>Deliver Panel</title>
 <h1>Deliver Panel</h1>
-<h2>refresh page to check new order </h2>
+<h3>refresh page to check new order </h3>
 
 <?php
 /* include global vars */
@@ -24,6 +44,10 @@ db_open();
 $pending = db_query("SELECT foodname, baseid, locker, password FROM food WHERE iscooked='1' AND isdeliver='0';");
 $pcount = db_num_rows($pending);
 
+?>
+
+<h3>
+<?php
 /* test */
 if ($pcount > 0) {
         $base = 0;
@@ -44,6 +68,9 @@ if ($pcount > 0) {
                 
         }
 
+}  else {
+        echo "no pending orders. yay";
+        echo '<meta http-equiv="refresh" content="10">';
 }
 
 if (isset($_POST["baseid"])) {
@@ -66,9 +93,6 @@ if (isset($_POST["baseid"])) {
         // echo "<img src='https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$rpass&choe=UTF-8%22%20title=%22your%20order%20is%20ready%22' />";
         // echo "The food $food goes to locker $locker.";
         // db_query("UPDATE food SET isdeliver=1 WHERE baseid=$base");
-} else {
-        echo "no pending orders. yay";
-        echo '<meta http-equiv="refresh" content="10">';
 }
 /*
 if ($pcount == 0){
@@ -100,6 +124,7 @@ if ($pcount == 0){
 }
 */
 ?>
+</h3>
 
 </body>
 </html>

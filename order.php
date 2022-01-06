@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <head>
 <style>
+
+@font-face { font-family: HarmonyBold; src: url('fonts/bold.ttf'); } 
+@font-face { font-family: HarmonyReg; src: url('fonts/regular.ttf'); } 
+@font-face { font-family: HarmonyLight; src: url('fonts/light.ttf'); } 
 h1 {
         text-align: center;
+        font-family: HarmonyBold
 }
 
 h3 {
         text-align: center;
+        font-family: HarmonyLight
 }
 
 </style>
@@ -40,11 +46,14 @@ if ($qcount > 0) {
 }
 }
 if ($qcount >= $lcount) {
+?>
+<h3>
+<?php
         echo "There are no more lockers. Ordering stopped.";
         echo "<br>";
 } else {
 ?>
-
+</h3>
 <h1>
         Menu: 
 </h1>

@@ -4,10 +4,35 @@
 <head>
 <title>Kitchen system</title>
 <meta http-equiv="refresh" content="10">
+
+<style>
+
+@font-face { font-family: HarmonyBold; src: url('fonts/bold.ttf'); } 
+@font-face { font-family: HarmonyReg; src: url('fonts/regular.ttf'); } 
+@font-face { font-family: HarmonyLight; src: url('fonts/light.ttf'); } 
+h1 {
+        text-align: center;
+        font-family: HarmonyBold
+}
+
+h3 {
+        text-align: center;
+        font-family: HarmonyReg
+}
+
+a {
+        text-align: center;
+        font-family: HarmonyReg
+}
+
+</style>
+
 </head>
 <body>
 
 <h1>Kitchen System </h1>
+
+<h3>
 <?php
 
 /* start import */
@@ -50,5 +75,6 @@ if ($rcount == 0){
 }
 ?>
 
+</h3>
 </body>
 </html>
