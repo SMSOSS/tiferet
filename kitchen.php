@@ -34,6 +34,10 @@ input[type=submit] {
     border-radius: 5px; 
 }
 
+body {
+background-color: #DBF9FC;
+}
+
 </style>
 
 </head>

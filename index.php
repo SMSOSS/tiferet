@@ -23,6 +23,9 @@ a {
 
 }
 
+body {
+background-color: #DBF9FC;
+}
 
 </style>
 </head>

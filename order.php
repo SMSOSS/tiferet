@@ -7,7 +7,7 @@
 @font-face { font-family: HarmonyLight; src: url('fonts/light.ttf'); } 
 h1 {
         text-align: center;
-        font-family: HarmonyBold
+        font-family: HarmonyBold;
 }
 
 h3 {
@@ -22,6 +22,10 @@ input[type=submit] {
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px; 
+}
+
+body {
+background-color: #DBF9FC;
 }
 
 </style>

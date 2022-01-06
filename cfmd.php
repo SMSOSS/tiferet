@@ -17,6 +17,10 @@ h3 {
         font-family: HarmonyLight
 }
 
+body {
+background-color: #DBF9FC;
+}
+
 </style>
 
 </head>

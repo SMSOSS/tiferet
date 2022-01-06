@@ -29,7 +29,11 @@ input[type=submit] {
     -webkit-border-radius: 5px;
     border-radius: 5px; 
 }
-        
+
+body {
+background-color: #DBF9FC;
+}
+
 </style>
 </head>
 
