@@ -16,12 +16,14 @@ h3 {
 }
 
 input[type=submit] {
-    padding:4px 15px; 
-    background:#ccc; 
-    border:0 none;
+    padding:5px 15px; 
+    background:#DBF9FC; 
+    border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px; 
+    font-family: HarmonyBold;
+    font-size: 15px;
 }
 
 body {
