@@ -22,7 +22,7 @@ include("db.php");
 db_open();
 
 $timestamp = $_GET["baseid"];
-$order = db_query("SELECT password, locker, foodname FROM food WHERE baseid='$timestamp' AND isdeliver=0;");
+$order = db_query("SELECT password, locker, foodname FROM food WHERE baseid='$timestamp' AND isdeliver=2;");
 $prows = db_num_rows($order);
 
 
