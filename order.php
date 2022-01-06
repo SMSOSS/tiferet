@@ -15,6 +15,15 @@ h3 {
         font-family: HarmonyLight
 }
 
+input[type=submit] {
+    padding:4px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
 </style>
 </head>
 
