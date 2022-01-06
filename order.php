@@ -8,6 +8,7 @@ h1 {
 h3 {
         text-align: center;
 }
+
 </style>
 </head>
 
@@ -50,7 +51,7 @@ if ($qcount >= $lcount) {
 
 <h3>
 <?php
-$qfood = db_query("SELECT food FROM menu WHERE soldout=0;");
+$qfood = db_query("SELECT food, price FROM menu WHERE soldout=0;");
 $rfood = db_num_rows($qfood);
 
 if ($rfood > 0) {
@@ -58,7 +59,8 @@ if ($rfood > 0) {
         while($row = $qfood->fetch_assoc()) {
                 $food = 0;
                 $food = $row['food'];
-                echo "$food";
+                $price = $row['price'];
+                echo "$food ― $$price";
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='food' value='" . $row['food'] . "'>";
                 $temp = "<input type='submit' value='Order!' name='order'>";
