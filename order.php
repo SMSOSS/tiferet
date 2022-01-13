@@ -38,15 +38,16 @@ background-color: #DBF9FC;
 include("vars.php");
 if (isset($_POST["food"])){
         $foodname = $_POST["food"];
-        $qlocker = db_query("SELECT lockerid FROM lockerdata WHERE isoccupy=0 LIMIT 1");
+        $qlocker = db_query("SELECT lockerid, location FROM lockerdata WHERE isoccupy=0 LIMIT 1");
         $qcount = db_num_rows($qlocker);
         if ($qcount > 0) {
                 while($row = $qlocker->fetch_assoc()) {
                         $locker = 0;
                         $locker = $row['lockerid'];
+                        $lockation = $row['location'];
                 }
         }
-        db_query("INSERT INTO food (locker, baseid, foodid, iscooked, isdeliver, istaken, foodname, password) VALUES ($locker, $baseid, $foodid, 0, 0, 0, '$foodname', '$pass')");
+        db_query("INSERT INTO food (locker, baseid, foodid, iscooked, isdeliver, istaken, foodname, password, location) VALUES ($locker, $baseid, $foodid, 0, 0, 0, '$foodname', '$pass', '$lockation')");
         db_query("UPDATE lockerdata SET isoccupy='1' WHERE lockerid='$locker'");
         echo "<script>location.replace('user.php?food=$foodname&baseid=$baseid');</script>";
 
