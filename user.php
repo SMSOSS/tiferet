@@ -2,7 +2,6 @@
 <html>
 
 <head>
-<meta http-equiv="refresh" content="10">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 <style>
@@ -25,6 +24,17 @@ background-color: #DBF9FC;
 }
 
 input[type=submit] {
+    padding:5px 15px; 
+    background:#DBF9FC; 
+    border:1px solid black;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    font-family: HarmonyBold;
+    font-size: 15px;
+}
+
+button {
     padding:5px 15px; 
     background:#DBF9FC; 
     border:1px solid black;
@@ -68,6 +78,7 @@ if ($prows > 0) {
 
 if ($iscook == 0) {
         echo "Your $food is being prepared. <br> Please be patient.";
+        echo "<meta http-equiv='refresh' content='10'>";
 } elseif ($istaken == 1) {
 	echo "Please enjoy your meal";
 } elseif ($isdeliver == 1) {
@@ -78,14 +89,42 @@ if ($iscook == 0) {
         ?>
         <input type="submit" value="Show location on Google Map" />
         </a>
+        <script>
+                var notification = new Notification("Your food is ready!");
+        </script>
 <?php
 } elseif ($isdeliver == 0) {
         echo "Your $food is being delivered. <br> Please be patient.";
+        echo "<meta http-equiv='refresh' content='10'>";
 }
 
 // echo "$fook";
+echo "<br> <br>";
 ?>
+<button onclick="notifyMe()">Notify me!</button>
 
 </h3>
+
+<script>
+function notifyMe() {
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
+
+  else if (Notification.permission === "granted") {
+        // previously granted. great
+  }
+
+  // Otherwise, we need to ask the user for permission
+  else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(function (permission) {
+      if (permission === "granted") {
+        // you're finally accepting, wow
+      }
+    });
+  }
+}
+</script>
+
 </body>
 </html>
