@@ -45,7 +45,6 @@ input[type=submit] {
 <h3>
 <?php
 /* import start */
-require 'vendor/autoload.php';
 include("vars.php");
 
 /* db init */
