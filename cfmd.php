@@ -21,6 +21,17 @@ body {
 background-color: #DBF9FC;
 }
 
+input[type=submit] {
+    padding:5px 15px; 
+    background:#DBF9FC; 
+    border:1px solid black;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    font-family: HarmonyBold;
+    font-size: 15px;
+}
+
 </style>
 
 </head>
@@ -33,7 +44,7 @@ include("db.php");
 db_open();
 
 $timestamp = $_GET["baseid"];
-$order = db_query("SELECT password, locker, foodname FROM food WHERE baseid='$timestamp' AND isdeliver=2;");
+$order = db_query("SELECT password, locker, foodname, location FROM food WHERE baseid='$timestamp' AND isdeliver=2;");
 $prows = db_num_rows($order);
 
 
@@ -42,6 +53,7 @@ if ($prows > 0) {
                 $password = $row['password'];
                 $locker = $row['locker'];
                 $food = $row['foodname'];
+                $location = $row['location'];
         }
 } else {
         echo "<script>location.replace('delivery.php');</script>";
@@ -68,8 +80,15 @@ echo "<img src='https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=$rpass
 
 <?php
 echo "This $food goes to locker $locker. <br>";
-
 ?>
+
+<?php
+echo "<br>";
+echo "<a href='http://maps.google.com?q=$location'>"
+?>
+<input type="submit" value="Show location on Google Map" />
+</a>
+
 
 </h1>
 
