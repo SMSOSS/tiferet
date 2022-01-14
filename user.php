@@ -23,6 +23,17 @@ body {
 background-color: #DBF9FC;
 }
 
+input[type=submit] {
+    padding:5px 15px; 
+    background:#DBF9FC; 
+    border:1px solid black;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    font-family: HarmonyBold;
+    font-size: 15px;
+}
+
 </style>
 
 </head>
@@ -41,7 +52,7 @@ db_open();
 
 /* variable start */
 $timestamp = $_GET["baseid"];
-$cook = db_query("SELECT iscooked, isdeliver, istaken, password FROM food WHERE baseid='$timestamp';");
+$cook = db_query("SELECT iscooked, isdeliver, istaken, password, location FROM food WHERE baseid='$timestamp';");
 $prows = db_num_rows($cook);
 $food = $_GET["food"];
 
@@ -51,6 +62,7 @@ if ($prows > 0) {
                 $isdeliver = $row['isdeliver'];
                 $password = $row['password'];
 		$istaken = $row['istaken'];
+                $location = $row['location'];
         }
 }
 
@@ -59,8 +71,14 @@ if ($iscook == 0) {
 } elseif ($istaken == 1) {
 	echo "Please enjoy your meal";
 } elseif ($isdeliver == 1) {
-        echo "Your $food is ready.";
+        echo "Your $food is ready. <br>";
         echo "<img src='https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$password&choe=UTF-8%22%20title=%22your%20order%20is%20ready%22' />";
+        echo "<br>";
+        echo "<a href='http://maps.google.com?q=$location'>";
+        ?>
+        <input type="submit" value="Show location on Google Map" />
+        </a>
+<?php
 } elseif ($isdeliver == 0) {
         echo "Your $food is being delivered. Please be patient.";
 }
