@@ -90,7 +90,10 @@ if ($iscook == 0) {
         <input type="submit" value="Show location on Google Map" />
         </a>
         <script>
-                var notification = new Notification("Your food is ready!");
+                var options = {
+                        body: "Get your food now by scanning QR code."
+                }
+                var notification = new Notification("Food is ready", options);
         </script>
 <?php
 } elseif ($isdeliver == 0) {
