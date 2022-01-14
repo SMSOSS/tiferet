@@ -68,7 +68,7 @@ if ($prows > 0) {
 }
 
 if ($iscook == 0) {
-        echo "Your $food is being prepared. Please be patient.";
+        echo "Your $food is being prepared. <br> Please be patient.";
 } elseif ($istaken == 1) {
 	echo "Please enjoy your meal";
 } elseif ($isdeliver == 1) {
@@ -81,7 +81,7 @@ if ($iscook == 0) {
         </a>
 <?php
 } elseif ($isdeliver == 0) {
-        echo "Your $food is being delivered. Please be patient.";
+        echo "Your $food is being delivered. <br> Please be patient.";
 }
 
 // echo "$fook";
