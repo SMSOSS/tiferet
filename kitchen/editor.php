@@ -111,6 +111,7 @@ if ($rfood > 0) {
         if (isset($_POST['soldout'])){
                 $target = $_POST['food'];
                 db_query("UPDATE menu SET soldout=1 WHERE food='$target';");
+                header('Location: /kitchen/editor.php');
         }
 }
 
@@ -133,6 +134,7 @@ if ($rfood > 0) {
         if (isset($_POST['avail'])){
                 $target = $_POST['food'];
                 db_query("UPDATE menu SET soldout=0 WHERE food='$target';");
+                header('Location: /kitchen/editor.php');
         }
 }
 ?>
