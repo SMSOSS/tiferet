@@ -32,6 +32,39 @@ body {
 background-color: #DBF9FC;
 }
 
+
+h2 {
+        text-align: center;
+        font-family: HarmonyReg
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #8F00FF;
+  color: white;
+}
 </style>
 </head>
 
@@ -48,6 +81,14 @@ $shop = $_SESSION['shop'];
 echo "$shop menu editor <br>";
 ?>
 </h1>
+
+<h2>
+<div class="topnav">
+  <a href="/kitchen.php">Home</a>
+  <a class="active" href="/kitchen/editor.php">Menu Editor</a>
+  <a href="/kitchen/login.php">Log Out</a>
+</div>
+</h2>
 
 <h3>
 <?php
