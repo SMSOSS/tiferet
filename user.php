@@ -120,14 +120,14 @@ function notifyMe() {
   }
 
   else if (Notification.permission === "granted") {
-        // previously granted. great
+        console.log("user previously granted permission")
   }
 
   // Otherwise, we need to ask the user for permission
   else if (Notification.permission !== "denied") {
     Notification.requestPermission().then(function (permission) {
       if (permission === "granted") {
-        // you're finally accepting, wow
+        console.log("user has granted permission")
       }
     });
   }
