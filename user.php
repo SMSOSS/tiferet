@@ -102,10 +102,12 @@ if ($iscook == 0) {
 echo "<br> <br>";
 
 echo "<br>";
+if ($istaken == 0) {
 echo "<a href='http://maps.google.com?q=$location'>";
 echo '<input type="submit" value="Show locker location on Google Map" />';
 echo "   ";
 echo '</a>';
+}
 ?>
 <button onclick="notifyMe()">Notify me!</button>
 
