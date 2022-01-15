@@ -9,7 +9,7 @@ session_start();
 unset($_SESSION['loggedin']);
 ?>
 <form method="post">
-<input type="text" name="password"><br>
+<input type="password" name="password"><br>
 <input type="submit" name="login">
 </form>
 <?php
