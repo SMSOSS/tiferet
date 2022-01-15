@@ -85,10 +85,7 @@ if ($iscook == 0) {
         echo "Your $food is ready. <br>";
         echo "<img src='https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$password&choe=UTF-8%22%20title=%22your%20order%20is%20ready%22' />";
         echo "<br>";
-        echo "<a href='http://maps.google.com?q=$location'>";
-        ?>
-        <input type="submit" value="Show location on Google Map" />
-        </a>
+?>
         <script>
                 var options = {
                         body: "Get your food now by scanning QR code."
@@ -103,6 +100,12 @@ if ($iscook == 0) {
 
 // echo "$fook";
 echo "<br> <br>";
+
+echo "<br>";
+echo "<a href='http://maps.google.com?q=$location'>";
+echo '<input type="submit" value="Show locker location on Google Map" />';
+echo "   ";
+echo '</a>';
 ?>
 <button onclick="notifyMe()">Notify me!</button>
 
