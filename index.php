@@ -26,6 +26,12 @@ a {
 
 }
 
+p {
+        text-align: center;
+        font-family: HarmonyReg;
+
+}
+
 body {
 background-color: #DBF9FC;
 }
@@ -40,5 +46,13 @@ background-color: #DBF9FC;
 
 <a href="order.php">Order Food</a> | <a href="kitchen.php">Kitchen System</a> | <a href="delivery.php">Delivery System</a>
 </body>
+
+<p>
+<?php
+include("vars.php");
+echo "Tiferet version $version";
+?>
+</p>
+
 </html>
 
