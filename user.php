@@ -107,9 +107,9 @@ echo "<a href='http://maps.google.com?q=$location'>";
 echo '<input type="submit" value="Show locker location on Google Map" />';
 echo "   ";
 echo '</a>';
+echo '<button onclick="notifyMe()">Notify me!</button>';
 }
 ?>
-<button onclick="notifyMe()">Notify me!</button>
 
 </h3>
 
