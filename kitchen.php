@@ -95,6 +95,7 @@ db_open();
 <h2>
 <div class="topnav">
   <a class="active" href="#home">Home</a>
+  <a href="/kitchen/editor.php">Menu Editor</a>
   <a href="/kitchen/login.php">Log Out</a>
 </div>
 </h2>
