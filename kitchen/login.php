@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+unset($_SESSION['loggedin']);
 ?>
 <form method="post">
 <input type="text" name="password"><br>
