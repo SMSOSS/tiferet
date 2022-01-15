@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<head>
+        <title>Login</title>
+</head>
+
+<body>
 <?php
 session_start();
 unset($_SESSION['loggedin']);
@@ -27,3 +33,5 @@ if (isset($_POST["login"]) && isset($_POST["password"]) ) {
         }
 } 
 ?>
+</body>
+</html>
