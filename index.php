@@ -54,12 +54,14 @@ background-color: #DBF9FC;
 </h4>
 </body>
 
+<footer>
 <p>
 <?php
 include("vars.php");
 echo "Tiferet version $version";
 ?>
 </p>
+</footer>
 
 </html>
 
