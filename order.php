@@ -41,6 +41,7 @@ background-color: #DBF9FC;
 include("vars.php");
 if (isset($_POST["food"])){
         $foodname = $_POST["food"];
+        $shop = $_POST["shop"];
         $qlocker = db_query("SELECT lockerid, location FROM lockerdata WHERE isoccupy=0 LIMIT 1");
         $qcount = db_num_rows($qlocker);
         if ($qcount > 0) {
@@ -92,6 +93,7 @@ if ($rfood > 0) {
                 echo "$food by $shop ― $$price";
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='food' value='" . $row['food'] . "'>";
+                echo "<input type='hidden' name='shop' value='" . $row['shop'] . "'>";
                 $temp = "<input type='submit' value='Order!' name='order'>";
                 echo $temp;
                 echo "</form>";
