@@ -113,6 +113,28 @@ if ($rfood > 0) {
                 db_query("UPDATE menu SET soldout=1 WHERE food='$target';");
         }
 }
+
+$qfood = db_query("SELECT food FROM menu WHERE shop='$shop' AND soldout='1';");
+$rfood = db_num_rows($qfood);
+
+if ($rfood > 0) {
+        while($row = $qfood->fetch_assoc()) {
+                $food = 0;
+                $food = $row['food'];
+                echo "$food";
+                echo "<form method='post'>";
+                echo "<input type='hidden' name='food' value='" . $row['food'] . "'>";
+                $temp = "<input type='submit' value='Mark Available' name='avail'>";
+                echo $temp;
+                echo "</form>";
+                echo "<br>";
+                
+        }
+        if (isset($_POST['avail'])){
+                $target = $_POST['food'];
+                db_query("UPDATE menu SET soldout=0 WHERE food='$target';");
+        }
+}
 ?>
 </h3>
 </body>
