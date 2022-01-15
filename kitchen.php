@@ -65,7 +65,7 @@ background-color: #DBF9FC;
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: #8F00FF;
   color: white;
 }
 </style>
@@ -91,6 +91,13 @@ include("db.php");
 db_open();
 ?>
 </h3>
+
+<h2>
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="/kitchen/login.php">Log Out</a>
+</div>
+</h2>
 
 <h3>
 <?php
