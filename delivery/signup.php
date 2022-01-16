@@ -153,7 +153,7 @@ if (isset($_POST['signup'])){
 </form>
 <?php
         if(isset($_POST['back'])){
-                header('Location: /kitchen/editor.php');
+                header('Location: /delivery/login.php');
         }
 ?>
 </h3>
