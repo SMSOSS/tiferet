@@ -126,4 +126,17 @@ if (isset($_POST["baseid"])) {
 </h3>
 
 </body>
+
+<footer>
+        <h3>
+        <?php
+        echo "<form method='post'>";
+        echo '<input type="submit" value="Log Out" name="logout">';
+        echo '</form>';
+        if (isset($_POST['logout'])) {
+                header('Location: /delivery/login.php');
+        }
+        ?>
+        </h3>
+</footer>
 </html>
