@@ -79,6 +79,7 @@ $shop = $_SESSION['shop'];
 <h1>
 <?php
 echo "$shop menu editor <br>";
+echo "edit current menu <br>";
 ?>
 </h1>
 
@@ -141,4 +142,16 @@ if ($rfood > 0) {
 </h3>
 </body>
 
+<footer>
+<h3>
+<form method='post'>
+<input type="submit" value="Add Item" name="additem">
+</form>
+<?php
+        if(isset($_POST['additem'])){
+                header('Location: /kitchen/additem.php');
+        }
+?>
+</h3>
+</footer>
 </html>
