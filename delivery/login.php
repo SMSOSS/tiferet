@@ -102,9 +102,16 @@ echo '<input type="text" name="username"><br>';
 echo "Password: <br>";
 echo '<input type="password" name="password"><br>';
 echo '<input type="submit" value="Log in" name="login">';
+echo "  ";
+echo '<input type="submit" value="Sign Up" name="signup">';
 echo '</form>';
 
 include("../vars.php");
+
+if (isset($_POST['signup'])){ 
+        header('Location: /delivery/signup.php');
+}
+
 if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["username"])) {
         $password = $_POST['password'];
         $username = $_POST['username'];
