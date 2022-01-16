@@ -142,8 +142,13 @@ if (isset($_POST["baseid"])) {
         <h3>
         <?php
         echo "<form method='post'>";
+        echo '<input type="submit" value="Change Password" name="changepass">';
+        echo " ";
         echo '<input type="submit" value="Log Out" name="logout">';
         echo '</form>';
+        if (isset($_POST['changepass'])){
+                header('Location: /delivery/changepass.php');
+        }
         if (isset($_POST['logout'])) {
                 header('Location: /delivery/login.php');
         }
