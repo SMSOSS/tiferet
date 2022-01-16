@@ -94,7 +94,7 @@ if (isset($_POST["baseid"])) {
         $base = $_POST["baseid"];
         $pending = db_query("SELECT foodname, baseid, locker, password FROM food WHERE baseid='$base';");
         db_query("UPDATE food SET isdeliver=2 WHERE baseid=$base");
-        echo "<script>location.replace('cfmd.php?baseid=$base');</script>";
+        echo "<script>location.replace('/delivery/cfmd.php?baseid=$base');</script>";
         if ($pcount > 0) {
                 $base = 0;
                 while($row = $pending->fetch_assoc()) {
