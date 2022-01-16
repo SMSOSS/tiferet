@@ -115,7 +115,7 @@ if ($pcount > 0) {
         echo "no pending orders. yay";
 }
 
-if (isset($_POST["baseid"])) {
+if (isset($_POST["mdone"])) {
         $base = $_POST["baseid"];
         $pending = db_query("SELECT foodname, baseid, locker, password FROM food WHERE baseid='$base';");
         db_query("UPDATE food SET isdeliver=2 WHERE baseid=$base");
