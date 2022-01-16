@@ -87,7 +87,7 @@ unset($_SESSION['loggedin']);
 <h3>
 <form method="post">
 <input type="password" name="password"><br>
-<input type="submit" name="login">
+<input type="submit" value="Log in" name="login">
 </form>
 </h3>
 <?php

@@ -97,9 +97,11 @@ unset($_SESSION['loggedin']);
 <?php
 
 echo '<form method="post">';
+echo "Username: <br>";
 echo '<input type="text" name="username"><br>';
+echo "Password: <br>";
 echo '<input type="password" name="password"><br>';
-echo '<input type="submit" name="login">';
+echo '<input type="submit" value="Log in" name="login">';
 echo '</form>';
 
 include("../vars.php");
