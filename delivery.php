@@ -18,6 +18,11 @@ h3 {
         font-family: HarmonyLight
 }
 
+h2 {
+        text-align: center;
+        font-family: HarmonyReg
+}
+
 a {
         font-family: HarmonyReg
 }
@@ -79,6 +84,7 @@ $pcount = db_num_rows($pending);
 
 ?>
 
+<h2>Pending Deliveries </h2>
 <h3>
 <?php
 /* test */
