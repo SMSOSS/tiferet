@@ -105,6 +105,9 @@ echo "Sign up";
 <h3>
 <?php
 echo '<form method=post>';
+echo "Email: <br>";
+echo '<input type="text" name="email">';
+echo "<br>";
 echo "Username: <br>";
 echo '<input type="text" name="username">';
 echo "<br>";
@@ -120,13 +123,16 @@ echo '</form>';
 if (isset($_POST['signup'])){
         if (!empty($_POST['username']) && !empty($_POST['pass'])) {
                 $username = $_POST['username'];
+                $email = $_POST['email'];
                 $query = db_query("SELECT username FROM userdata WHERE username='$username'");
                 $qcount = db_num_rows($query);
-                if ($qcount == 0) {
+                $mcheck = db_query("SELECT email FROM userdata WHERE email='$email'");
+                $mcount = db_num_rows($mcheck);
+                if ($qcount == 0 && $mcount == 0) {
                         $pass = $_POST['pass'];
                         $pass2 = $_POST['cpass'];
                         if ($pass === $pass2) {
-                                db_query("INSERT INTO `userdata`(`username`, `password`, `isdelivery`) VALUES ('$username','$pass','1')");
+                                db_query("INSERT INTO `userdata`(`username`, `password`, `isdelivery`, `email`) VALUES ('$username','$pass','1', '$email')");
                                 echo "Register success";
                                 $_SESSION['loggedin'] = TRUE;
                                 $_SESSION['username'] = $username;
@@ -134,8 +140,10 @@ if (isset($_POST['signup'])){
                         } else {
                                 echo "Both passwords doesn't match.";
                         }
-                } else {
+                } else if ($mcount == 0) {
                         echo "username taken. please retry";
+                } else {
+                        echo "Email has already been registered. Please log-in instead.";
                 }
         } else {
                 echo "Fields are not being filled? Check your input and try again.";
