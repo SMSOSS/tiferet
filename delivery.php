@@ -77,7 +77,7 @@ if ($pcount > 0) {
                 $food = $row['foodname'];
                 $pass = $row['password'];
                 $rpass = $pass+10000;
-                echo "$food that goes to $locker";
+                echo "$food that goes to locker $locker";
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='baseid' value='" . $row['baseid'] . "'>";
                 $temp = "<input type='submit' value='Take Job' name='mdone'>";
