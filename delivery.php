@@ -42,6 +42,10 @@ body {
 background-color: #DBF9FC;
 }
 
+hr.rounded {
+  border-top: 4px solid #006666;
+  border-radius: 5px;
+}
 </style>
 
 <meta http-equiv="refresh" content="10">
@@ -134,6 +138,7 @@ if (isset($_POST["baseid"])) {
 </body>
 
 <footer>
+        <hr class="rounded">
         <h3>
         <?php
         echo "<form method='post'>";
