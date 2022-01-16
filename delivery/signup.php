@@ -125,7 +125,6 @@ if (isset($_POST['signup'])){
                 if ($qcount == 0) {
                         $pass = $_POST['pass'];
                         $pass2 = $_POST['cpass'];
-                        echo "debug: $pass // $pass2";
                         if ($pass === $pass2) {
                                 db_query("INSERT INTO `userdata`(`username`, `password`, `isdelivery`) VALUES ('$username','$pass','1')");
                                 echo "Register success";
