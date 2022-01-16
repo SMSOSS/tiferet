@@ -83,7 +83,7 @@ db_open();
 
 
 /* variable start */
-$pending = db_query("SELECT foodname, baseid, locker, password FROM food WHERE iscooked='1' AND isdeliver='0';");
+$pending = db_query("SELECT foodname, baseid, locker, password, location FROM food WHERE iscooked='1' AND isdeliver='0';");
 $pcount = db_num_rows($pending);
 
 ?>
@@ -101,12 +101,14 @@ if ($pcount > 0) {
                 $locker = $row['locker'];
                 $food = $row['foodname'];
                 $pass = $row['password'];
+                $location = $row['location'];
                 $rpass = $pass+10000;
                 echo "$food that goes to locker $locker";
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='baseid' value='" . $row['baseid'] . "'>";
                 $temp = "<input type='submit' value='Take Job' name='mdone'>";
-                echo $temp;
+                $lc = "<input type='submit' value='Show locker location' name='lockation'>";
+                echo "$temp $lc";
                 echo "</form>";
                 
         }
@@ -132,6 +134,10 @@ if (isset($_POST["mdone"])) {
                 }
         }
 }
+
+if (isset($_POST['lockation'])){
+        header("Location: http://maps.google.com?q=$location");
+}
 ?>
 </h3>
 
@@ -150,7 +156,7 @@ if (isset($_POST["mdone"])) {
                 header('Location: /delivery/changepass.php');
         }
         if (isset($_POST['logout'])) {
-                header('Location: /delivery/login.php');
+                header("Location: /delivery/login.php");
         }
         ?>
         </h3>
