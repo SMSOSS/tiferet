@@ -116,7 +116,7 @@ if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["usernam
                 $_SESSION['username'] = $username;
                 header('Location: /delivery.php');
         } else {
-                echo "wrong pass bsdk";
+                echo "Wrong username / password.";
         }
 } 
 ?>

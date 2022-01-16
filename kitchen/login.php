@@ -107,7 +107,7 @@ if (isset($_POST["login"]) && isset($_POST["password"]) ) {
                 $_SESSION['shop'] = $shop;
                 header('Location: /kitchen.php');
         } else {
-                echo "wrong pass bsdk";
+                echo "Wrong username / password.";
         }
 } 
 ?>
