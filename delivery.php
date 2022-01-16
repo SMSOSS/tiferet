@@ -48,6 +48,21 @@ background-color: #DBF9FC;
 <title>Deliver Panel</title>
 <h1>Deliver Panel</h1>
 
+<h3>
+<?php
+
+session_start();
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: /delivery/login.php');
+	exit;
+}
+
+$username = $_SESSION['username'];
+echo "welcome $username ! <br>";
+/* start import */
+?>
+</h3>
+
 <?php
 /* include global vars */
 include("db.php");
