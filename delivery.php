@@ -38,13 +38,15 @@ background-color: #DBF9FC;
 }
 
 </style>
+
+<meta http-equiv="refresh" content="10">
+
 </head>
 
 <body>
 
 <title>Deliver Panel</title>
 <h1>Deliver Panel</h1>
-<h3>refresh page to check new order </h3>
 
 <?php
 /* include global vars */
@@ -86,7 +88,6 @@ if ($pcount > 0) {
 
 }  else {
         echo "no pending orders. yay";
-        echo '<meta http-equiv="refresh" content="10">';
 }
 
 if (isset($_POST["baseid"])) {
