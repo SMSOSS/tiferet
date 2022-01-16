@@ -57,13 +57,12 @@ body {
 background-color: #DBF9FC;
 }
 
-/* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
   overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
+/* nav bar white text */
 .topnav a {
   float: center;
   color: #f2f2f2;
@@ -85,6 +84,7 @@ background-color: #DBF9FC;
   color: white;
 }
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 </head>
 
 <body>
