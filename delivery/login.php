@@ -131,4 +131,17 @@ if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["usernam
 ?>
 </h3>
 </body>
+<footer>
+<h3>
+<?php
+echo "<br>";
+echo '<form method="post">';
+echo '<input type="submit" value="Back to homepage" name="back">';
+echo "</form>";
+if (isset($_POST["back"])){
+        header('Location: /index.php');
+}
+?>
+</h3>
+</footer>
 </html>
