@@ -75,6 +75,11 @@ h2 {
 session_start();
 include("../vars.php");
 $shop = $_SESSION['shop'];
+session_start();
+if (!isset($_SESSION['loggedin'])) {
+        header('Location: /kitchen/login.php');
+        exit;
+}
 ?>
 
 <h1>
