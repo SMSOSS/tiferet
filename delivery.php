@@ -105,40 +105,7 @@ if (isset($_POST["baseid"])) {
                         $pass = $row['password'];
                 }
         }
-        // echo "<script>event.preventDefault();</script>";
-        // echo "<img src='https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$rpass&choe=UTF-8%22%20title=%22your%20order%20is%20ready%22' />";
-        // echo "The food $food goes to locker $locker.";
-        // db_query("UPDATE food SET isdeliver=1 WHERE baseid=$base");
 }
-/*
-if ($pcount == 0){
-        echo "There's no pending yet. Take some rest :)";
-} else {
-        echo "There are $rcount pending orders. <br> <br>";
-        echo "They are: <br> <br>";
-        if ($pcount > 0) {
-                $base = 0;
-                while($row = $pending->fetch_assoc()) {
-                        $food = 0;
-                        $locker = 0;
-                        $pass = 0;
-                        $locker = $row['locker'];
-                        $food = $row['foodname'];
-                        $pass = $row['password'];
-                        echo "$food that goes to $locker";
-                        echo "<form method='post'>";
-                        echo "<input type='hidden' name='baseid' value='" . $row['baseid'] . "'>";
-                        $temp = "<input type='submit' value='Take Job' name='mdone'>";
-                        echo $temp;
-                        echo "</form>";
-                        echo "<br>";
-                        $food++;
-                }
-        }
-        echo "<br>";
-
-}
-*/
 ?>
 </h3>
 
