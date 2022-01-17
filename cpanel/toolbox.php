@@ -125,14 +125,19 @@ echo "<input type='submit' value='Free all lockers' name='flocker'> "; // featur
 echo "<input type='submit' value='Lock all lockers' name='llocker'> "; // feature set occupy=1 for all locker
 echo "</h3>";
 echo "</form>";
-
+?>
+<h4>
+<?php
 /* start features */
 if (isset($_POST['flocker'])) {
         db_query("UPDATE lockerdata SET isoccupy=0 WHERE 1");
+        echo "Operation completed";
 }
 if (isset($_POST['llocker'])) {
         db_query("UPDATE lockerdata SET isoccupy=1 WHERE 1");
+        echo "Operation completed";
 }
 ?>
+</h4>
 </body>
 </html>
