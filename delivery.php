@@ -18,6 +18,11 @@ h3 {
         font-family: HarmonyLight
 }
 
+h2 {
+        text-align: center;
+        font-family: HarmonyReg
+}
+
 a {
         font-family: HarmonyReg
 }
@@ -37,14 +42,35 @@ body {
 background-color: #DBF9FC;
 }
 
+hr.rounded {
+  border-top: 4px solid #006666;
+  border-radius: 5px;
+}
 </style>
+
+<meta http-equiv="refresh" content="10">
+
 </head>
 
 <body>
 
 <title>Deliver Panel</title>
 <h1>Deliver Panel</h1>
-<h3>refresh page to check new order </h3>
+
+<h3>
+<?php
+
+session_start();
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: /delivery/login.php');
+	exit;
+}
+
+$username = $_SESSION['username'];
+echo "welcome $username ! <br>";
+/* start import */
+?>
+</h3>
 
 <?php
 /* include global vars */
@@ -57,11 +83,12 @@ db_open();
 
 
 /* variable start */
-$pending = db_query("SELECT foodname, baseid, locker, password FROM food WHERE iscooked='1' AND isdeliver='0';");
+$pending = db_query("SELECT foodname, baseid, locker, password, location FROM food WHERE iscooked='1' AND isdeliver='0';");
 $pcount = db_num_rows($pending);
 
 ?>
 
+<h2>Pending Deliveries </h2>
 <h3>
 <?php
 /* test */
@@ -74,26 +101,27 @@ if ($pcount > 0) {
                 $locker = $row['locker'];
                 $food = $row['foodname'];
                 $pass = $row['password'];
+                $location = $row['location'];
                 $rpass = $pass+10000;
-                echo "$food that goes to $locker";
+                echo "$food that goes to locker $locker";
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='baseid' value='" . $row['baseid'] . "'>";
                 $temp = "<input type='submit' value='Take Job' name='mdone'>";
-                echo $temp;
+                $lc = "<input type='submit' value='Show details' name='details'>";
+                echo "$temp $lc";
                 echo "</form>";
                 
         }
 
 }  else {
         echo "no pending orders. yay";
-        echo '<meta http-equiv="refresh" content="10">';
 }
 
-if (isset($_POST["baseid"])) {
+if (isset($_POST["mdone"])) {
         $base = $_POST["baseid"];
         $pending = db_query("SELECT foodname, baseid, locker, password FROM food WHERE baseid='$base';");
         db_query("UPDATE food SET isdeliver=2 WHERE baseid=$base");
-        echo "<script>location.replace('cfmd.php?baseid=$base');</script>";
+        echo "<script>location.replace('/delivery/cfmd.php?baseid=$base');</script>";
         if ($pcount > 0) {
                 $base = 0;
                 while($row = $pending->fetch_assoc()) {
@@ -105,42 +133,33 @@ if (isset($_POST["baseid"])) {
                         $pass = $row['password'];
                 }
         }
-        // echo "<script>event.preventDefault();</script>";
-        // echo "<img src='https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$rpass&choe=UTF-8%22%20title=%22your%20order%20is%20ready%22' />";
-        // echo "The food $food goes to locker $locker.";
-        // db_query("UPDATE food SET isdeliver=1 WHERE baseid=$base");
 }
-/*
-if ($pcount == 0){
-        echo "There's no pending yet. Take some rest :)";
-} else {
-        echo "There are $rcount pending orders. <br> <br>";
-        echo "They are: <br> <br>";
-        if ($pcount > 0) {
-                $base = 0;
-                while($row = $pending->fetch_assoc()) {
-                        $food = 0;
-                        $locker = 0;
-                        $pass = 0;
-                        $locker = $row['locker'];
-                        $food = $row['foodname'];
-                        $pass = $row['password'];
-                        echo "$food that goes to $locker";
-                        echo "<form method='post'>";
-                        echo "<input type='hidden' name='baseid' value='" . $row['baseid'] . "'>";
-                        $temp = "<input type='submit' value='Take Job' name='mdone'>";
-                        echo $temp;
-                        echo "</form>";
-                        echo "<br>";
-                        $food++;
-                }
-        }
-        echo "<br>";
 
+if (isset($_POST['details'])){
+        $base = $_POST["baseid"];
+        header("Location: /delivery/details.php?baseid=$base");
 }
-*/
 ?>
 </h3>
 
 </body>
+
+<footer>
+        <hr class="rounded">
+        <h3>
+        <?php
+        echo "<form method='post'>";
+        echo '<input type="submit" value="Change Password" name="changepass">';
+        echo " ";
+        echo '<input type="submit" value="Log Out" name="logout">';
+        echo '</form>';
+        if (isset($_POST['changepass'])){
+                header('Location: /delivery/changepass.php');
+        }
+        if (isset($_POST['logout'])) {
+                header("Location: /delivery/login.php");
+        }
+        ?>
+        </h3>
+</footer>
 </html>

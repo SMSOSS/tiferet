@@ -21,7 +21,7 @@ h3 {
         font-family: HarmonyReg
 }
 
-a {
+h2 {
         text-align: center;
         font-family: HarmonyReg
 }
@@ -41,6 +41,33 @@ body {
 background-color: #DBF9FC;
 }
 
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #40E0D0;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: center;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  /* background-color: #ddd;
+  color: black; */
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #8F00FF;
+  color: white;
+}
 </style>
 
 </head>
@@ -51,18 +78,38 @@ background-color: #DBF9FC;
 <h3>
 <?php
 
+session_start();
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: /kitchen/login.php');
+	exit;
+}
+
+$shop = $_SESSION['shop'];
+echo "welcome $shop ! <br>";
 /* start import */
 include("db.php");
 db_open();
+?>
+</h3>
 
+<h2>
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="/kitchen/editor.php">Menu Editor</a>
+  <a href="/kitchen/login.php">Log Out</a>
+</div>
+</h2>
+
+<h3>
+<?php
 if (isset($_POST["baseid"])) {
         $base = $_POST["baseid"];
         db_query("UPDATE food SET iscooked=1 WHERE baseid=$base");
 }
 
 /* start function and variable */
-$count = db_query("SELECT COUNT(baseid) as total FROM food WHERE NOT iscooked='1';");
-$pending = db_query("SELECT foodname, baseid FROM food WHERE NOT iscooked='1';");
+$count = db_query("SELECT COUNT(baseid) as total FROM food WHERE shop='$shop' AND NOT iscooked='1';");
+$pending = db_query("SELECT foodname, baseid FROM food WHERE shop='$shop' AND NOT iscooked='1';");
 $prows = db_num_rows($pending);
 
 $countr=db_fetch_array($count);

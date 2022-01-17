@@ -41,6 +41,7 @@ background-color: #DBF9FC;
 include("vars.php");
 if (isset($_POST["food"])){
         $foodname = $_POST["food"];
+        $shop = $_POST["shop"];
         $qlocker = db_query("SELECT lockerid, location FROM lockerdata WHERE isoccupy=0 LIMIT 1");
         $qcount = db_num_rows($qlocker);
         if ($qcount > 0) {
@@ -50,7 +51,7 @@ if (isset($_POST["food"])){
                         $lockation = $row['location'];
                 }
         }
-        db_query("INSERT INTO food (locker, baseid, foodid, iscooked, isdeliver, istaken, foodname, password, location) VALUES ($locker, $baseid, $foodid, 0, 0, 0, '$foodname', '$pass', '$lockation')");
+        db_query("INSERT INTO food (locker, baseid, foodid, iscooked, isdeliver, istaken, foodname, password, location, shop) VALUES ($locker, $baseid, $foodid, 0, 0, 0, '$foodname', '$pass', '$lockation', '$shop')");
         db_query("UPDATE lockerdata SET isoccupy='1' WHERE lockerid='$locker'");
         echo "<script>location.replace('user.php?food=$foodname&baseid=$baseid');</script>";
 
@@ -79,7 +80,7 @@ if ($qcount >= $lcount) {
 
 <h3>
 <?php
-$qfood = db_query("SELECT food, price FROM menu WHERE soldout=0;");
+$qfood = db_query("SELECT food, price, shop FROM menu WHERE soldout=0;");
 $rfood = db_num_rows($qfood);
 
 if ($rfood > 0) {
@@ -88,9 +89,11 @@ if ($rfood > 0) {
                 $food = 0;
                 $food = $row['food'];
                 $price = $row['price'];
-                echo "$food ― $$price";
+                $shop = $row['shop'];   
+                echo "$food by $shop ― $$price";
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='food' value='" . $row['food'] . "'>";
+                echo "<input type='hidden' name='shop' value='" . $row['shop'] . "'>";
                 $temp = "<input type='submit' value='Order!' name='order'>";
                 echo $temp;
                 echo "</form>";

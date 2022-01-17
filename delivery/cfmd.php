@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <style>
 
-@font-face { font-family: HarmonyBold; src: url('fonts/bold.ttf'); } 
-@font-face { font-family: HarmonyReg; src: url('fonts/regular.ttf'); } 
-@font-face { font-family: HarmonyLight; src: url('fonts/light.ttf'); } 
+@font-face { font-family: HarmonyBold; src: url('/fonts/bold.ttf'); } 
+@font-face { font-family: HarmonyReg; src: url('/fonts/regular.ttf'); } 
+@font-face { font-family: HarmonyLight; src: url('/fonts/light.ttf'); } 
 h1 {
         text-align: center;
         font-family: HarmonyBold
@@ -35,13 +35,15 @@ input[type=submit] {
 
 </style>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
 </head>
 
 <body>
 
 <!-- sql: grab food information first -->
 <?php
-include("db.php");
+include("../db.php");
 db_open();
 
 $timestamp = $_GET["baseid"];
@@ -57,7 +59,7 @@ if ($prows > 0) {
                 $location = $row['location'];
         }
 } else {
-        echo "<script>location.replace('delivery.php');</script>";
+        echo "<script>location.replace('/delivery.php');</script>";
 }
 
 $rpass = $password+10000

@@ -66,6 +66,9 @@ $cook = db_query("SELECT iscooked, isdeliver, istaken, password, location FROM f
 $prows = db_num_rows($cook);
 $food = $_GET["food"];
 
+if (!$_GET["baseid"] && !$_GET["food"]) {
+        echo '<script>window.location.replace("404.php");</script>';
+}
 if ($prows > 0) {
         while($row = $cook->fetch_assoc()) {
                 $iscook = $row['iscooked'];
@@ -107,7 +110,9 @@ echo "<a href='http://maps.google.com?q=$location'>";
 echo '<input type="submit" value="Show locker location on Google Map" />';
 echo "   ";
 echo '</a>';
-echo '<button onclick="notifyMe()">Notify me!</button>';
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') == FALSE){
+        echo '<button onclick="notifyMe()">Notify me!</button>';
+}
 }
 ?>
 

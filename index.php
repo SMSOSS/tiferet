@@ -51,6 +51,14 @@ background-color: #DBF9FC;
 
 <h4>
 <a href="order.php">Order Food</a> | <a href="kitchen.php">Kitchen System</a> | <a href="delivery.php">Delivery System</a>
+
+<?php
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') == TRUE){
+        echo "<br> <br>";
+        echo "You are using Chrome. <br>";
+        echo "Please consider switching to Mozilla Firefox for better support. <br>";
+}
+?>
 </h4>
 </body>
 
