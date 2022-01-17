@@ -109,11 +109,10 @@ echo "<form method='post'>";
 // echo "<input type='submit' value='Disable User' name='duser'> "; // feature disable user
 // echo "<input type='submit' value='Promote User' name='puser'>"; // feature promote user
 // echo "</h3>";
-// echo "<h2>Shop tools </h2>";
-// echo "<h3>";
-// echo "<input type='submit' value='Add shop' name='ashop'> "; // feature add new shop
-// echo "<input type='submit' value='Disable shop' name='dshop'>"; // feature disable shop, use when shop stop working
-// echo "</h3>";
+echo "<h2>Shop tools </h2>";
+echo "<h3>";
+echo "<input type='submit' value='Shop editor' name='eshop'> "; // feature add or disable shop
+echo "</h3>";
 echo "<h2>Food tools</h2>";
 echo "<h3>";
 echo "<input type='submit' value='Mark all as done' name='adone'> "; // feature reset all, use with caution
@@ -143,6 +142,9 @@ if (isset($_POST['adone'])) {
 }
 if (isset($_POST['tuner'])) {
 	header('Location: /cpanel/tuner.php');
+}
+if (isset($_POST['eshop'])) {
+	header('Location: /cpanel/stools.php');
 }
 ?>
 </h4>
