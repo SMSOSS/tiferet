@@ -115,15 +115,22 @@ if (isset($_POST['signup'])){
 if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["username"])) {
         $password = $_POST['password'];
         $username = $_POST['username'];
-        $query = db_query("SELECT username, password FROM userdata WHERE password='$password' AND username='$username' AND isdelivery='1'");
+        $query = db_query("SELECT username, password, isdisabled FROM userdata WHERE password='$password' AND username='$username' AND isdelivery='1'");
         $qcount = db_num_rows($query);
         if ($qcount > 0) {
                 while($row = $query->fetch_assoc()) {
                         $username = $row['username'];
+                        $disable = $row['isdisabled'];
                 }
-                $_SESSION['loggedin'] = TRUE;
-                $_SESSION['username'] = $username;
-                header('Location: /delivery.php');
+                if ($disable == 0){
+                        $_SESSION['loggedin'] = TRUE;
+                        $_SESSION['username'] = $username;
+                        header('Location: /delivery.php');
+                } else {
+                        echo "<br>";
+                        echo "Your account has been disabled. <br>";
+                        echo "Contact customer support if you think this is a mistake.";
+                }
         } else {
                 echo "Wrong username / password.";
         }
