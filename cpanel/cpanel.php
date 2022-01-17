@@ -96,6 +96,7 @@ echo "welcome $username ! <br>";
 <h2>
 <div class="topnav">
   <a class="active" href="#home">Home</a>
+  <a href="/cpanel/toolbox.php">Toolbox</a>
   <a href="/cpanel/login.php">Log Out</a>
 </div>
 </h2>
@@ -146,6 +147,10 @@ echo "<h4>";
 echo "Number of lockers: $tlnum <br>";
 echo "Number of occupied lockers: $olnum";
 echo "</h4>";
+echo "<h3>System Data</h3>";
+echo "<h4>";
+echo "Tiferet Version: $version";
+echo "</h4>"
 ?>
 </body>
 </html>
