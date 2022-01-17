@@ -103,12 +103,11 @@ echo "welcome $username ! <br>";
 
 <?php
 include("../vars.php");
-// echo "<h2>User Tools</h2>";
+echo "<h2>User Tools</h2>";
 echo "<form method='post'>";
-// echo "<h3>";
-// echo "<input type='submit' value='Disable User' name='duser'> "; // feature disable user
-// echo "<input type='submit' value='Promote User' name='puser'>"; // feature promote user
-// echo "</h3>";
+echo "<h3>";
+echo "<input type='submit' value='User editor' name='euser'> "; // feature disable user
+echo "</h3>";
 echo "<h2>Shop tools </h2>";
 echo "<h3>";
 echo "<input type='submit' value='Shop editor' name='eshop'> "; // feature add or disable shop
@@ -145,6 +144,9 @@ if (isset($_POST['tuner'])) {
 }
 if (isset($_POST['eshop'])) {
 	header('Location: /cpanel/stools.php');
+}
+if (isset($_POST['euser'])) {
+	header('Location: /cpanel/utools.php');
 }
 ?>
 </h4>
