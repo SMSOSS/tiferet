@@ -15,7 +15,7 @@ $pass = mt_rand(1000,9999);
 $foodid = 1;
 $lcount = 2; // number of lockers
 
-$version = 1.2;
+$version = 1.3;
 /* real bug trigger. save all data into db */
 db_open();
 ?>
