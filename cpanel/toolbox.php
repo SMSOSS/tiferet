@@ -114,11 +114,11 @@ echo "<form method='post'>";
 // echo "<input type='submit' value='Add shop' name='ashop'> "; // feature add new shop
 // echo "<input type='submit' value='Disable shop' name='dshop'>"; // feature disable shop, use when shop stop working
 // echo "</h3>";
-// echo "<h2>Food tools</h2>";
-// echo "<h3>";
-// echo "<input type='submit' value='Mark all as done' name='adone'> "; // feature reset all, use with caution
-// echo "<input type='submit' value='Advanced tuner' name='tuner'> "; // feature food fine tune
-// echo "</h3>";
+echo "<h2>Food tools</h2>";
+echo "<h3>";
+echo "<input type='submit' value='Mark all as done' name='adone'> "; // feature reset all, use with caution
+echo "<input type='submit' value='Advanced tuner' name='tuner'> "; // feature food fine tune
+echo "</h3>";
 echo "<h2>Locker tools</h2>";
 echo "<h3>";
 echo "<input type='submit' value='Free all lockers' name='flocker'> "; // feature set occupy=0 for all locker
@@ -136,6 +136,13 @@ if (isset($_POST['flocker'])) {
 if (isset($_POST['llocker'])) {
         db_query("UPDATE lockerdata SET isoccupy=1 WHERE 1");
         echo "Operation completed";
+}
+if (isset($_POST['adone'])) {
+        db_query("UPDATE food SET istaken=1 WHERE 1");
+        echo "Operation completed";
+}
+if (isset($_POST['tuner'])) {
+	header('Location: /cpanel/tuner.php');
 }
 ?>
 </h4>
