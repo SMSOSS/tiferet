@@ -98,19 +98,27 @@ unset($_SESSION['loggedin']);
 include("../vars.php");
 if (isset($_POST["login"]) && isset($_POST["password"]) ) {
         $pass = $_POST['password'];
-        $qshop = db_query("SELECT name, passcode FROM shopdata WHERE passcode='$pass'");
+        $qshop = db_query("SELECT name, passcode, isdisable FROM shopdata WHERE passcode='$pass'");
         $qcount = db_num_rows($qshop);
         if ($qcount > 0) {
                 while($row = $qshop->fetch_assoc()) {
                         $pass = $row['passcode'];
                         $shop = $row['name'];
+                        $disable = $row['isdisable'];
                 }
-                $_SESSION['loggedin'] = TRUE;
-                $_SESSION['pass'] = $pass;
-                $_SESSION['shop'] = $shop;
-                header('Location: /kitchen.php');
+                if ($disable == 0){ 
+                        $_SESSION['loggedin'] = TRUE;
+                        $_SESSION['pass'] = $pass;
+                        $_SESSION['shop'] = $shop;
+                        header('Location: /kitchen.php');
+                } else {
+                        echo "<h3>";
+                        echo "Your account has been disabled.";
+                        echo "Please contact customer support.";
+                        echo "</h3>";
+                }
         } else {
-                echo "Wrong username / password.";
+                echo "<h3>Wrong username / password.</h3>";
         }
 } 
 ?>
