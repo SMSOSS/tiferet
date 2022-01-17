@@ -150,14 +150,14 @@ if (isset($_POST['changepass'])){
 if (isset($_POST['disable'])){
         $shop = $_POST['shop'];
         db_query("UPDATE shopdata SET isdisable=1 WHERE name='$shop'");
-        db_query("UPDATE menu SET soldout=1 WHERE shop='$shop'");
+        db_query("UPDATE menu SET soldout=2 WHERE shop='$shop' AND soldout='0'");
         echo "operation successful";
         header('Location: /cpanel/stools.php');
 }
 if (isset($_POST['enable'])){
         $shop = $_POST['shop'];
         db_query("UPDATE shopdata SET isdisable=0 WHERE name='$shop'");
-        db_query("UPDATE menu SET soldout=0 WHERE shop='$shop'");
+        db_query("UPDATE menu SET soldout=0 WHERE shop='$shop' AND soldout='2'");
         echo "operation successful";
         header('Location: /cpanel/stools.php');
 }
