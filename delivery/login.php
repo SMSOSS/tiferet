@@ -4,9 +4,9 @@
 
         <style>
 
-@font-face { font-family: HarmonyBold; src: url('../fonts/bold.ttf'); } 
-@font-face { font-family: HarmonyReg; src: url('../fonts/regular.ttf'); } 
-@font-face { font-family: HarmonyLight; src: url('../fonts/light.ttf'); } 
+@font-face { font-family: HarmonyBold; src: url('../fonts/bold.ttf'); }
+@font-face { font-family: HarmonyReg; src: url('../fonts/regular.ttf'); }
+@font-face { font-family: HarmonyLight; src: url('../fonts/light.ttf'); }
 h1 {
         text-align: center;
         font-family: HarmonyBold
@@ -23,32 +23,32 @@ h2 {
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#DBF9FC; 
+    padding:5px 15px;
+    background:#DBF9FC;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyBold;
     font-size: 15px;
 }
 
 input[type=password] {
-    padding:5px 15px; 
+    padding:5px 15px;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyLight;
     font-size: 15px;
 }
 
 input[type=text] {
-    padding:5px 15px; 
+    padding:5px 15px;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyLight;
     font-size: 15px;
 }
@@ -106,35 +106,35 @@ echo "  ";
 echo '<input type="submit" value="Sign Up" name="signup">';
 echo '</form>';
 
-include("../vars.php");
+include "../vars.php";
 
-if (isset($_POST['signup'])){ 
-        header('Location: /delivery/signup.php');
+if (isset($_POST['signup'])) {
+    header('Location: /delivery/signup.php');
 }
 
 if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["username"])) {
-        $password = $_POST['password'];
-        $username = $_POST['username'];
-        $query = db_query("SELECT username, password, isdisabled FROM userdata WHERE password='$password' AND username='$username' AND isdelivery='1'");
-        $qcount = db_num_rows($query);
-        if ($qcount > 0) {
-                while($row = $query->fetch_assoc()) {
-                        $username = $row['username'];
-                        $disable = $row['isdisabled'];
-                }
-                if ($disable == 0){
-                        $_SESSION['loggedin'] = TRUE;
-                        $_SESSION['username'] = $username;
-                        header('Location: /delivery.php');
-                } else {
-                        echo "<br>";
-                        echo "Your account has been disabled. <br>";
-                        echo "Contact customer support if you think this is a mistake.";
-                }
-        } else {
-                echo "Wrong username / password.";
+    $password = $_POST['password'];
+    $username = $_POST['username'];
+    $query = db_query("SELECT username, password, isdisabled FROM userdata WHERE password='$password' AND username='$username' AND isdelivery='1'");
+    $qcount = db_num_rows($query);
+    if ($qcount > 0) {
+        while ($row = $query->fetch_assoc()) {
+            $username = $row['username'];
+            $disable = $row['isdisabled'];
         }
-} 
+        if ($disable == 0) {
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
+            header('Location: /delivery.php');
+        } else {
+            echo "<br>";
+            echo "Your account has been disabled. <br>";
+            echo "Contact customer support if you think this is a mistake.";
+        }
+    } else {
+        echo "Wrong username / password.";
+    }
+}
 ?>
 </h3>
 </body>
@@ -145,8 +145,8 @@ echo "<br>";
 echo '<form method="post">';
 echo '<input type="submit" value="Back to homepage" name="back">';
 echo "</form>";
-if (isset($_POST["back"])){
-        header('Location: /index.php');
+if (isset($_POST["back"])) {
+    header('Location: /index.php');
 }
 ?>
 </h3>

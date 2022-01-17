@@ -7,9 +7,9 @@
 
 <style>
 
-@font-face { font-family: HarmonyBold; src: url('fonts/bold.ttf'); } 
-@font-face { font-family: HarmonyReg; src: url('fonts/regular.ttf'); } 
-@font-face { font-family: HarmonyLight; src: url('fonts/light.ttf'); } 
+@font-face { font-family: HarmonyBold; src: url('fonts/bold.ttf'); }
+@font-face { font-family: HarmonyReg; src: url('fonts/regular.ttf'); }
+@font-face { font-family: HarmonyLight; src: url('fonts/light.ttf'); }
 h1 {
         text-align: center;
         font-family: HarmonyBold
@@ -53,10 +53,10 @@ background-color: #DBF9FC;
 <a href="order.php">Order Food</a> | <a href="kitchen.php">Kitchen System</a> | <a href="delivery.php">Delivery System</a>
 
 <?php
-if(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') == TRUE){
-        echo "<br> <br>";
-        echo "You are using Chrome. <br>";
-        echo "Please consider switching to Mozilla Firefox for better support. <br>";
+if (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') == true) {
+    echo "<br> <br>";
+    echo "You are using Chrome. <br>";
+    echo "Please consider switching to Mozilla Firefox for better support. <br>";
 }
 ?>
 </h4>
@@ -65,7 +65,7 @@ if(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') == TRUE){
 <footer>
 <p>
 <?php
-include("vars.php");
+include "vars.php";
 echo "Tiferet version $version";
 ?>
 </p>

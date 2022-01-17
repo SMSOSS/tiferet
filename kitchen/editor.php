@@ -4,9 +4,9 @@
 <head>
 <style>
 
-@font-face { font-family: HarmonyBold; src: url('../fonts/bold.ttf'); } 
-@font-face { font-family: HarmonyReg; src: url('../fonts/regular.ttf'); } 
-@font-face { font-family: HarmonyLight; src: url('../fonts/light.ttf'); } 
+@font-face { font-family: HarmonyBold; src: url('../fonts/bold.ttf'); }
+@font-face { font-family: HarmonyReg; src: url('../fonts/regular.ttf'); }
+@font-face { font-family: HarmonyLight; src: url('../fonts/light.ttf'); }
 h1 {
         text-align: center;
         font-family: HarmonyBold;
@@ -18,12 +18,12 @@ h3 {
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#DBF9FC; 
+    padding:5px 15px;
+    background:#DBF9FC;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyBold;
     font-size: 15px;
 }
@@ -73,12 +73,12 @@ h2 {
 
 <?php
 session_start();
-include("../vars.php");
+include "../vars.php";
 $shop = $_SESSION['shop'];
 session_start();
 if (!isset($_SESSION['loggedin'])) {
-        header('Location: /kitchen/login.php');
-        exit;
+    header('Location: /kitchen/login.php');
+    exit;
 }
 ?>
 
@@ -103,46 +103,46 @@ $qfood = db_query("SELECT food FROM menu WHERE shop='$shop' AND soldout='0';");
 $rfood = db_num_rows($qfood);
 
 if ($rfood > 0) {
-        while($row = $qfood->fetch_assoc()) {
-                $food = 0;
-                $food = $row['food'];
-                echo "$food";
-                echo "<form method='post'>";
-                echo "<input type='hidden' name='food' value='" . $row['food'] . "'>";
-                $temp = "<input type='submit' value='Mark Sold out' name='soldout'>";
-                echo $temp;
-                echo "</form>";
-                echo "<br>";
-                
-        }
-        if (isset($_POST['soldout'])){
-                $target = $_POST['food'];
-                db_query("UPDATE menu SET soldout=1 WHERE food='$target';");
-                header('Location: /kitchen/editor.php');
-        }
+    while ($row = $qfood->fetch_assoc()) {
+        $food = 0;
+        $food = $row['food'];
+        echo "$food";
+        echo "<form method='post'>";
+        echo "<input type='hidden' name='food' value='" . $row['food'] . "'>";
+        $temp = "<input type='submit' value='Mark Sold out' name='soldout'>";
+        echo $temp;
+        echo "</form>";
+        echo "<br>";
+
+    }
+    if (isset($_POST['soldout'])) {
+        $target = $_POST['food'];
+        db_query("UPDATE menu SET soldout=1 WHERE food='$target';");
+        header('Location: /kitchen/editor.php');
+    }
 }
 
 $qfood = db_query("SELECT food FROM menu WHERE shop='$shop' AND soldout='1';");
 $rfood = db_num_rows($qfood);
 
 if ($rfood > 0) {
-        while($row = $qfood->fetch_assoc()) {
-                $food = 0;
-                $food = $row['food'];
-                echo "$food";
-                echo "<form method='post'>";
-                echo "<input type='hidden' name='food' value='" . $row['food'] . "'>";
-                $temp = "<input type='submit' value='Mark Available' name='avail'>";
-                echo $temp;
-                echo "</form>";
-                echo "<br>";
-                
-        }
-        if (isset($_POST['avail'])){
-                $target = $_POST['food'];
-                db_query("UPDATE menu SET soldout=0 WHERE food='$target';");
-                header('Location: /kitchen/editor.php');
-        }
+    while ($row = $qfood->fetch_assoc()) {
+        $food = 0;
+        $food = $row['food'];
+        echo "$food";
+        echo "<form method='post'>";
+        echo "<input type='hidden' name='food' value='" . $row['food'] . "'>";
+        $temp = "<input type='submit' value='Mark Available' name='avail'>";
+        echo $temp;
+        echo "</form>";
+        echo "<br>";
+
+    }
+    if (isset($_POST['avail'])) {
+        $target = $_POST['food'];
+        db_query("UPDATE menu SET soldout=0 WHERE food='$target';");
+        header('Location: /kitchen/editor.php');
+    }
 }
 ?>
 </h3>
@@ -154,9 +154,9 @@ if ($rfood > 0) {
 <input type="submit" value="Add Item" name="additem">
 </form>
 <?php
-        if(isset($_POST['additem'])){
-                header('Location: /kitchen/additem.php');
-        }
+if (isset($_POST['additem'])) {
+    header('Location: /kitchen/additem.php');
+}
 ?>
 </h3>
 </footer>

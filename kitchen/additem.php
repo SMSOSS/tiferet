@@ -4,9 +4,9 @@
 <head>
 <style>
 
-@font-face { font-family: HarmonyBold; src: url('../fonts/bold.ttf'); } 
-@font-face { font-family: HarmonyReg; src: url('../fonts/regular.ttf'); } 
-@font-face { font-family: HarmonyLight; src: url('../fonts/light.ttf'); } 
+@font-face { font-family: HarmonyBold; src: url('../fonts/bold.ttf'); }
+@font-face { font-family: HarmonyReg; src: url('../fonts/regular.ttf'); }
+@font-face { font-family: HarmonyLight; src: url('../fonts/light.ttf'); }
 h1 {
         text-align: center;
         font-family: HarmonyBold;
@@ -18,22 +18,22 @@ h3 {
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#DBF9FC; 
+    padding:5px 15px;
+    background:#DBF9FC;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyBold;
     font-size: 15px;
 }
 
 input[type=text] {
-    padding:5px 15px; 
+    padding:5px 15px;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyLight;
     font-size: 15px;
 }
@@ -83,12 +83,12 @@ h2 {
 
 <?php
 session_start();
-include("../vars.php");
+include "../vars.php";
 $shop = $_SESSION['shop'];
 session_start();
 if (!isset($_SESSION['loggedin'])) {
-        header('Location: /kitchen/login.php');
-        exit;
+    header('Location: /kitchen/login.php');
+    exit;
 }
 ?>
 
@@ -119,14 +119,14 @@ echo "<br> <br>";
 echo '<input type="submit" value="Add to menu" name="add">';
 echo '</form>';
 if (isset($_POST['add'])) {
-        if (!empty($_POST['food']) && !empty($_POST['price'])){
-                $food = $_POST['food'];
-                $price = $_POST['price'];
-                db_query("INSERT INTO `menu`(`food`, `price`, `soldout`, `shop`) VALUES ('$food','$price','0','$shop');");
-                echo "Added to menu!";
-        } else {
-                echo "Fields are not being filled? Check your input and try again.";
-        }
+    if (!empty($_POST['food']) && !empty($_POST['price'])) {
+        $food = $_POST['food'];
+        $price = $_POST['price'];
+        db_query("INSERT INTO `menu`(`food`, `price`, `soldout`, `shop`) VALUES ('$food','$price','0','$shop');");
+        echo "Added to menu!";
+    } else {
+        echo "Fields are not being filled? Check your input and try again.";
+    }
 }
 ?>
 </h3>
@@ -138,9 +138,9 @@ if (isset($_POST['add'])) {
 <input type="submit" value="Back" name="back">
 </form>
 <?php
-        if(isset($_POST['back'])){
-                header('Location: /kitchen/editor.php');
-        }
+if (isset($_POST['back'])) {
+    header('Location: /kitchen/editor.php');
+}
 ?>
 </h3>
 </footer>

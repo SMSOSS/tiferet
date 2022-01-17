@@ -7,9 +7,9 @@
 
 <style>
 
-@font-face { font-family: HarmonyBold; src: url('/fonts/bold.ttf'); } 
-@font-face { font-family: HarmonyReg; src: url('/fonts/regular.ttf'); } 
-@font-face { font-family: HarmonyLight; src: url('/fonts/light.ttf'); } 
+@font-face { font-family: HarmonyBold; src: url('/fonts/bold.ttf'); }
+@font-face { font-family: HarmonyReg; src: url('/fonts/regular.ttf'); }
+@font-face { font-family: HarmonyLight; src: url('/fonts/light.ttf'); }
 h1 {
         text-align: center;
         font-family: HarmonyBold
@@ -31,12 +31,12 @@ p {
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#DBF9FC; 
+    padding:5px 15px;
+    background:#DBF9FC;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyBold;
     font-size: 15px;
 }
@@ -83,8 +83,8 @@ background-color: #DBF9FC;
 
 session_start();
 if (!isset($_SESSION['aloggedin'])) {
-	header('Location: /cpanel/login.php');
-	exit;
+    header('Location: /cpanel/login.php');
+    exit;
 }
 
 $username = $_SESSION['username'];
@@ -103,63 +103,63 @@ echo "welcome $username ! <br>";
 
 <h2>Food details</h2>
 <?php
-include("../vars.php");
+include "../vars.php";
 
 $query = db_query("SELECT * FROM shopdata");
 $qcount = db_num_rows($query);
 if ($qcount > 0) {
-        $base = 0;
-         while($row = $query->fetch_assoc()) {
-                $name = $row['name'];
-                $pass = $row['passcode'];
-                $location = $row['location'];
-                $dstat = $row['isdisable'];
-                echo "<h3>Shop: $name</h3>";
-                echo "<p>Passcode: $pass</p>";
-                echo "<p>Location: $location</p>";
-                if ($dstat == 0){
-                        echo "<p>Status: Enabled</p>";
-                } else {
-                        echo "<p>Status: Disabled</p>";
-                }
-                echo "<form method='post'>";
-                echo "<input type='hidden' name='shop' value='" . $row['name'] . "'>";
-                $cpw = "<input type='submit' value='Change Password' name='changepass'>"; // feature change password
-                $clc = "<input type='submit' value='Change location' name='changeloc'>"; // feature change location
-                $disable = "<input type='submit' value='Disable shop' name='disable'>"; // feature disable restaurant
-                $enable = "<input type='submit' value='Enable shop' name='enable'>"; // feature disable restaurant
-                echo "<h3>";
-                echo "$cpw $clc <br>";
-                echo "$disable $enable<br>";
-                echo "</h3>";
-                echo "</form>";
-                
+    $base = 0;
+    while ($row = $query->fetch_assoc()) {
+        $name = $row['name'];
+        $pass = $row['passcode'];
+        $location = $row['location'];
+        $dstat = $row['isdisable'];
+        echo "<h3>Shop: $name</h3>";
+        echo "<p>Passcode: $pass</p>";
+        echo "<p>Location: $location</p>";
+        if ($dstat == 0) {
+            echo "<p>Status: Enabled</p>";
+        } else {
+            echo "<p>Status: Disabled</p>";
         }
+        echo "<form method='post'>";
+        echo "<input type='hidden' name='shop' value='" . $row['name'] . "'>";
+        $cpw = "<input type='submit' value='Change Password' name='changepass'>"; // feature change password
+        $clc = "<input type='submit' value='Change location' name='changeloc'>"; // feature change location
+        $disable = "<input type='submit' value='Disable shop' name='disable'>"; // feature disable restaurant
+        $enable = "<input type='submit' value='Enable shop' name='enable'>"; // feature disable restaurant
+        echo "<h3>";
+        echo "$cpw $clc <br>";
+        echo "$disable $enable<br>";
+        echo "</h3>";
+        echo "</form>";
+
+    }
 
 }
 ?>
 <h3>
 <?php
 
-if (isset($_POST['changepass'])){
-        $shop = $_POST['shop'];
-        $newpassword = mt_rand(1000, 9999);
-        db_query("UPDATE shopdata SET passcode='$newpassword' WHERE name='$shop'");
-        header('Location: /cpanel/stools.php');
+if (isset($_POST['changepass'])) {
+    $shop = $_POST['shop'];
+    $newpassword = mt_rand(1000, 9999);
+    db_query("UPDATE shopdata SET passcode='$newpassword' WHERE name='$shop'");
+    header('Location: /cpanel/stools.php');
 }
-if (isset($_POST['disable'])){
-        $shop = $_POST['shop'];
-        db_query("UPDATE shopdata SET isdisable=1 WHERE name='$shop'");
-        db_query("UPDATE menu SET soldout=2 WHERE shop='$shop' AND soldout='0'");
-        echo "operation successful";
-        header('Location: /cpanel/stools.php');
+if (isset($_POST['disable'])) {
+    $shop = $_POST['shop'];
+    db_query("UPDATE shopdata SET isdisable=1 WHERE name='$shop'");
+    db_query("UPDATE menu SET soldout=2 WHERE shop='$shop' AND soldout='0'");
+    echo "operation successful";
+    header('Location: /cpanel/stools.php');
 }
-if (isset($_POST['enable'])){
-        $shop = $_POST['shop'];
-        db_query("UPDATE shopdata SET isdisable=0 WHERE name='$shop'");
-        db_query("UPDATE menu SET soldout=0 WHERE shop='$shop' AND soldout='2'");
-        echo "operation successful";
-        header('Location: /cpanel/stools.php');
+if (isset($_POST['enable'])) {
+    $shop = $_POST['shop'];
+    db_query("UPDATE shopdata SET isdisable=0 WHERE name='$shop'");
+    db_query("UPDATE menu SET soldout=0 WHERE shop='$shop' AND soldout='2'");
+    echo "operation successful";
+    header('Location: /cpanel/stools.php');
 }
 ?>
 </h3>
@@ -171,8 +171,8 @@ echo "<br>";
 echo '<form method="post">';
 echo '<input type="submit" value="Back" name="back">';
 echo "</form>";
-if (isset($_POST["back"])){
-        header('Location: /cpanel/toolbox.php');
+if (isset($_POST["back"])) {
+    header('Location: /cpanel/toolbox.php');
 }
 ?>
 </h3>

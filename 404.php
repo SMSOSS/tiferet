@@ -6,9 +6,9 @@
 
 <style>
 
-@font-face { font-family: HarmonyBold; src: url('fonts/bold.ttf'); } 
-@font-face { font-family: HarmonyReg; src: url('fonts/regular.ttf'); } 
-@font-face { font-family: HarmonyLight; src: url('fonts/light.ttf'); } 
+@font-face { font-family: HarmonyBold; src: url('fonts/bold.ttf'); }
+@font-face { font-family: HarmonyReg; src: url('fonts/regular.ttf'); }
+@font-face { font-family: HarmonyLight; src: url('fonts/light.ttf'); }
 h1 {
         text-align: center;
         font-family: HarmonyBold
@@ -24,23 +24,23 @@ background-color: #DBF9FC;
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#DBF9FC; 
+    padding:5px 15px;
+    background:#DBF9FC;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyBold;
     font-size: 15px;
 }
 
 button {
-    padding:5px 15px; 
-    background:#DBF9FC; 
+    padding:5px 15px;
+    background:#DBF9FC;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyBold;
     font-size: 15px;
 }
@@ -55,3 +55,4 @@ button {
         <h3></h3>
         <h3>Please report to your administrator at once.</h3>
 </body>
+</html>

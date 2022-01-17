@@ -7,9 +7,9 @@
 
 <style>
 
-@font-face { font-family: HarmonyBold; src: url('/fonts/bold.ttf'); } 
-@font-face { font-family: HarmonyReg; src: url('/fonts/regular.ttf'); } 
-@font-face { font-family: HarmonyLight; src: url('/fonts/light.ttf'); } 
+@font-face { font-family: HarmonyBold; src: url('/fonts/bold.ttf'); }
+@font-face { font-family: HarmonyReg; src: url('/fonts/regular.ttf'); }
+@font-face { font-family: HarmonyLight; src: url('/fonts/light.ttf'); }
 h1 {
         text-align: center;
         font-family: HarmonyBold
@@ -31,12 +31,12 @@ h4 {
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#DBF9FC; 
+    padding:5px 15px;
+    background:#DBF9FC;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyBold;
     font-size: 15px;
 }
@@ -83,8 +83,8 @@ background-color: #DBF9FC;
 
 session_start();
 if (!isset($_SESSION['aloggedin'])) {
-	header('Location: /cpanel/login.php');
-	exit;
+    header('Location: /cpanel/login.php');
+    exit;
 }
 
 $username = $_SESSION['username'];
@@ -102,7 +102,7 @@ echo "welcome $username ! <br>";
 </h2>
 
 <?php
-include("../vars.php");
+include "../vars.php";
 echo "<h2>User Tools</h2>";
 echo "<form method='post'>";
 echo "<h3>";
@@ -128,25 +128,25 @@ echo "</form>";
 <?php
 /* start features */
 if (isset($_POST['flocker'])) {
-        db_query("UPDATE lockerdata SET isoccupy=0 WHERE 1");
-        echo "Operation completed";
+    db_query("UPDATE lockerdata SET isoccupy=0 WHERE 1");
+    echo "Operation completed";
 }
 if (isset($_POST['llocker'])) {
-        db_query("UPDATE lockerdata SET isoccupy=1 WHERE 1");
-        echo "Operation completed";
+    db_query("UPDATE lockerdata SET isoccupy=1 WHERE 1");
+    echo "Operation completed";
 }
 if (isset($_POST['adone'])) {
-        db_query("UPDATE food SET istaken=1 WHERE 1");
-        echo "Operation completed";
+    db_query("UPDATE food SET istaken=1 WHERE 1");
+    echo "Operation completed";
 }
 if (isset($_POST['tuner'])) {
-	header('Location: /cpanel/tuner.php');
+    header('Location: /cpanel/tuner.php');
 }
 if (isset($_POST['eshop'])) {
-	header('Location: /cpanel/stools.php');
+    header('Location: /cpanel/stools.php');
 }
 if (isset($_POST['euser'])) {
-	header('Location: /cpanel/utools.php');
+    header('Location: /cpanel/utools.php');
 }
 ?>
 </h4>
