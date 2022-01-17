@@ -107,7 +107,7 @@ if ($pcount > 0) {
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='baseid' value='" . $row['baseid'] . "'>";
                 $temp = "<input type='submit' value='Take Job' name='mdone'>";
-                $lc = "<input type='submit' value='Show locker location' name='lockation'>";
+                $lc = "<input type='submit' value='Show details' name='details'>";
                 echo "$temp $lc";
                 echo "</form>";
                 
@@ -135,8 +135,9 @@ if (isset($_POST["mdone"])) {
         }
 }
 
-if (isset($_POST['lockation'])){
-        header("Location: http://maps.google.com?q=$location");
+if (isset($_POST['details'])){
+        $base = $_POST["baseid"];
+        header("Location: /delivery/details.php?baseid=$base");
 }
 ?>
 </h3>
