@@ -105,7 +105,7 @@ echo "welcome $username ! <br>";
 <?php
 include("../vars.php");
 
-$query = db_query("SELECT foodname, baseid, locker, password, location FROM food");
+$query = db_query("SELECT * FROM food");
 $qcount = db_num_rows($query);
 if ($qcount > 0) {
         $base = 0;
@@ -116,9 +116,21 @@ if ($qcount > 0) {
                 $locker = $row['locker'];
                 $food = $row['foodname'];
                 $pass = $row['password'];
+                $cook = $row['iscooked'];
+                $deliver = $row['isdeliver'];
+                $taken = $row['istaken'];
                 echo "<h3>Item: $food</h3>";
                 echo "<p>Locker: $locker</p>";
                 echo "<p>Passcode: $pass</p>";
+                if ($taken == 1){
+                        echo "<p>Status: Taken</p>";
+                } else if ($deliver == 1){
+                        echo "<p>Status: Delivered</p>";
+                } else if ($cook == 1){
+                        echo "<p>Status: Cooked </p>";
+                } else {
+                        echo "<p>Status: Preparing </p>";
+                }
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='baseid' value='" . $row['baseid'] . "'>";
                 $cooked = "<input type='submit' value='Set cooked' name='cooked'>"; // feature set food as cooked
@@ -149,31 +161,37 @@ if (isset($_POST['cooked'])){
         $baseid = $_POST['baseid'];
         setStatus("iscooked", "1", "$baseid");
         echo "operation successful";
+        header('Location: /cpanel/tuner.php');
 }
 if (isset($_POST['delivered'])){
         $baseid = $_POST['baseid'];
         setStatus("isdeliver", "1", "$baseid");
         echo "operation successful";
+        header('Location: /cpanel/tuner.php');
 }
 if (isset($_POST['taken'])){
         $baseid = $_POST['baseid'];
         setStatus("istaken", "1", "$baseid");
         echo "operation successful";
+        header('Location: /cpanel/tuner.php');
 }
 if (isset($_POST['uncooked'])){
         $baseid = $_POST['baseid'];
         setStatus("iscooked", "0", "$baseid");
         echo "operation successful";
+        header('Location: /cpanel/tuner.php');
 }
 if (isset($_POST['undelivered'])){
         $baseid = $_POST['baseid'];
         setStatus("isdeliver", "0", "$baseid");
         echo "operation successful";
+        header('Location: /cpanel/tuner.php');
 }
 if (isset($_POST['untaken'])){
         $baseid = $_POST['baseid'];
         setStatus("istaken", "0", "$baseid");
         echo "operation successful";
+        header('Location: /cpanel/tuner.php');
 }
 ?>
 </p>
