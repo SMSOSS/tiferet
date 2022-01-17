@@ -196,4 +196,17 @@ if (isset($_POST['untaken'])){
 ?>
 </p>
 </body>
+<footer>
+<h3>
+<?php
+echo "<br>";
+echo '<form method="post">';
+echo '<input type="submit" value="Back" name="back">';
+echo "</form>";
+if (isset($_POST["back"])){
+        header('Location: /cpanel/toolbox.php');
+}
+?>
+</h3>
+</footer>
 </html>
