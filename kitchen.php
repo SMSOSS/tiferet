@@ -2,142 +2,167 @@
 <html>
 
 <head>
-<title>Kitchen system</title>
-<meta http-equiv="refresh" content="10">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Kitchen system</title>
+  <meta http-equiv="refresh" content="10">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-<style>
+  <style>
+    @font-face {
+      font-family: HarmonyBold;
+      src: url('fonts/bold.ttf');
+    }
 
-@font-face { font-family: HarmonyBold; src: url('fonts/bold.ttf'); }
-@font-face { font-family: HarmonyReg; src: url('fonts/regular.ttf'); }
-@font-face { font-family: HarmonyLight; src: url('fonts/light.ttf'); }
-h1 {
-        text-align: center;
-        font-family: HarmonyBold
-}
+    @font-face {
+      font-family: HarmonyReg;
+      src: url('fonts/regular.ttf');
+    }
 
-h3 {
-        text-align: center;
-        font-family: HarmonyReg
-}
+    @font-face {
+      font-family: HarmonyLight;
+      src: url('fonts/light.ttf');
+    }
 
-h2 {
-        text-align: center;
-        font-family: HarmonyReg
-}
+    h1 {
+      text-align: center;
+      font-family: HarmonyBold
+    }
 
-input[type=submit] {
-    padding:5px 15px;
-    background:#DBF9FC;
-    border:1px solid black;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    font-family: HarmonyBold;
-    font-size: 15px;
-}
+    h3 {
+      text-align: center;
+      font-family: HarmonyReg
+    }
 
-body {
-background-color: #DBF9FC;
-}
+    h2 {
+      text-align: center;
+      font-family: HarmonyReg
+    }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #40E0D0;
-  overflow: hidden;
-}
+    h4 {
+      text-align: center;
+      font-family: HarmonyReg
+    }
+    
+    input[type=submit] {
+      padding: 5px 15px;
+      background: #DBF9FC;
+      border: 1px solid black;
+      cursor: pointer;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      font-family: HarmonyBold;
+      font-size: 15px;
+    }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: center;
-  color: #000000;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+    body {
+      background-color: #DBF9FC;
+    }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  /* background-color: #ddd;
+    /* Add a black background color to the top navigation */
+    .topnav {
+      background-color: #40E0D0;
+      overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: center;
+      color: #000000;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      /* background-color: #ddd;
   color: black; */
-}
+    }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #8F00FF;
-  color: white;
-}
-</style>
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: #8F00FF;
+      color: white;
+    }
+  </style>
 
 </head>
+
 <body>
 
-<h1>Kitchen System </h1>
+  <h1>Kitchen System </h1>
 
-<h3>
-<?php
+  <h3>
+    <?php
 
-session_start();
-if (!isset($_SESSION['loggedin'])) {
-    header('Location: /kitchen/login.php');
-    exit;
-}
+    session_start();
+    if (!isset($_SESSION['loggedin'])) {
+      header('Location: /kitchen/login.php');
+      exit;
+    }
 
-$shop = $_SESSION['shop'];
-echo "welcome $shop ! <br>";
-/* start import */
-include "db.php";
-db_open();
-?>
-</h3>
+    $shop = $_SESSION['shop'];
+    echo "welcome $shop ! <br>";
+    /* start import */
+    include "db.php";
+    db_open();
+    ?>
+  </h3>
 
-<h2>
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="/kitchen/editor.php">Menu Editor</a>
-  <a href="/kitchen/login.php">Log Out</a>
-</div>
-</h2>
+  <h2>
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="/kitchen/editor.php">Menu Editor</a>
+      <a href="/kitchen/login.php">Log Out</a>
+    </div>
+  </h2>
 
-<h3>
-<?php
-if (isset($_POST["baseid"])) {
-    $base = $_POST["baseid"];
-    db_query("UPDATE food SET iscooked=1 WHERE baseid=$base");
-}
+  <h3>
+    <?php
+    if (isset($_POST["baseid"])) {
+      $base = $_POST["baseid"];
+      $password = $_POST["password"];
+      db_query("UPDATE food SET iscooked=1 WHERE baseid=$base");
+      echo "Marked order number $password as done. Label the receipt. <br>";
+    }
 
-/* start function and variable */
-$count = db_query("SELECT COUNT(baseid) as total FROM food WHERE shop='$shop' AND NOT iscooked='1';");
-$pending = db_query("SELECT foodname, baseid FROM food WHERE shop='$shop' AND NOT iscooked='1';");
-$prows = db_num_rows($pending);
+    /* start function and variable */
+    $count = db_query("SELECT COUNT(baseid) as total FROM food WHERE shop='$shop' AND NOT iscooked='1';");
+    $pending = db_query("SELECT foodname, baseid, password FROM food WHERE shop='$shop' AND NOT iscooked='1';");
+    $prows = db_num_rows($pending);
 
-$countr = db_fetch_array($count);
-$rcount = $countr['total'];
+    $countr = db_fetch_array($count);
+    $rcount = $countr['total'];
 
-if ($rcount == 0) {
-    echo "No pending orders. Hooray!";
-} else {
-    echo "There are $rcount pending orders. <br> <br>";
-    echo "They are: <br> <br>";
-    if ($prows > 0) {
+    if ($rcount == 0) {
+      echo "No pending orders. Hooray!";
+    } else {
+      echo "There are $rcount pending orders. <br> <br>";
+      echo "They are: <br> <br>";
+      if ($prows > 0) {
         $base = 0;
         while ($row = $pending->fetch_assoc()) {
-            echo $row['foodname'];
-            echo "  ";
-            echo "<form method='post'>";
-            echo "<input type='hidden' name='baseid' value='" . $row['baseid'] . "'>";
-            $temp = "<input type='submit' value='Mark done' name='mdone'>";
-            echo $temp;
-            echo "</form>";
-            echo "<br>";
+          $password = 0;
+          $password = $row['password'];
+          echo $row['foodname'];
+          echo "<h4>Order number: $password </h4>";
+          echo "  ";
+          echo "<form method='post'>";
+          echo "<input type='hidden' name='baseid' value='" . $row['baseid'] . "'>";
+          echo "<input type='hidden' name='password' value='" . $row['password'] . "'>";
+          echo "<h3>";
+          $temp = "<input type='submit' value='Mark done' name='mdone'>";
+          echo $temp;
+          echo "</form>";
+          echo "<br>";
+          echo "</h3>";
         }
+      }
+      echo "<br>";
     }
-    echo "<br>";
+    ?>
 
-}
-?>
-
-</h3>
+  </h3>
 </body>
+
 </html>
