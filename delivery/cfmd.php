@@ -74,6 +74,7 @@
             $locker = $row['locker'];
             $food = $row['foodname'];
             $location = $row['location'];
+            db_query("UPDATE food SET handler='$username' WHERE baseid='$timestamp'");
         }
     } else {
         echo "<script>location.replace('/delivery.php');</script>";
