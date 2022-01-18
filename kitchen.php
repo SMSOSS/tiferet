@@ -41,7 +41,7 @@
       text-align: center;
       font-family: HarmonyReg
     }
-    
+
     input[type=submit] {
       padding: 5px 15px;
       background: #DBF9FC;
@@ -127,17 +127,13 @@
     }
 
     /* start function and variable */
-    $count = db_query("SELECT COUNT(baseid) as total FROM food WHERE shop='$shop' AND NOT iscooked='1';");
     $pending = db_query("SELECT foodname, baseid, password FROM food WHERE shop='$shop' AND NOT iscooked='1';");
     $prows = db_num_rows($pending);
 
-    $countr = db_fetch_array($count);
-    $rcount = $countr['total'];
-
-    if ($rcount == 0) {
+    if ($prows == 0) {
       echo "No pending orders. Hooray!";
     } else {
-      echo "There are $rcount pending orders. <br> <br>";
+      echo "There are $prows pending orders. <br> <br>";
       echo "They are: <br> <br>";
       if ($prows > 0) {
         $base = 0;
