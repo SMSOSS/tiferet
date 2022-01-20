@@ -114,7 +114,7 @@
             $shop = $_POST['shop'];
             $location = $_POST['location'];
             $passcode = mt_rand(1000, 9999);
-            db_query("INSERT INTO `menu`(`name`, `passcode`, `location`) VALUES ('$shop','$location','$passcode');");
+            db_query("INSERT INTO `shopdata`(`name`, `passcode`, `location`) VALUES ('$shop','$location','$passcode');");
             echo "Added restaurant $shop with password $passcode";
         } else {
             echo "Fields are not being filled? Check your input and try again.";
