@@ -91,6 +91,8 @@
 </head>
 
 <body>
+    <h1>Add new shop</h1>
+    <h3>
     <?php
     session_start();
     if (!isset($_SESSION['aloggedin'])) {
@@ -119,6 +121,7 @@
         }
     }
     ?>
+    </h3>
 </body>
 <footer>
     <h3>
