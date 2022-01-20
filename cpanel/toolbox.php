@@ -110,7 +110,8 @@ echo "<input type='submit' value='User editor' name='euser'> "; // feature disab
 echo "</h3>";
 echo "<h2>Shop tools </h2>";
 echo "<h3>";
-echo "<input type='submit' value='Shop editor' name='eshop'> "; // feature add or disable shop
+echo "<input type='submit' value='Shop editor' name='eshop'> "; // feature shop manager
+echo "<input type='submit' value='Add shop' name='ashop'> "; // feature add shop
 echo "</h3>";
 echo "<h2>Food tools</h2>";
 echo "<h3>";
@@ -143,7 +144,10 @@ if (isset($_POST['tuner'])) {
     header('Location: /cpanel/tuner.php');
 }
 if (isset($_POST['eshop'])) {
-    header('Location: /cpanel/stools.php');
+  header('Location: /cpanel/stools.php');
+}
+if (isset($_POST['ashop'])) {
+  header('Location: /cpanel/addshop.php');
 }
 if (isset($_POST['euser'])) {
     header('Location: /cpanel/utools.php');
