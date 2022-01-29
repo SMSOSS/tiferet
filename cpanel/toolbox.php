@@ -137,7 +137,7 @@ if (isset($_POST['llocker'])) {
     echo "Operation completed";
 }
 if (isset($_POST['adone'])) {
-    db_query("UPDATE food SET istaken=1 WHERE 1");
+    db_query("UPDATE food SET istaken=1 AND isdeliver=1 AND iscooked=1 WHERE 1");
     echo "Operation completed";
 }
 if (isset($_POST['tuner'])) {
