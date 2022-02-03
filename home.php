@@ -43,7 +43,7 @@
 
         stext {
             position: absolute;
-            width: 160px;
+            width: 120px;
             height: 19px;
             left: 7px;
             top: 46px;
@@ -314,12 +314,30 @@
             background: #CE93D8;
             border-radius: 5px;
         }
+
+        username {
+            position: absolute;
+            width: 41px;
+            height: 19px;
+            left: 124px;
+            top: 46px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+
+            color: #8E24AA;
+        }
     </style>
 </head>
 
 <body>
     <stitle>tiferet</stitle>
-    <stext>Welcome back, User</stext>
+    <stext>Welcome back,</stext>
+    <username>User</username>
     <suggest_text>Recommended</suggest_text>
     <suggest_1></suggest_1>
     <suggest_2></suggest_2>
@@ -332,18 +350,18 @@
 
 <navbar>
     <form method="post">
-    <octr></octr>
-    <input type="image" id="oimg" src="/assets/source_icons_bag.svg" name="order">
-    <otext>Order</otext>
-    <dctr></dctr>
-    <input type="image" id="dimg" src="/assets/source_icons_delivery-truck.svg" name="delivery">
-    <dtext>Delivery</dtext>
-    <lctr></lctr>
-    <input type="image" id="limg" src="/assets/source_icons_home-user.svg" name="login">
-    <ltext>Login</ltext>
-    <sectr></sectr>
-    <input type="image" id="seimg" src="/assets/source_icons_settings.svg" name="settings">
-    <setext>Settings</setext>
+        <octr></octr>
+        <input type="image" id="oimg" src="/assets/source_icons_bag.svg" name="order">
+        <otext>Order</otext>
+        <dctr></dctr>
+        <input type="image" id="dimg" src="/assets/source_icons_delivery-truck.svg" name="delivery">
+        <dtext>Delivery</dtext>
+        <lctr></lctr>
+        <input type="image" id="limg" src="/assets/source_icons_home-user.svg" name="login">
+        <ltext>Login</ltext>
+        <sectr></sectr>
+        <input type="image" id="seimg" src="/assets/source_icons_settings.svg" name="settings">
+        <setext>Settings</setext>
     </form>
 </navbar>
 
