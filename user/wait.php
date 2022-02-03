@@ -352,6 +352,25 @@
             top: 77px;
 
         }
+
+        status {
+            position: absolute;
+            width: 159px;
+            left: calc(50% - 159px/2 + 0.5px);
+            top: 284px;
+            bottom: 269px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #00000
+        }
     </style>
 </head>
 
@@ -369,6 +388,7 @@
     <dt>Delivered</dt>
     <fc></fc>
     <ft>Taken</ft>
+    <status>Your food is being prepared.</status>
 </body>
 
 <navbar>
