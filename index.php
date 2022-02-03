@@ -203,7 +203,7 @@
 
         <ptext>Password</ptext>
         <input type="password" name="password"><br>
-        <input type="submit" value="hello" name="login">
+        <input type="submit" value="Login" name="login">
     </form>
 </body>
 
