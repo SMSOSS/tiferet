@@ -102,20 +102,14 @@ echo '<input type="text" name="username"><br>';
 echo "Password: <br>";
 echo '<input type="password" name="password"><br>';
 echo '<input type="submit" value="Log in" name="login">';
-echo "  ";
-echo '<input type="submit" value="Sign Up" name="signup">';
 echo '</form>';
 
 include "../vars.php";
 
-if (isset($_POST['signup'])) {
-    header('Location: /delivery/signup.php');
-}
-
 if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["username"])) {
     $password = $_POST['password'];
     $username = $_POST['username'];
-    $query = db_query("SELECT username, password, isdisabled FROM userdata WHERE password='$password' AND username='$username' AND isdelivery='1'");
+    $query = db_query("SELECT username, password, isdisabled FROM userdata WHERE password='$password' AND username='$username' AND isdelivery='2'");
     $qcount = db_num_rows($query);
     if ($qcount > 0) {
         while ($row = $query->fetch_assoc()) {
@@ -123,9 +117,9 @@ if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["usernam
             $disable = $row['isdisabled'];
         }
         if ($disable == 0) {
-            $_SESSION['loggedin'] = true;
+            $_SESSION['aloggedin'] = true;
             $_SESSION['username'] = $username;
-            header('Location: /delivery.php');
+            header('Location: /cpanel/cpanel.php');
         } else {
             echo "<br>";
             echo "Your account has been disabled. <br>";

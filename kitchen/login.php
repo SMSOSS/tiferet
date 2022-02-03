@@ -4,9 +4,9 @@
 
         <style>
 
-@font-face { font-family: HarmonyBold; src: url('../fonts/bold.ttf'); } 
-@font-face { font-family: HarmonyReg; src: url('../fonts/regular.ttf'); } 
-@font-face { font-family: HarmonyLight; src: url('../fonts/light.ttf'); } 
+@font-face { font-family: HarmonyBold; src: url('../fonts/bold.ttf'); }
+@font-face { font-family: HarmonyReg; src: url('../fonts/regular.ttf'); }
+@font-face { font-family: HarmonyLight; src: url('../fonts/light.ttf'); }
 h1 {
         text-align: center;
         font-family: HarmonyBold
@@ -23,22 +23,22 @@ h2 {
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#DBF9FC; 
+    padding:5px 15px;
+    background:#DBF9FC;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyBold;
     font-size: 15px;
 }
 
 input[type=password] {
-    padding:5px 15px; 
+    padding:5px 15px;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyLight;
     font-size: 15px;
 }
@@ -95,24 +95,32 @@ unset($_SESSION['loggedin']);
 </h3>
 <?php
 
-include("../vars.php");
-if (isset($_POST["login"]) && isset($_POST["password"]) ) {
-        $pass = $_POST['password'];
-        $qshop = db_query("SELECT name, passcode FROM shopdata WHERE passcode='$pass'");
-        $qcount = db_num_rows($qshop);
-        if ($qcount > 0) {
-                while($row = $qshop->fetch_assoc()) {
-                        $pass = $row['passcode'];
-                        $shop = $row['name'];
-                }
-                $_SESSION['loggedin'] = TRUE;
-                $_SESSION['pass'] = $pass;
-                $_SESSION['shop'] = $shop;
-                header('Location: /kitchen.php');
-        } else {
-                echo "Wrong username / password.";
+include "../vars.php";
+if (isset($_POST["login"]) && isset($_POST["password"])) {
+    $pass = $_POST['password'];
+    $qshop = db_query("SELECT name, passcode, isdisable FROM shopdata WHERE passcode='$pass'");
+    $qcount = db_num_rows($qshop);
+    if ($qcount > 0) {
+        while ($row = $qshop->fetch_assoc()) {
+            $pass = $row['passcode'];
+            $shop = $row['name'];
+            $disable = $row['isdisable'];
         }
-} 
+        if ($disable == 0) {
+            $_SESSION['loggedin'] = true;
+            $_SESSION['pass'] = $pass;
+            $_SESSION['shop'] = $shop;
+            header('Location: /kitchen.php');
+        } else {
+            echo "<h3>";
+            echo "Your account has been disabled.";
+            echo "Please contact customer support.";
+            echo "</h3>";
+        }
+    } else {
+        echo "<h3>Wrong username / password.</h3>";
+    }
+}
 ?>
 </body>
 <footer>
@@ -122,8 +130,8 @@ echo "<br>";
 echo '<form method="post">';
 echo '<input type="submit" value="Back to homepage" name="back">';
 echo "</form>";
-if (isset($_POST["back"])){
-        header('Location: /index.php');
+if (isset($_POST["back"])) {
+    header('Location: /index.php');
 }
 ?>
 </h3>

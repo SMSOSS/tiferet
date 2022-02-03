@@ -4,9 +4,9 @@
 <head>
 <style>
 
-@font-face { font-family: HarmonyBold; src: url('../fonts/bold.ttf'); } 
-@font-face { font-family: HarmonyReg; src: url('../fonts/regular.ttf'); } 
-@font-face { font-family: HarmonyLight; src: url('../fonts/light.ttf'); } 
+@font-face { font-family: HarmonyBold; src: url('../fonts/bold.ttf'); }
+@font-face { font-family: HarmonyReg; src: url('../fonts/regular.ttf'); }
+@font-face { font-family: HarmonyLight; src: url('../fonts/light.ttf'); }
 h1 {
         text-align: center;
         font-family: HarmonyBold;
@@ -18,32 +18,32 @@ h3 {
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#DBF9FC; 
+    padding:5px 15px;
+    background:#DBF9FC;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyBold;
     font-size: 15px;
 }
 
 input[type=text] {
-    padding:5px 15px; 
+    padding:5px 15px;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyLight;
     font-size: 15px;
 }
 
 input[type=password] {
-    padding:5px 15px; 
+    padding:5px 15px;
     border:1px solid black;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-family: HarmonyLight;
     font-size: 15px;
 }
@@ -93,7 +93,7 @@ h2 {
 
 <?php
 session_start();
-include("../vars.php");
+include "../vars.php";
 ?>
 
 <h1>
@@ -120,34 +120,34 @@ echo "<br> <br>";
 echo '<input type="submit" value="Sign up" name="signup">';
 echo '</form>';
 
-if (isset($_POST['signup'])){
-        if (!empty($_POST['username']) && !empty($_POST['pass'])) {
-                $username = $_POST['username'];
-                $email = $_POST['email'];
-                $query = db_query("SELECT username FROM userdata WHERE username='$username'");
-                $qcount = db_num_rows($query);
-                $mcheck = db_query("SELECT email FROM userdata WHERE email='$email'");
-                $mcount = db_num_rows($mcheck);
-                if ($qcount == 0 && $mcount == 0) {
-                        $pass = $_POST['pass'];
-                        $pass2 = $_POST['cpass'];
-                        if ($pass === $pass2) {
-                                db_query("INSERT INTO `userdata`(`username`, `password`, `isdelivery`, `email`) VALUES ('$username','$pass','1', '$email')");
-                                echo "Register success";
-                                $_SESSION['loggedin'] = TRUE;
-                                $_SESSION['username'] = $username;
-                                header('Location: /delivery.php');
-                        } else {
-                                echo "Both passwords doesn't match.";
-                        }
-                } else if ($mcount == 0) {
-                        echo "username taken. please retry";
-                } else {
-                        echo "Email has already been registered. Please log-in instead.";
-                }
+if (isset($_POST['signup'])) {
+    if (!empty($_POST['username']) && !empty($_POST['pass'])) {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $query = db_query("SELECT username FROM userdata WHERE username='$username'");
+        $qcount = db_num_rows($query);
+        $mcheck = db_query("SELECT email FROM userdata WHERE email='$email'");
+        $mcount = db_num_rows($mcheck);
+        if ($qcount == 0 && $mcount == 0) {
+            $pass = $_POST['pass'];
+            $pass2 = $_POST['cpass'];
+            if ($pass === $pass2) {
+                db_query("INSERT INTO `userdata`(`username`, `password`, `isdelivery`, `email`) VALUES ('$username','$pass','1', '$email')");
+                echo "Register success";
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $username;
+                header('Location: /delivery.php');
+            } else {
+                echo "Both passwords doesn't match.";
+            }
+        } else if ($mcount == 0) {
+            echo "username taken. please retry";
         } else {
-                echo "Fields are not being filled? Check your input and try again.";
+            echo "Email has already been registered. Please log-in instead.";
         }
+    } else {
+        echo "Fields are not being filled? Check your input and try again.";
+    }
 }
 ?>
 </h3>
@@ -159,9 +159,9 @@ if (isset($_POST['signup'])){
 <input type="submit" value="Back" name="back">
 </form>
 <?php
-        if(isset($_POST['back'])){
-                header('Location: /delivery/login.php');
-        }
+if (isset($_POST['back'])) {
+    header('Location: /delivery/login.php');
+}
 ?>
 </h3>
 </footer>
