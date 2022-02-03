@@ -55,7 +55,7 @@
 
         }
 
-        uform {
+        input[type=text] {
             position: absolute;
             width: 301px;
             height: 33px;
@@ -70,8 +70,36 @@
             position: absolute;
             width: 61px;
             height: 15px;
-            left: 19px;
-            top: 156px;
+            left: 14px;
+            top: 125px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+
+            color: #4A148C;
+        }
+
+        input[type=password] {
+            position: absolute;
+            width: 301px;
+            height: 33px;
+            left: 7px;
+            top: 200px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+        }
+
+        ptext {
+            position: absolute;
+            width: 58px;
+            height: 15px;
+            left: 14px;
+            top: 185px;
 
             font-family: Inter;
             font-style: normal;
@@ -80,35 +108,6 @@
             line-height: 15px;
             /* identical to box height */
 
-            text-align: center;
-
-            color: #4A148C;
-        }
-
-        pform {
-            position: absolute;
-            width: 301px;
-            height: 33px;
-            left: 7px;
-            top: 188px;
-
-            background: #E1BEE7;
-            border-radius: 20px;
-
-        }
-
-        ptext {
-            position: absolute;
-            width: 58px;
-            height: 15px;
-            left: 19px;
-            top: 197px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
             text-align: center;
 
             color: #4A148C;
@@ -123,7 +122,7 @@
             background: #F3E5F5;
         }
 
-        lbtn {
+        input[type=submit] {
             position: absolute;
             width: 79px;
             height: 38px;
@@ -133,6 +132,14 @@
             background: #BA68C8;
             border-radius: 100px;
 
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-align: center;
         }
 
         ltext {
@@ -190,14 +197,16 @@
 <body>
     <stitle>tiferet</stitle>
     <logtext>Log in</logtext>
-    <uform></uform>
-    <utext>Username</utext>
-    <pform></pform>
-    <ptext>Password</ptext>
-    <lbtn></lbtn>
-    <ltext>Login</ltext>
-    <rbtn></rbtn>
-    <rtext>Register</rtext>
+    <form>
+        <utext>Username</utext>
+        <input type="text" name="username"><br>
+
+        <ptext>Password</ptext>
+        <input type="password" name="password"><br>
+        <input type="submit" value="hello" name="login">
+    </form>
+    <!-- <rbtn></rbtn>
+    <rtext>Register</rtext> -->
 
 </body>
 
