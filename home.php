@@ -331,6 +331,14 @@
 
             color: #8E24AA;
         }
+
+        #cart {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 268px;
+            top: 17px;
+        }
     </style>
 </head>
 
@@ -338,6 +346,9 @@
     <stitle>tiferet</stitle>
     <stext>Welcome back,</stext>
     <username>User</username>
+    <form method="post">
+        <input type="image" id="cart" src="/assets/source_icons_cart.svg" name="cart">
+    </form>
     <suggest_text>Recommended</suggest_text>
     <suggest_1></suggest_1>
     <suggest_2></suggest_2>
