@@ -205,9 +205,6 @@
         <input type="password" name="password"><br>
         <input type="submit" value="hello" name="login">
     </form>
-    <!-- <rbtn></rbtn>
-    <rtext>Register</rtext> -->
-
 </body>
 
 </html>
