@@ -197,7 +197,7 @@
 <body>
     <stitle>tiferet</stitle>
     <logtext>Log in</logtext>
-    <form>
+    <form method="post">
         <utext>Username</utext>
         <input type="text" name="username"><br>
 
