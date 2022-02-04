@@ -277,7 +277,7 @@ if (isset($_SESSION['loggedin'])) {
                 $ucount = db_num_rows($cuname);
                     if ($ecount == 0 && $ucount == 0){
                         db_query("INSERT INTO `userdata`(`username`, `password`, `isdelivery`, `email`) VALUES ('$username','$password','0', '$email')");
-                        header("Location: /home.php")
+                        header("Location: /home.php");
                     } else if ($ecount == 0){
                         echo "<errMsg>Please use another username.</errMsg>";
                     } else {
