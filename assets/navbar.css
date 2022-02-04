@@ -32,9 +32,9 @@ otext {
     height: 24px;
     left: 29px;
     top: 5px;
-
+    background:url(/assets/source_icons_bag.svg) no-repeat;
     border-radius: 90px;
-
+    border: none;
 }
 
 octr {
@@ -71,6 +71,8 @@ dtext {
     height: 24px;
     left: 105px;
     top: 7px;
+    background:url(/assets/source_icons_delivery-truck.svg) no-repeat;
+    border: none;
 }
 
 dctr {
@@ -107,6 +109,8 @@ ltext {
     height: 24px;
     left: 185px;
     top: 4px;
+    background:url(/assets/source_icons_home-user.svg) no-repeat;
+    border: none;
 }
 
 lctr {
@@ -143,6 +147,8 @@ setext {
     height: 24px;
     left: 268px;
     top: 6px;
+    background:url(/assets/source_icons_settings.svg) no-repeat;
+    border: none;
 }
 
 sectr {
