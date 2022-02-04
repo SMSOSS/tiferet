@@ -189,23 +189,6 @@ include "assets/vars.php";
             border-radius: 5px;
         }
 
-        username {
-            position: absolute;
-            width: 41px;
-            height: 19px;
-            left: 124px;
-            top: 46px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 16px;
-            line-height: 19px;
-            text-align: center;
-
-            color: #8E24AA;
-        }
-
         stitle {
             position: absolute;
             width: 75px;
@@ -225,7 +208,7 @@ include "assets/vars.php";
 
         stext {
             position: absolute;
-            width: 200px;
+            width: 66px;
             height: 19px;
             left: 7px;
             top: 46px;
@@ -235,7 +218,6 @@ include "assets/vars.php";
             font-weight: bold;
             font-size: 16px;
             line-height: 19px;
-            text-align: center;
 
             color: #000000;
         }
@@ -730,22 +712,15 @@ include "assets/vars.php";
 
 <body>
     <stitle>tiferet</stitle>
-    <?php
-    if (isset($_SESSION['loggedin'])) {
-        echo "<stext>Welcome back, </stext>";
-        echo "<username>$username</username>";
-    } else {
-        echo "<stext>Please login to continue.</stext>";
-    }
-    ?>
+    <stext>Settings</stext>
 
     <form method="post">
         <input type="submit" id="logout" value="Log Out" name="logout">
     </form>
     <?php
-        if (isset($_POST['logout'])){
-            unset($_SESSION['loggedin']);
-        }
+    if (isset($_POST['logout'])) {
+        unset($_SESSION['loggedin']);
+    }
     ?>
     <general>General</general>
     <accent_ctn> </accent_ctn>
