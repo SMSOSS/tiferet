@@ -714,10 +714,14 @@ include "assets/vars.php";
     <stitle>tiferet</stitle>
     <stext>Settings</stext>
 
-    <form method="post">
-        <input type="submit" id="logout" value="Log Out" name="logout">
-    </form>
     <?php
+    if (isset($_SESSION['loggedin'])) {
+    ?>
+        <form method="post">
+            <input type="submit" id="logout" value="Log Out" name="logout">
+        </form>
+    <?php
+    }
     if (isset($_POST['logout'])) {
         unset($_SESSION['loggedin']);
     }
