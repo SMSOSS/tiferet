@@ -2,6 +2,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="/assets/navbar.css" type="text/css"/>
 
     <style>
         @import url('https://rsms.me/inter/inter.css');
@@ -741,5 +742,22 @@
     <button id="epm_ctn"></button>
     <epm_label>Edit payment methods</epm_label>
 </body>
+
+<navbar>
+    <form method="post">
+        <octr></octr>
+        <input type="image" id="oimg" src="/assets/source_icons_bag.svg" name="order">
+        <otext>Order</otext>
+        <dctr></dctr>
+        <input type="image" id="dimg" src="/assets/source_icons_delivery-truck.svg" name="delivery">
+        <dtext>Delivery</dtext>
+        <lctr></lctr>
+        <input type="image" id="limg" src="/assets/source_icons_home-user.svg" name="login">
+        <ltext>Login</ltext>
+        <sectr></sectr>
+        <input type="image" id="seimg" src="/assets/source_icons_settings.svg" name="settings">
+        <setext>Settings</setext>
+    </form>
+</navbar>
 
 </html>
