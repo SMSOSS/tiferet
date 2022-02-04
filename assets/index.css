@@ -216,3 +216,23 @@
             border: 0;
             color: #000000;
         }
+
+        errMsg {
+            position: absolute;
+            width: 163px;
+            height: 15px;
+            left: 78px;
+            top: 351px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+
+            display: flex;
+            align-items: center;
+
+            color: #000000;
+
+        }

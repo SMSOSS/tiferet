@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="/assets/navbar.css" type="text/css" />
 </head>
 
+<?php
+include "assets/vars.php";
+session_start();
+db_open;
+
+if (isset($_SESSION['loggedin'])) {
+    echo "<script>location.replace('/home.php');</script>";
+}
+?>
 
 <body>
     <header>
@@ -24,6 +33,21 @@
             </form>
         </article>
     </section>
+    <?php
+    if (isset($_POST['login'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $query = db_query("SELECT username, password, isdisabled FROM userdata WHERE password='$password' AND username='$username' AND isdisabled=0");
+        $qcount = db_num_rows($query);
+        if ($qcount > 0) {
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
+            echo "<script>location.replace('/home.php');</script>";
+        } else {
+            echo "<errMsg>Wrong username / password.</errmsg>";
+        }
+    }
+    ?>
 </body>
 
 <navbar>
