@@ -185,10 +185,22 @@
     </style>
 </head>
 
+<?php
+session_start();
+include "assets/vars.php";
+?>
+
 <body>
     <stitle>tiferet</stitle>
-    <stext>Welcome back,</stext>
-    <username>User</username>
+    <?php
+    if (isset($_SESSION['loggedin'])) {
+        $username = $_SESSION['username'];
+    ?>
+        <stext>Welcome back,</stext>
+    <?php
+        echo "<username>$username</username>";
+    }
+    ?>
     <form method="post">
         <input type="image" id="cart" src="/assets/source_icons_cart.svg" name="cart">
     </form>
