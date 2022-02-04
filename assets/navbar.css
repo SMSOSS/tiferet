@@ -1,0 +1,157 @@
+navbar {
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    left: 0px;
+    bottom: 0px;
+    background: #E1BEE7;
+}
+
+otext {
+    position: absolute;
+    width: 33px;
+    height: 15px;
+    left: 25px;
+    top: 29px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+#oimg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 29px;
+    top: 5px;
+
+    border-radius: 90px;
+
+}
+
+octr {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 28px;
+    top: 5px;
+
+    background: #CE93D8;
+    border-radius: 5px;
+}
+
+dtext {
+    position: absolute;
+    width: 61px;
+    height: 8px;
+    left: 87px;
+    top: 29px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #000000;
+}
+
+#dimg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 105px;
+    top: 7px;
+}
+
+dctr {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 104px;
+    top: 6px;
+
+    background: #CE93D8;
+    border-radius: 5px;
+}
+
+ltext {
+    position: absolute;
+    width: 32px;
+    height: 8px;
+    left: 181px;
+    top: 29px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #000000;
+}
+
+#limg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 185px;
+    top: 4px;
+}
+
+lctr {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 184px;
+    top: 4px;
+
+    background: #CE93D8;
+    border-radius: 5px;
+}
+
+setext {
+    position: absolute;
+    width: 47px;
+    height: 15px;
+    left: 259px;
+    top: 29px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #000000;
+}
+
+#seimg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 268px;
+    top: 6px;
+}
+
+sectr {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 267px;
+    top: 5px;
+
+    background: #CE93D8;
+    border-radius: 5px;
+}
