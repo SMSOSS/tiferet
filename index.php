@@ -28,12 +28,15 @@ if (isset($_SESSION['loggedin'])) {
                 <input type="text" name="username"><br>
                 <ptext>Password</ptext>
                 <input type="password" name="password"><br>
-                <input type="register" value="Register" name="register">
-                <input type="submit" value="Login" name="login">
+                <input type="submit" id="register" value="Register" name="register">
+                <input type="submit" id="login" value="Login" name="login">
             </form>
         </article>
     </section>
     <?php
+    if (isset($_POST['register'])) {
+        header("Location: /user/register.php");
+    }
     if (isset($_POST['login'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];

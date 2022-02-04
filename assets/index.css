@@ -126,7 +126,7 @@
             background: #F3E5F5;
         }
 
-        input[type=submit] {
+        #login {
             position: absolute;
             width: 79px;
             height: 38px;
@@ -146,6 +146,22 @@
             text-align: center;
         }
 
+        #register {
+            position: absolute;
+            width: 79px;
+            height: 38px;
+            left: 65px;
+            top: 247px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 17px;
+            border: none;
+            background: #BA68C8;
+            border-radius: 100px;
+
+        }
         ltext {
             position: absolute;
             width: 38px;
