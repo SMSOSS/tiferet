@@ -162,7 +162,7 @@
             position: absolute;
             width: 41px;
             height: 19px;
-            left: 124px;
+            left: 40%;
             top: 46px;
 
             font-family: Inter;
@@ -170,7 +170,6 @@
             font-weight: bold;
             font-size: 16px;
             line-height: 19px;
-            text-align: center;
 
             color: #8E24AA;
         }
