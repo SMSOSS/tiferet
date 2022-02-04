@@ -225,7 +225,7 @@ include "assets/vars.php";
 
         stext {
             position: absolute;
-            width: 120px;
+            width: 200px;
             height: 19px;
             left: 7px;
             top: 46px;
@@ -708,6 +708,23 @@ include "assets/vars.php";
 
             color: #000000;
         }
+
+        #logout {
+            position: absolute;
+            width: 75px;
+            height: 26px;
+            left: 231px;
+            top: 20px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            border: none;
+        }
     </style>
 </head>
 
@@ -715,9 +732,20 @@ include "assets/vars.php";
     <stitle>tiferet</stitle>
     <?php
     if (isset($_SESSION['loggedin'])) {
-    echo "<stext>Welcome back, </stext>";    
-    echo "<username>$username</username>";
+        echo "<stext>Welcome back, </stext>";
+        echo "<username>$username</username>";
+    } else {
+        echo "<stext>Please login to continue.</stext>";
     }
+    ?>
+
+    <form method="post">
+        <input type="submit" id="logout" value="Log Out" name="logout">
+    </form>
+    <?php
+        if (isset($_POST['logout'])){
+            unset($_SESSION['loggedin']);
+        }
     ?>
     <general>General</general>
     <accent_ctn> </accent_ctn>
@@ -734,7 +762,7 @@ include "assets/vars.php";
     <?php
     echo "<ver_stat>$version</ver_stat>";
     ?>
-    
+
     <account>Account</account>
     <uname_ctn></uname_ctn>
     <uname_label>Username</uname_label>
@@ -749,7 +777,7 @@ include "assets/vars.php";
     if ($role == 1) {
         echo "<acctype_stat>Delivery</acctype_stat>";
     } else if ($role == 2) {
-        echo "<acctype_stat>Admin</acctype_stat>"    ;    
+        echo "<acctype_stat>Admin</acctype_stat>";
     } else {
         echo "<acctype_stat>User</acctype_stat>";
     }
