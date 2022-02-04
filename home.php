@@ -185,7 +185,6 @@
 </head>
 
 <?php
-session_start();
 include "assets/vars.php";
 ?>
 
@@ -193,7 +192,6 @@ include "assets/vars.php";
     <stitle>tiferet</stitle>
     <?php
     if (isset($_SESSION['loggedin'])) {
-        $username = $_SESSION['username'];
     ?>
         <stext>Welcome back,</stext>
     <?php

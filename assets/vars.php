@@ -8,6 +8,11 @@
     include "db.php";
 
     /* variable start */
+    session_start();
+
+    if (isset($_SESSION['loggedin'])) {
+        $username = $_SESSION['username'];
+    }
     global $baseid;
     global $dummy;
     $baseid = strtotime("now");
