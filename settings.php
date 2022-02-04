@@ -706,6 +706,8 @@ include "assets/vars.php";
             font-size: 12px;
             line-height: 15px;
             border: none;
+
+            color: #4A148C;
         }
     </style>
 </head>
