@@ -42,7 +42,7 @@ if (isset($_SESSION['loggedin'])) {
         if ($qcount > 0) {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
-            echo "<script>location.replace('/home.php');</script>";
+            header('Location: /home.php');
             exit;
         } else {
             echo "<errMsg>Wrong username / password.</errmsg>";
