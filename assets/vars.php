@@ -11,6 +11,7 @@
     session_start();
 
     if (isset($_SESSION['loggedin'])) {
+        global $username;
         $username = $_SESSION['username'];
     }
     global $baseid;
@@ -21,7 +22,7 @@
     $foodid = 1;
     $lcount = 2; // number of lockers
 
-    $version = 1.3;
+    $version = "2.0 Beta";
     /* real bug trigger. save all data into db */
     db_open();
     ?>

@@ -37,11 +37,15 @@ if (isset($_SESSION['loggedin'])) {
     if (isset($_POST['login'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $query = db_query("SELECT username, password, isdisabled FROM userdata WHERE password='$password' AND username='$username' AND isdisabled=0");
+        $query = db_query("SELECT username, password, isdisabled, isdelivery FROM userdata WHERE password='$password' AND username='$username' AND isdisabled=0");
         $qcount = db_num_rows($query);
         if ($qcount > 0) {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
+            while ($row = $query->fetch_assoc()) {
+                $role = $row['isdelivery'];
+                $_SESSION['role'] = $role;
+            }
             header('Location: /home.php');
             exit;
         } else {

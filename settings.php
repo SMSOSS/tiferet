@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 
+
+<?php
+session_start();
+include "assets/vars.php";
+?>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="/assets/navbar.css" type="text/css" />
@@ -707,9 +713,12 @@
 
 <body>
     <stitle>tiferet</stitle>
-    <stext>Welcome back, </stext>
-    <username>User</username>
-
+    <?php
+    if (isset($_SESSION['loggedin'])) {
+    echo "<stext>Welcome back, </stext>";    
+    echo "<username>$username</username>";
+    }
+    ?>
     <general>General</general>
     <accent_ctn> </accent_ctn>
     <accent_label>Accent Color</accent_label>
@@ -722,16 +731,29 @@
     <lang_stat>en-US</lang_stat>
     <ver_ctn></ver_ctn>
     <ver_label>System version</ver_label>
-    <ver_stat>2.0 Beta</ver_stat>
-
+    <?php
+    echo "<ver_stat>$version</ver_stat>";
+    ?>
+    
     <account>Account</account>
     <uname_ctn></uname_ctn>
     <uname_label>Username</uname_label>
-    <uname_stat>user</uname_stat>
+    <?php
+    echo "<uname_stat>$username</uname_stat>";
+    ?>
     <!-- <acctype_ctn></acctype_ctn> -->
     <button id="acctype_ctn"></button>
     <acctype_label>Account type</acctype_label>
-    <acctype_stat>Admin</acctype_stat>
+    <?php
+    $role = $_SESSION['role'];
+    if ($role == 1) {
+        echo "<acctype_stat>Delivery</acctype_stat>";
+    } else if ($role == 2) {
+        echo "<acctype_stat>Admin</acctype_stat>"    ;    
+    } else {
+        echo "<acctype_stat>User</acctype_stat>";
+    }
+    ?>
     <button id="cpw_ctn"></button>
     <cpw_label>Change Password</cpw_label>
 
