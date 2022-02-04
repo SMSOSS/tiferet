@@ -2,6 +2,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="/assets/navbar.css" type="text/css" />
 
     <style>
         @import url('https://rsms.me/inter/inter.css');
@@ -157,164 +158,6 @@
             color: #000000;
         }
 
-        navbar {
-            position: absolute;
-            width: 100%;
-            height: 45px;
-            left: 0px;
-            bottom: 0px;
-            background: #E1BEE7;
-        }
-
-        otext {
-            position: absolute;
-            width: 33px;
-            height: 15px;
-            left: 25px;
-            top: 29px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 15px;
-            /* identical to box height */
-
-            text-align: center;
-
-            color: #000000;
-        }
-
-        #oimg {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 29px;
-            top: 5px;
-
-            border-radius: 90px;
-
-        }
-
-        octr {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            left: 28px;
-            top: 5px;
-
-            background: #CE93D8;
-            border-radius: 5px;
-        }
-
-        dtext {
-            position: absolute;
-            width: 61px;
-            height: 8px;
-            left: 87px;
-            top: 29px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 15px;
-            text-align: center;
-
-            color: #000000;
-        }
-
-        #dimg {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 105px;
-            top: 7px;
-        }
-
-        dctr {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            left: 104px;
-            top: 6px;
-
-            background: #CE93D8;
-            border-radius: 5px;
-        }
-
-        ltext {
-            position: absolute;
-            width: 32px;
-            height: 8px;
-            left: 181px;
-            top: 29px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 15px;
-            text-align: center;
-
-            color: #000000;
-        }
-
-        #limg {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 185px;
-            top: 4px;
-        }
-
-        lctr {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            left: 184px;
-            top: 4px;
-
-            background: #CE93D8;
-            border-radius: 5px;
-        }
-
-        setext {
-            position: absolute;
-            width: 47px;
-            height: 15px;
-            left: 259px;
-            top: 29px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 15px;
-            text-align: center;
-
-            color: #000000;
-        }
-
-        #seimg {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 268px;
-            top: 6px;
-        }
-
-        sectr {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            left: 267px;
-            top: 5px;
-
-            background: #CE93D8;
-            border-radius: 5px;
-        }
-
         username {
             position: absolute;
             width: 41px;
@@ -362,18 +205,34 @@
 <navbar>
     <form method="post">
         <octr></octr>
-        <input type="image" id="oimg" src="/assets/source_icons_bag.svg" name="order">
+        <input type="submit" id="oimg" value="" name="order">
         <otext>Order</otext>
         <dctr></dctr>
-        <input type="image" id="dimg" src="/assets/source_icons_delivery-truck.svg" name="delivery">
+        <input type="submit" id="dimg" value="" name="delivery">
         <dtext>Delivery</dtext>
         <lctr></lctr>
-        <input type="image" id="limg" src="/assets/source_icons_home-user.svg" name="login">
+        <input type="submit" id="limg" value="" name="login">
         <ltext>Login</ltext>
         <sectr></sectr>
-        <input type="image" id="seimg" src="/assets/source_icons_settings.svg" name="settings">
+        <input type="submit" id="seimg" value="" name="settings">
         <setext>Settings</setext>
     </form>
 </navbar>
+
+
+<?php
+if (isset($_POST['order'])) {
+    echo "<script>location.replace('home.php');</script>";
+}
+if (isset($_POST['delivery'])) {
+    echo "<script>location.replace('delivery.php');</script>";
+}
+if (isset($_POST['login'])) {
+    echo "<script>location.replace('index.php');</script>";
+}
+if (isset($_POST['settings'])) {
+    echo "<script>location.replace('settings.php');</script>";
+}
+?>
 
 </html>
