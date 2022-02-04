@@ -5,7 +5,7 @@
 
     <?php
     /* import start */
-    include "/assets/db.php";
+    include "db.php";
 
     /* variable start */
     global $baseid;
