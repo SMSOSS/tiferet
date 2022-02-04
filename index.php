@@ -43,6 +43,7 @@ if (isset($_SESSION['loggedin'])) {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
             echo "<script>location.replace('/home.php');</script>";
+            exit;
         } else {
             echo "<errMsg>Wrong username / password.</errmsg>";
         }
