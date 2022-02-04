@@ -724,6 +724,7 @@ include "assets/vars.php";
     }
     if (isset($_POST['logout'])) {
         unset($_SESSION['loggedin']);
+        echo '<script>window.location.replace("index.php");</script>';
     }
     ?>
     <general>General</general>
