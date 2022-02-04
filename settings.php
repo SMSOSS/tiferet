@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <style>
+        @import url('https://rsms.me/inter/inter.css');
+
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: 'Inter var', sans-serif;
+            }
+        }
+
+        body {
+            position: relative;
+            width: 320px;
+            height: 568px;
+
+            background: #F3E5F5;
+        }
+
+        navbar {
+            position: absolute;
+            width: 100%;
+            height: 45px;
+            left: 0px;
+            bottom: 0px;
+            background: #E1BEE7;
+        }
+
+        otext {
+            position: absolute;
+            width: 33px;
+            height: 15px;
+            left: 25px;
+            top: 29px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        #oimg {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 29px;
+            top: 5px;
+
+            border-radius: 90px;
+
+        }
+
+        octr {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            left: 28px;
+            top: 5px;
+
+            background: #CE93D8;
+            border-radius: 5px;
+        }
+
+        dtext {
+            position: absolute;
+            width: 61px;
+            height: 8px;
+            left: 87px;
+            top: 29px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+
+            color: #000000;
+        }
+
+        #dimg {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 105px;
+            top: 7px;
+        }
+
+        dctr {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            left: 104px;
+            top: 6px;
+
+            background: #CE93D8;
+            border-radius: 5px;
+        }
+
+        ltext {
+            position: absolute;
+            width: 32px;
+            height: 8px;
+            left: 181px;
+            top: 29px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+
+            color: #000000;
+        }
+
+        #limg {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 185px;
+            top: 4px;
+        }
+
+        lctr {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            left: 184px;
+            top: 4px;
+
+            background: #CE93D8;
+            border-radius: 5px;
+        }
+
+        setext {
+            position: absolute;
+            width: 47px;
+            height: 15px;
+            left: 259px;
+            top: 29px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+
+            color: #000000;
+        }
+
+        #seimg {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 268px;
+            top: 6px;
+        }
+
+        sectr {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            left: 267px;
+            top: 5px;
+
+            background: #CE93D8;
+            border-radius: 5px;
+        }
+
+        username {
+            position: absolute;
+            width: 41px;
+            height: 19px;
+            left: 124px;
+            top: 46px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+
+            color: #8E24AA;
+        }
+
+        stitle {
+            position: absolute;
+            width: 75px;
+            height: 29px;
+            left: 7px;
+            top: 17px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+
+            color: #000000;
+        }
+
+        stext {
+            position: absolute;
+            width: 120px;
+            height: 19px;
+            left: 7px;
+            top: 46px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+
+            color: #000000;
+        }
+
+        general {
+            position: absolute;
+            width: 46px;
+            height: 15px;
+            left: 11px;
+            top: 76px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        accent_ctn {
+            position: absolute;
+            width: 301px;
+            height: 33px;
+            left: 5px;
+            top: 98px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+        }
+
+        accent_label {
+            position: absolute;
+            width: 77px;
+            height: 15px;
+            left: 23px;
+            top: 107px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        accent_stat {
+            position: absolute;
+            width: 58px;
+            height: 15px;
+            left: 235px;
+            top: 107px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #4A148C;
+        }
+
+        theme_ctn {
+            position: absolute;
+            width: 301px;
+            height: 33px;
+            left: 5px;
+            top: 138px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+        }
+
+        theme_label {
+            position: absolute;
+            width: 41px;
+            height: 15px;
+            left: 23px;
+            top: 147px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        theme_stat {
+            position: absolute;
+            width: 53px;
+            height: 15px;
+            left: 238px;
+            top: 147px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #4A148C;
+        }
+
+        lang_ctn {
+            position: absolute;
+            width: 301px;
+            height: 33px;
+            left: 5px;
+            top: 178px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+        }
+
+        lang_label {
+            position: absolute;
+            width: 59px;
+            height: 15px;
+            left: 23px;
+            top: 187px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        lang_stat {
+            position: absolute;
+            width: 37px;
+            height: 15px;
+            left: 246px;
+            top: 187px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #4A148C;
+        }
+
+        ver_ctn {
+            position: absolute;
+            width: 301px;
+            height: 33px;
+            left: 5px;
+            top: 218px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+        }
+
+        ver_label {
+            position: absolute;
+            width: 93px;
+            height: 15px;
+            left: 23px;
+            top: 227px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        ver_stat {
+            position: absolute;
+            width: 54px;
+            height: 15px;
+            left: 238px;
+            top: 227px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #4A148C;
+        }
+
+        account {
+            position: absolute;
+            width: 49px;
+            height: 15px;
+            left: 17px;
+            top: 258px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        uname_ctn {
+            position: absolute;
+            width: 301px;
+            height: 33px;
+            left: 5px;
+            top: 280px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+        }
+
+        uname_label {
+            position: absolute;
+            width: 65px;
+            height: 15px;
+            left: 23px;
+            top: 289px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        uname_stat {
+            position: absolute;
+            width: 28px;
+            height: 15px;
+            left: 75%;
+            top: 289px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #4A148C;
+
+        }
+
+        #acctype_ctn {
+            position: absolute;
+            width: 301px;
+            height: 33px;
+            left: 5px;
+            top: 320px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+        }
+
+        acctype_label {
+            position: absolute;
+            width: 82px;
+            height: 15px;
+            left: 23px;
+            top: 329px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        acctype_stat {
+            position: absolute;
+            width: 38px;
+            height: 15px;
+            left: 75%;
+            top: 329px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #4A148C;
+        }
+
+        #cpw_ctn {
+            position: absolute;
+            width: 301px;
+            height: 33px;
+            left: 5px;
+            top: 360px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        cpw_label {
+            position: absolute;
+            width: 107px;
+            height: 15px;
+            left: 23px;
+            top: 369px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        payment {
+            position: absolute;
+            width: 51px;
+            height: 15px;
+            left: 17px;
+            top: 403px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        #dpm_ctn {
+            position: absolute;
+            width: 301px;
+            height: 33px;
+            left: 5px;
+            top: 425px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        dpm_label {
+            position: absolute;
+            width: 146px;
+            height: 15px;
+            left: 23px;
+            top: 434px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        dpm_stat {
+            position: absolute;
+            width: 40px;
+            height: 15px;
+            left: 75%;
+            top: 434px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #4A148C;
+        }
+
+        #epm_ctn {
+            position: absolute;
+            width: 301px;
+            height: 33px;
+            left: 5px;
+            top: 465px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        epm_label {
+            position: absolute;
+            width: 133px;
+            height: 15px;
+            left: 23px;
+            top: 474px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <stitle>tiferet</stitle>
+    <stext>Welcome back, </stext>
+    <username>User</username>
+
+    <general>General</general>
+    <accent_ctn> </accent_ctn>
+    <accent_label>Accent Color</accent_label>
+    <accent_stat>Amethyst</accent_stat>
+    <theme_ctn></theme_ctn>
+    <theme_label>Theme</theme_label>
+    <theme_stat>Adaptive</theme_stat>
+    <lang_ctn></lang_ctn>
+    <lang_label>Language</lang_label>
+    <lang_stat>en-US</lang_stat>
+    <ver_ctn></ver_ctn>
+    <ver_label>System version</ver_label>
+    <ver_stat>2.0 Beta</ver_stat>
+
+    <account>Account</account>
+    <uname_ctn></uname_ctn>
+    <uname_label>Username</uname_label>
+    <uname_stat>user</uname_stat>
+    <!-- <acctype_ctn></acctype_ctn> -->
+    <button id="acctype_ctn"></button>
+    <acctype_label>Account type</acctype_label>
+    <acctype_stat>Admin</acctype_stat>
+    <button id="cpw_ctn"></button>
+    <cpw_label>Change Password</cpw_label>
+
+    <payment>Payment</payment>
+    <button id="dpm_ctn"></button>
+    <dpm_label>Default payment method</dpm_label>
+    <dpm_stat>Paypal</dpm_stat>
+    <button id="epm_ctn"></button>
+    <epm_label>Edit payment methods</epm_label>
+</body>
+
+</html>
