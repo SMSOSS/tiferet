@@ -142,7 +142,9 @@ include "assets/vars.php";
     while ($row = $query->fetch_assoc()) {
         $imgurl = $row['shopimg'];
         $name = $row['name'];
+        echo "<a href='/user/menu.php?shop=$name'>";
         echo "<img src='$imgurl' id='sctr'>";
+        echo "</a>";
         echo "<div class='sdvr'>";
         echo "&nbsp; &nbsp; $name";
         echo "</div>";
