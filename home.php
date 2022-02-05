@@ -59,105 +59,6 @@
             color: #000000;
         }
 
-        suggest_text {
-            position: absolute;
-            width: 200px;
-            height: 26px;
-            left: 9px;
-            top: 150px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 22px;
-
-            color: #000000;
-        }
-
-        suggest_1 {
-            position: absolute;
-            width: 91px;
-            height: 79px;
-            left: 7px;
-            top: 174px;
-
-            background: #AB47BC;
-            border-radius: 20px;
-
-        }
-
-        suggest_2 {
-
-            position: absolute;
-            width: 91px;
-            height: 79px;
-            left: 109px;
-            top: 174px;
-
-            background: #AB47BC;
-            border-radius: 20px;
-        }
-
-        suggest_3 {
-            position: absolute;
-            width: 91px;
-            height: 79px;
-            left: 211px;
-            top: 174px;
-
-            background: #AB47BC;
-            border-radius: 20px;
-        }
-
-        newest_1 {
-            position: absolute;
-            width: 91px;
-            height: 79px;
-            left: 7px;
-            top: 298px;
-
-            background: #AB47BC;
-            border-radius: 20px;
-        }
-
-        newest_2 {
-            position: absolute;
-            width: 91px;
-            height: 79px;
-            left: 211px;
-            top: 298px;
-
-            background: #AB47BC;
-            border-radius: 20px;
-        }
-
-        newest_3 {
-            position: absolute;
-            width: 91px;
-            height: 79px;
-            left: 109px;
-            top: 298px;
-
-            background: #AB47BC;
-            border-radius: 20px;
-        }
-
-        newest_text {
-            position: absolute;
-            width: 193px;
-            height: 22px;
-            left: 9px;
-            top: 265px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 22px;
-            color: #000000;
-        }
-
         username {
             position: absolute;
             width: 41px;
@@ -174,12 +75,44 @@
             color: #8E24AA;
         }
 
+        #sctr {
+            width: 300px;
+            height: 100px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+
+        }
+
+        .stext {
+            left: 100%;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: medium;
+            font-size: 12px;
+            line-height: 15px;
+        }
+
+        .sdvr {
+            height: 25px;
+        }
+
+        .fsdvr {
+            height: 79px;
+        }
+
         #cart {
             position: absolute;
             width: 24px;
             height: 24px;
             left: 268px;
             top: 17px;
+        }
+
+        shop_name {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
@@ -189,26 +122,32 @@ include "assets/vars.php";
 ?>
 
 <body>
-    <stitle>tiferet</stitle>
+    <div class="fsdvr">
+        <stitle>tiferet</stitle>
+        <?php
+        if (isset($_SESSION['loggedin'])) {
+        ?>
+            <stext>Welcome back,</stext>
+        <?php
+            echo "<username>$username</username>";
+        }
+        ?>
+        <form method="post">
+            <input type="image" id="cart" src="/assets/source_icons_cart.svg" name="cart">
+        </form>
+    </div>
     <?php
-    if (isset($_SESSION['loggedin'])) {
-    ?>
-        <stext>Welcome back,</stext>
-    <?php
-        echo "<username>$username</username>";
+    $query = db_query("SELECT name, shopimg FROM shopdata WHERE isdisable=0");
+    $count = db_num_rows($query);
+    while ($row = $query->fetch_assoc()) {
+        $imgurl = $row['shopimg'];
+        $name = $row['name'];
+        echo "<img src='$imgurl' id='sctr'>";
+        echo "<div class='sdvr'>";
+        echo "&nbsp; &nbsp; $name";
+        echo "</div>";
     }
     ?>
-    <form method="post">
-        <input type="image" id="cart" src="/assets/source_icons_cart.svg" name="cart">
-    </form>
-    <suggest_text>Recommended</suggest_text>
-    <suggest_1></suggest_1>
-    <suggest_2></suggest_2>
-    <suggest_3></suggest_3>
-    <newest_text>Newest in stock</newest_text>
-    <newest_1></newest_1>
-    <newest_2></newest_2>
-    <newest_3></newest_3>
 </body>
 
 <navbar>
