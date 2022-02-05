@@ -752,7 +752,9 @@ include "assets/vars.php";
     echo "<uname_stat>$username</uname_stat>";
     ?>
     <!-- <acctype_ctn></acctype_ctn> -->
-    <button id="acctype_ctn"></button>
+    <a href="/user/acctype.php">
+        <button id="acctype_ctn"></button>
+    </a>
     <acctype_label>Account type</acctype_label>
     <?php
     $role = $_SESSION['role'];
