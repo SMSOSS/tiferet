@@ -766,7 +766,9 @@ include "assets/vars.php";
         echo "<acctype_stat>User</acctype_stat>";
     }
     ?>
-    <button id="cpw_ctn"></button>
+    <a href="/user/cpw.php">
+        <button id="cpw_ctn"></button>
+    </a>
     <cpw_label>Change Password</cpw_label>
 
     <payment>Payment</payment>
