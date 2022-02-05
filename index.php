@@ -28,8 +28,8 @@ if (isset($_SESSION['loggedin'])) {
                 <input type="text" name="username"><br>
                 <ptext>Password</ptext>
                 <input type="password" name="password"><br>
-                <input type="submit" id="register" value="Register" name="register">
                 <input type="submit" id="login" value="Login" name="login">
+                <input type="submit" id="register" value="Register" name="register">
             </form>
         </article>
     </section>
