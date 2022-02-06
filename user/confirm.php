@@ -289,6 +289,14 @@ include "../assets/vars.php";
         .statCtn {
             top: 210px;
         }
+
+        #qrCode {
+            position: absolute;
+            width: 150px;
+            height: 148.83px;
+            left: 85px;
+            top: 210px;
+        }
     </style>
 </head>
 
@@ -307,23 +315,26 @@ include "../assets/vars.php";
     <lstr>claimed</lstr>
     <?php
     $baseid = $_GET['baseid'];
-    $query = db_query("SELECT iscooked, isdeliver, istaken FROM food WHERE baseid='$baseid'");
+    $query = db_query("SELECT iscooked, isdeliver, istaken, password FROM food WHERE baseid='$baseid'");
     while ($row = $query->fetch_assoc()) {
         $taken = $row['istaken'];
         $deliver = $row['isdeliver'];
         $cook = $row['iscooked'];
+        $password = $row['password'];
     }
     if ($taken == 1) {
         echo "<img id='cp' src='/assets/source_icons_pizza-slice.svg'>";
         echo "<img id='dp' src='/assets/source_icons_delivery.svg'>";
         echo "<img id='lp' src='/assets/source_icons_check.svg'>";
+        echo "<img id='qrCode' src='/assets/like.gif' />";
         echo "<div class='statctn'>";
         echo "<foodStat>Enjoy your meal.</foodStat>";
         echo "</div>";
     } elseif ($deliver == 1) {
         echo "<img id='cp' src='/assets/source_icons_pizza-slice.svg'>";
         echo "<img id='dp' src='/assets/source_icons_delivery.svg'>";
-        echo "<img id='oktruck' src='/assets/source_icons_delivery-truck.svg'";
+        echo "<img id='oktruck' src='/assets/source_icons_delivery-truck.svg'>";
+        echo "<img id='qrCode' src='https://chart.googleapis.com/chart?chs=547x547&cht=qr&chl=$password&choe=UTF-8%22%20title=%22your%20order%20is%20ready%22' />";
         echo "<div class='statctn'>";
         echo "<foodStat>Your food is ready.</foodStat>";
         echo "</div>";
