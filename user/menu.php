@@ -153,9 +153,9 @@ include "../assets/vars.php";
 
         locker_pill {
             position: absolute;
-            width: 75px;
+            width: 81px;
             height: 29px;
-            left: 218px;
+            left: 212px;
             top: 15px;
 
             background: #E1BEE7;
@@ -166,7 +166,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 42px;
             height: 13px;
-            left: 221px;
+            left: 219px;
             top: 23px;
 
             font-family: Inter;
