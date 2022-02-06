@@ -87,8 +87,9 @@ include "../assets/vars.php";
 
         .fdvr {
             /* food divider, foodname container */
+            line-height: 33px;
             width: 301px;
-            height: 25px;
+            height: 33px;
             left: 3px;
             background: #E1BEE7;
             border-radius: 20px;
@@ -119,7 +120,7 @@ include "../assets/vars.php";
             font-family: Inter;
             font-style: normal;
             font-weight: medium;
-            font-size: 18px;
+            font-size: 12px;
             line-height: 15px;
             /* identical to box height */
 
@@ -132,7 +133,7 @@ include "../assets/vars.php";
             font-family: Inter;
             font-style: normal;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 12px;
             line-height: 15px;
             /* identical to box height */
 
