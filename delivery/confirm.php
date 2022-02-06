@@ -361,8 +361,6 @@ if (empty($_SESSION['username'])) {
     <?php
     $stage = $_GET['stage'];
     $baseid = $_GET['baseid'];
-    db_query("UPDATE food SET isdeliver=2 WHERE baseid=$baseid");
-    db_query("UPDATE food SET handler='$username' WHERE baseid=$baseid");
     $query = db_query("SELECT location, password, shop FROM food WHERE baseid=$baseid");
     while ($row = $query->fetch_assoc()) {
         $lc = $row['location'];
@@ -374,6 +372,8 @@ if (empty($_SESSION['username'])) {
         echo "<script>location.replace('/delivery/finish.php');</script>";
     }
     if ($stage == 1) {
+        db_query("UPDATE food SET isdeliver=2 WHERE baseid=$baseid");
+        db_query("UPDATE food SET handler='$username' WHERE baseid=$baseid");    
         /* stage 1. delivery haven't claimed takeaway from shop, yet. */
         $query =  db_query("SELECT location FROM shopdata WHERE name='$shop'");
         while ($row = $query->fetch_assoc()) {
