@@ -128,6 +128,19 @@ include "../assets/vars.php";
             color: #000000;
         }
 
+        price {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: right;
+
+            color: #4A148C;
+        }
+
         .sdvr {
             /* divider to divide between fdvr */
             height: 7px;
@@ -155,7 +168,7 @@ include "../assets/vars.php";
         $price = $row['price'];
         echo "<a id='nohl' href='/user/confirm.php?order=$food'>";
         echo "<div class='fdvr'>";
-        echo "&nbsp; &nbsp; <fname>$food - $$price</fname>";
+        echo "&nbsp; &nbsp; <fname>$food - <price>$$price</price></fname>";
         echo "</div>";
         echo "<div class='sdvr'>";
         echo "</div>";
