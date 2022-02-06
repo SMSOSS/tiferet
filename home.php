@@ -98,7 +98,25 @@
         }
 
         .fsdvr {
-            height: 79px;
+            height: 100px;
+        }
+
+        r_header {
+            position: absolute;
+            width: 68px;
+            height: 15px;
+            left: 7px;
+            top: 85px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+
+            color: #000000;
         }
 
         #cart {
@@ -135,6 +153,7 @@ include "assets/vars.php";
         <form method="post">
             <input type="image" id="cart" src="/assets/source_icons_cart.svg" name="cart">
         </form>
+        <r_header>Restaurants</r_header>
     </div>
     <?php
     $query = db_query("SELECT name, shopimg FROM shopdata WHERE isdisable=0");
