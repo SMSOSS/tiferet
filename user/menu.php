@@ -166,7 +166,7 @@ include "../assets/vars.php";
     while ($row = $query->fetch_assoc()) {
         $food = $row['food'];
         $price = $row['price'];
-        echo "<a id='nohl' href='/user/confirm.php?order=$food'>";
+        echo "<a id='nohl' href='/user/add-to-cart.php?order=$food&shop=$name'>";
         echo "<div class='fdvr'>";
         echo "&nbsp; &nbsp; <fname>$food - <price>$$price</price></fname>";
         echo "</div>";
