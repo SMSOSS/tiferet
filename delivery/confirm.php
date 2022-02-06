@@ -362,6 +362,7 @@ if (empty($_SESSION['username'])) {
     $stage = $_GET['stage'];
     $baseid = $_GET['baseid'];
     db_query("UPDATE food SET isdeliver=2 WHERE baseid=$baseid");
+    db_query("UPDATE food SET handler='$username' WHERE baseid=$baseid");
     $query = db_query("SELECT location, password, shop FROM food WHERE baseid=$baseid");
     while ($row = $query->fetch_assoc()) {
         $lc = $row['location'];
