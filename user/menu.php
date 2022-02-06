@@ -96,22 +96,6 @@ include "../assets/vars.php";
             text-decoration: none;
         }
 
-        fprice {
-            left: 263px;
-            top: 109px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
-            /* identical to box height */
-
-            text-align: right;
-
-            color: #4A148C;
-        }
-
         fname {
             height: 15px;
             left: 25px;
@@ -127,19 +111,6 @@ include "../assets/vars.php";
             text-align: right;
 
             color: #000000;
-        }
-
-        price {
-            font-family: Inter;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
-            /* identical to box height */
-
-            text-align: right;
-
-            color: #4A148C;
         }
 
         .sdvr {
@@ -222,6 +193,31 @@ include "../assets/vars.php";
 
             color: #000000;
         }
+
+        #dummy {
+            width: 52px;
+            height: 33px;
+            left: 256px;
+            top: 100px;
+            float: right;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            border: none;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            float: right;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #4A148C;
+
+        }
     </style>
 </head>
 
@@ -250,7 +246,8 @@ include "../assets/vars.php";
             echo "<errMsg>All lockers are occupied.<br>Ordering Stopped.</errMsg>";
         }
         echo "<div class='fdvr'>";
-        echo "&nbsp; &nbsp; <fname>$food - <price>$$price</price></fname>";
+        echo "&nbsp; &nbsp; <fname>$food</fname>";
+        echo "<button id='dummy'>$$price</button>";
         echo "</div>";
         if ($lc > 0) {
             echo "</a>";
