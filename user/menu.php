@@ -205,6 +205,23 @@ include "../assets/vars.php";
 
             color: #6A1B9A;
         }
+
+        errMsg {
+            position: absolute;
+            width: 137px;
+            height: 30px;
+            left: 92px;
+            top: 489px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+
+            color: #000000;
+        }
     </style>
 </head>
 
@@ -227,10 +244,17 @@ include "../assets/vars.php";
     while ($row = $query->fetch_assoc()) {
         $food = $row['food'];
         $price = $row['price'];
-        echo "<a id='nohl' href='/user/add-to-cart.php?order=$food&shop=$name'>";
+        if ($lc > 0) {
+            echo "<a id='nohl' href='/user/add-to-cart.php?order=$food&shop=$name'>";
+        } else {
+            echo "<errMsg>All lockers are occupied.<br>Ordering Stopped.</errMsg>";
+        }
         echo "<div class='fdvr'>";
         echo "&nbsp; &nbsp; <fname>$food - <price>$$price</price></fname>";
         echo "</div>";
+        if ($lc > 0) {
+            echo "</a>";
+        }
         echo "<div class='sdvr'>";
         echo "</div>";
     }
