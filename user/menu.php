@@ -149,6 +149,61 @@ include "../assets/vars.php";
         #nohl {
             text-decoration: none;
         }
+
+        locker_pill {
+            position: absolute;
+            width: 75px;
+            height: 29px;
+            left: 218px;
+            top: 15px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+        }
+
+        locker_text {
+            position: absolute;
+            width: 42px;
+            height: 13px;
+            left: 221px;
+            top: 23px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 13px;
+            text-align: center;
+
+            color: #000000;
+        }
+
+        locker_circle {
+            position: absolute;
+            width: 29px;
+            height: 29px;
+            left: 263px;
+            top: 15px;
+            border-radius: 100%;
+            background: #CE93D8;
+        }
+
+        locker_stat {
+            position: absolute;
+            width: 7px;
+            height: 13px;
+            left: 274px;
+            top: 23px;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 11px;
+            line-height: 13px;
+            text-align: center;
+
+            color: #6A1B9A;
+        }
     </style>
 </head>
 
@@ -156,9 +211,14 @@ include "../assets/vars.php";
     <div class="fsdvr">
         <stitle>tiferet</stitle>
         <stext>Menu for</stext>
+        <locker_pill></locker_pill>
+        <locker_text>Lockers</locker_text>
+        <locker_circle></locker_circle>
         <?php
         $name = $_GET['shop'];
         echo "<sname>$name</sname>";
+        $lc = db_num_rows(db_query("SELECT lockerid FROM lockerdata WHERE isoccupy=0"));
+        echo "<locker_stat>$lc</locker_stat>";
         ?>
     </div>
     <?php
