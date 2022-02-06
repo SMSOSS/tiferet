@@ -236,10 +236,10 @@ include "../assets/vars.php";
         #lp {
             /* claimed status svg */
             position: absolute;
-            width: 15px;
-            height: 15px;
+            width: 13px;
+            height: 13px;
             left: 279px;
-            top: 76px;
+            top: 77px;
         }
 
         lstr {
