@@ -52,7 +52,7 @@
 
         input[type=text] {
             position: absolute;
-            width: 80%;
+            width: 90%;
             height: 33px;
             left: 2.1875%;
             top: 25.8%;
@@ -88,7 +88,7 @@
 
         input[type=password] {
             position: absolute;
-            width: 80%;
+            width: 90%;
             height: 33px;
             left: 2.1875%;
             top: 35.21%;
