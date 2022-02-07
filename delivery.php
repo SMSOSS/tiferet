@@ -23,10 +23,6 @@ include "assets/vars.php";
         }
 
         body {
-            position: relative;
-            width: 320px;
-            height: 568px;
-
             background: #F3E5F5;
         }
 
@@ -34,7 +30,7 @@ include "assets/vars.php";
             position: absolute;
             width: 75px;
             height: 29px;
-            left: 7px;
+            left: 2.1875%;
             top: 17px;
 
             font-family: Inter;
@@ -52,7 +48,7 @@ include "assets/vars.php";
         stext {
             position: absolute;
             height: 19px;
-            left: 7px;
+            left: 2.1875%;
             top: 46px;
 
             font-family: Inter;
@@ -68,7 +64,7 @@ include "assets/vars.php";
             position: absolute;
             width: 75px;
             height: 19px;
-            left: 80px;
+            left: 25%;
             top: 46px;
 
             font-family: Inter;
@@ -89,7 +85,7 @@ include "assets/vars.php";
             line-height: 33px;
             width: 301px;
             height: 33px;
-            left: 3px;
+            left: 0.9375%;
             background: #E1BEE7;
             border-radius: 20px;
             text-decoration: none;
@@ -97,7 +93,7 @@ include "assets/vars.php";
 
         fname {
             height: 15px;
-            left: 25px;
+            left: 7.8125px;
             top: 109px;
 
             font-family: Inter;
@@ -124,7 +120,7 @@ include "assets/vars.php";
         #rlb {
             /* right leaning button */
             height: 33px;
-            left: 256px;
+            left: 80%;
             top: 100px;
             float: right;
 
@@ -149,7 +145,7 @@ include "assets/vars.php";
         #pass-pill {
             /* left-leaning button pill */
             height: 33px;
-            left: 7px;
+            left: 2.1875%;
             top: 103px;
 
             background: #CE93D8;

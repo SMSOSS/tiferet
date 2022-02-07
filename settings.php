@@ -24,176 +24,14 @@ include "assets/vars.php";
         }
 
         body {
-            position: relative;
-            width: 320px;
-            height: 568px;
-
             background: #F3E5F5;
-        }
-
-        navbar {
-            position: absolute;
-            width: 100%;
-            height: 45px;
-            left: 0px;
-            bottom: 0px;
-            background: #E1BEE7;
-        }
-
-        otext {
-            position: absolute;
-            width: 33px;
-            height: 15px;
-            left: 25px;
-            top: 29px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 15px;
-            /* identical to box height */
-
-            text-align: center;
-
-            color: #000000;
-        }
-
-        #oimg {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 29px;
-            top: 5px;
-
-            border-radius: 90px;
-
-        }
-
-        octr {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            left: 28px;
-            top: 5px;
-
-            background: #CE93D8;
-            border-radius: 5px;
-        }
-
-        dtext {
-            position: absolute;
-            width: 61px;
-            height: 8px;
-            left: 87px;
-            top: 29px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 15px;
-            text-align: center;
-
-            color: #000000;
-        }
-
-        #dimg {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 105px;
-            top: 7px;
-        }
-
-        dctr {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            left: 104px;
-            top: 6px;
-
-            background: #CE93D8;
-            border-radius: 5px;
-        }
-
-        ltext {
-            position: absolute;
-            width: 32px;
-            height: 8px;
-            left: 181px;
-            top: 29px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 15px;
-            text-align: center;
-
-            color: #000000;
-        }
-
-        #limg {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 185px;
-            top: 4px;
-        }
-
-        lctr {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            left: 184px;
-            top: 4px;
-
-            background: #CE93D8;
-            border-radius: 5px;
-        }
-
-        setext {
-            position: absolute;
-            width: 47px;
-            height: 15px;
-            left: 259px;
-            top: 29px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 15px;
-            text-align: center;
-
-            color: #000000;
-        }
-
-        #seimg {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 268px;
-            top: 6px;
-        }
-
-        sectr {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            left: 267px;
-            top: 5px;
-
-            background: #CE93D8;
-            border-radius: 5px;
         }
 
         stitle {
             position: absolute;
             width: 75px;
             height: 29px;
-            left: 7px;
+            left: 2.1875%;
             top: 17px;
 
             font-family: Inter;
@@ -210,7 +48,7 @@ include "assets/vars.php";
             position: absolute;
             width: 66px;
             height: 19px;
-            left: 7px;
+            left: 2.1875%;
             top: 46px;
 
             font-family: Inter;
@@ -226,7 +64,7 @@ include "assets/vars.php";
             position: absolute;
             width: 46px;
             height: 15px;
-            left: 11px;
+            left: 3.4375%;
             top: 76px;
 
             font-family: Inter;
@@ -243,9 +81,9 @@ include "assets/vars.php";
 
         accent_ctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
-            left: 5px;
+            left: 3.5%;
             top: 98px;
 
             background: #E1BEE7;
@@ -256,7 +94,7 @@ include "assets/vars.php";
             position: absolute;
             width: 77px;
             height: 15px;
-            left: 23px;
+            left: 7.1875%;
             top: 107px;
 
             font-family: Inter;
@@ -275,7 +113,7 @@ include "assets/vars.php";
             position: absolute;
             width: 58px;
             height: 15px;
-            left: 235px;
+            left: 73.4375%;
             top: 107px;
 
             font-family: Inter;
@@ -292,9 +130,9 @@ include "assets/vars.php";
 
         theme_ctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
-            left: 5px;
+            left: 3.5%;
             top: 138px;
 
             background: #E1BEE7;
@@ -305,7 +143,7 @@ include "assets/vars.php";
             position: absolute;
             width: 41px;
             height: 15px;
-            left: 23px;
+            left: 7.1875%;;
             top: 147px;
 
             font-family: Inter;
@@ -324,7 +162,7 @@ include "assets/vars.php";
             position: absolute;
             width: 53px;
             height: 15px;
-            left: 238px;
+            left: 74.375%;
             top: 147px;
 
             font-family: Inter;
@@ -341,9 +179,9 @@ include "assets/vars.php";
 
         lang_ctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
-            left: 5px;
+            left: 3.5%;
             top: 178px;
 
             background: #E1BEE7;
@@ -354,7 +192,7 @@ include "assets/vars.php";
             position: absolute;
             width: 59px;
             height: 15px;
-            left: 23px;
+            left: 7.1875%;;
             top: 187px;
 
             font-family: Inter;
@@ -373,7 +211,7 @@ include "assets/vars.php";
             position: absolute;
             width: 37px;
             height: 15px;
-            left: 246px;
+            left: 76.875%;
             top: 187px;
 
             font-family: Inter;
@@ -390,9 +228,9 @@ include "assets/vars.php";
 
         ver_ctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
-            left: 5px;
+            left: 3.5%;
             top: 218px;
 
             background: #E1BEE7;
@@ -403,7 +241,7 @@ include "assets/vars.php";
             position: absolute;
             width: 93px;
             height: 15px;
-            left: 23px;
+            left: 7.1875%;;
             top: 227px;
 
             font-family: Inter;
@@ -422,7 +260,7 @@ include "assets/vars.php";
             position: absolute;
             width: 54px;
             height: 15px;
-            left: 238px;
+            left: 74.375%;
             top: 227px;
 
             font-family: Inter;
@@ -441,7 +279,7 @@ include "assets/vars.php";
             position: absolute;
             width: 49px;
             height: 15px;
-            left: 17px;
+            left: 5.3125%;
             top: 258px;
 
             font-family: Inter;
@@ -458,9 +296,9 @@ include "assets/vars.php";
 
         uname_ctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
-            left: 5px;
+            left: 3.5%;
             top: 280px;
 
             background: #E1BEE7;
@@ -471,7 +309,7 @@ include "assets/vars.php";
             position: absolute;
             width: 65px;
             height: 15px;
-            left: 23px;
+            left: 7.1875%;;
             top: 289px;
 
             font-family: Inter;
@@ -508,9 +346,9 @@ include "assets/vars.php";
 
         #acctype_ctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
-            left: 5px;
+            left: 3.5%;
             top: 320px;
 
             background: #E1BEE7;
@@ -523,7 +361,7 @@ include "assets/vars.php";
             position: absolute;
             width: 82px;
             height: 15px;
-            left: 23px;
+            left: 7.1875%;;
             top: 329px;
 
             font-family: Inter;
@@ -559,9 +397,9 @@ include "assets/vars.php";
 
         #cpw_ctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
-            left: 5px;
+            left: 3.5%;
             top: 360px;
 
             background: #E1BEE7;
@@ -574,7 +412,7 @@ include "assets/vars.php";
             position: absolute;
             width: 107px;
             height: 15px;
-            left: 23px;
+            left: 7.1875%;;
             top: 369px;
 
             font-family: Inter;
@@ -593,7 +431,7 @@ include "assets/vars.php";
             position: absolute;
             width: 51px;
             height: 15px;
-            left: 17px;
+            left: 5.3125%;
             top: 403px;
 
             font-family: Inter;
@@ -610,9 +448,9 @@ include "assets/vars.php";
 
         #dpm_ctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
-            left: 5px;
+            left: 3.5%;
             top: 425px;
 
             background: #E1BEE7;
@@ -625,7 +463,7 @@ include "assets/vars.php";
             position: absolute;
             width: 146px;
             height: 15px;
-            left: 23px;
+            left: 7.1875%;;
             top: 434px;
 
             font-family: Inter;
@@ -661,9 +499,9 @@ include "assets/vars.php";
 
         #epm_ctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
-            left: 5px;
+            left: 3.5%;
             top: 465px;
 
             background: #E1BEE7;
@@ -676,7 +514,7 @@ include "assets/vars.php";
             position: absolute;
             width: 133px;
             height: 15px;
-            left: 23px;
+            left: 7.1875%;;
             top: 474px;
 
             font-family: Inter;
@@ -695,7 +533,7 @@ include "assets/vars.php";
             position: absolute;
             width: 75px;
             height: 26px;
-            left: 231px;
+            left: 72.1875%;
             top: 20px;
 
             background: #E1BEE7;

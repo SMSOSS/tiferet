@@ -18,10 +18,6 @@
         }
 
         body {
-            position: relative;
-            width: 320px;
-            height: 568px;
-
             background: #F3E5F5;
         }
 
@@ -29,7 +25,7 @@
             position: absolute;
             width: 75px;
             height: 29px;
-            left: 7px;
+            left: 2.1875%;
             top: 17px;
 
             font-family: Inter;
@@ -46,7 +42,7 @@
             position: absolute;
             width: 120px;
             height: 19px;
-            left: 7px;
+            left: 2.1875%;
             top: 46px;
 
             font-family: Inter;
@@ -63,7 +59,7 @@
             position: absolute;
             width: 41px;
             height: 19px;
-            left: 40%;
+            left: 33.7%;
             top: 46px;
 
             font-family: Inter;
@@ -76,8 +72,8 @@
         }
 
         #sctr {
-            width: 300px;
-            height: 100px;
+            width: 100%;
+            height: 100%;
 
             background: #E1BEE7;
             border-radius: 20px;
@@ -105,7 +101,7 @@
             position: absolute;
             width: 68px;
             height: 15px;
-            left: 7px;
+            left: 2.1875%;
             top: 85px;
 
             font-family: Inter;
@@ -123,7 +119,7 @@
             position: absolute;
             width: 24px;
             height: 24px;
-            left: 268px;
+            left: 83.75%;
             top: 17px;
         }
 
