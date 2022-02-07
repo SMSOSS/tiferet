@@ -11,7 +11,7 @@ otext {
     position: absolute;
     width: 33px;
     height: 15px;
-    left: 25px;
+    left: 7.8125%;
     top: 29px;
 
     font-family: Inter;
@@ -30,7 +30,7 @@ otext {
     position: absolute;
     width: 24px;
     height: 24px;
-    left: 29px;
+    left: 9.0625%;
     top: 5px;
     background:url(/assets/source_icons_bag.svg) no-repeat;
     border-radius: 90px;
@@ -41,7 +41,7 @@ octr {
     position: absolute;
     width: 26px;
     height: 26px;
-    left: 28px;
+    left: 8.75%;
     top: 5px;
 
     background: #CE93D8;
@@ -52,7 +52,7 @@ dtext {
     position: absolute;
     width: 61px;
     height: 8px;
-    left: 87px;
+    left: 27.1875%;
     top: 29px;
 
     font-family: Inter;
@@ -69,7 +69,7 @@ dtext {
     position: absolute;
     width: 24px;
     height: 24px;
-    left: 105px;
+    left: 32.8125%;
     top: 7px;
     background:url(/assets/source_icons_delivery-truck.svg) no-repeat;
     border: none;
@@ -79,7 +79,7 @@ dctr {
     position: absolute;
     width: 26px;
     height: 26px;
-    left: 104px;
+    left: 32.5%;
     top: 6px;
 
     background: #CE93D8;
@@ -90,7 +90,7 @@ ltext {
     position: absolute;
     width: 32px;
     height: 8px;
-    left: 181px;
+    left: 56.5625%;
     top: 29px;
 
     font-family: Inter;
@@ -107,7 +107,7 @@ ltext {
     position: absolute;
     width: 24px;
     height: 24px;
-    left: 185px;
+    left: 57.8125%;
     top: 4px;
     background:url(/assets/source_icons_home-user.svg) no-repeat;
     border: none;
@@ -117,7 +117,7 @@ lctr {
     position: absolute;
     width: 26px;
     height: 26px;
-    left: 184px;
+    left: 57.5%;
     top: 4px;
 
     background: #CE93D8;
@@ -128,7 +128,7 @@ setext {
     position: absolute;
     width: 47px;
     height: 15px;
-    left: 259px;
+    left: 80.9375%;
     top: 29px;
 
     font-family: Inter;
@@ -145,7 +145,7 @@ setext {
     position: absolute;
     width: 24px;
     height: 24px;
-    left: 268px;
+    left: 83.75%;
     top: 6px;
     background:url(/assets/source_icons_settings.svg) no-repeat;
     border: none;
@@ -155,7 +155,7 @@ sectr {
     position: absolute;
     width: 26px;
     height: 26px;
-    left: 267px;
+    left: 83.4375%;
     top: 5px;
 
     background: #CE93D8;
