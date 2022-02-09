@@ -1,0 +1,105 @@
+@import url('https://rsms.me/inter/inter.css');
+
+        html {
+            font-family: 'Inter', sans-serif;
+            width: 100.0%; 
+            height: 100%;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: 'Inter var', sans-serif;
+            }
+        }
+
+        body {
+            position: relative;
+            width: 100.0%; 
+            height: 100%;
+            background: #F3E5F5;
+        }
+
+        stitle {
+            position: absolute;
+            width: 23.4375%; 
+            height: 29px;
+            left: 2.1875%; 
+            top: 5.3125%; 
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 29px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        stext {
+            position: absolute;
+            height: 19px;
+            left: 2.1875%; 
+            top: 10.374999999999998%; 
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+
+            color: #000000;
+        }
+
+        tyCtn {
+            position: absolute;
+            width: 19.6875%; 
+            height: 15px;
+            left: 40.3125%; 
+            top: 42.1875%; 
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        #qrCode {
+            position: absolute;
+            width: 50%; 
+            height: 28.169014%;
+            left: 26.5625%; 
+            top: 45.625%; 
+        }
+
+        #doneBtn {
+            position: absolute;
+            width: 37.5%; 
+            height: 30px;
+            left: 31.25%; 
+            top: 90%; 
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            border: none;
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #4A148C;
+
+        }
