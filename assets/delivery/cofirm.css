@@ -1,0 +1,317 @@
+@import url('https://rsms.me/inter/inter.css');
+
+        html {
+            font-family: 'Inter', sans-serif;
+            width: 100%;
+            height: 100%;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: 'Inter var', sans-serif;
+            }
+        }
+
+        body {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #F3E5F5;
+        }
+
+        stitle {
+            position: absolute;
+            width: 75px;
+            height: 29px;
+            left: 2.1875%; 
+            top: 5.3125%; 
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 29px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        stext {
+            position: absolute;
+            height: 19px;
+            left: 2.1875%; 
+            top: 14.374999999999998%; 
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+
+            color: #000000;
+        }
+
+        
+
+        cc {
+            /* claim job circle */
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: 3.75%; 
+            top: 23.4375%; 
+
+            background: #BA68C8;
+            border-radius: 90%
+        }
+
+        #ci {
+            /* claim job svg */
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            left: 4.0625%; 
+            top: 23.75%; 
+        }
+
+        cs {
+            /* claim job string */
+            position: absolute;
+            width: 30px;
+            height: 15px;
+            left: 1.25%; 
+            top: 28.125%; 
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        ct_truck {
+            /* truck between claimed and taken */
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: 25.624999999999996%; 
+            top: 23.75%; 
+        }
+
+        tc {
+            /* take food circle */
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: 47.8125%; 
+            top: 23.75%; 
+
+            background: #BA68C8;
+            border-radius: 90%;
+        }
+
+        #ti {
+            /* take food image */
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            left: 48.4375%; 
+            top: 24.0625%; 
+        }
+
+        ts {
+            /* take job string */
+            position: absolute;
+            width: 53px;
+            height: 15px;
+            left: 41.875%; 
+            top: 28.4375%; 
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        dc {
+            /* finish deliver circle */
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: 89.6875%; 
+            top: 23.4375%; 
+            border-radius: 90%;
+
+            background: #BA68C8;
+        }
+
+        #di {
+            /* finsih deliver svg */
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            left: 90.3125%; 
+            top: 23.75%; 
+        }
+
+        ds {
+            /* finish deliver string */
+            position: absolute;
+            width: 38px;
+            height: 15px;
+            left: 86.25%; 
+            top: 28.125%; 
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        #cti {
+            /* truck between claim and deliver */
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: 25.624999999999996%; 
+            top: 23.75%; 
+        }
+
+        notMsg {
+            /* notification msg */
+            position: absolute;
+            width: 213px;
+            height: 30px;
+            left: 17.1875%; 
+            top: 49.6875%; 
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+            color: #000000;
+        }
+
+        #passCtn {
+            /* ID container for food */
+            position: absolute;
+            width: 233px;
+            height: 110px;
+            left: 14.0625%; 
+            top: 65.3125%; 
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 75px;
+            line-height: 91px;
+            /* identical to box height */
+
+            text-align: center;
+            border: none;
+            color: #4A148C;
+        }
+
+        #mapCtn {
+            position: absolute;
+            width: 120px;
+            height: 30px;
+            left: 31.25%; 
+            top: 122.50000000000001%; 
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            border: none;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #4A148C;
+        }
+
+        #nextCtn {
+            position: absolute;
+            width: 72px;
+            height: 30px;
+            left: 72.5%; 
+            top: 163.75%; 
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-align: center;
+            border: none;
+        }
+
+        #tdi {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: 69.0625%; 
+            top: 23.4375%; 
+        }
+
+        #qrCode {
+            position: absolute;
+            width: 150px;
+            height: 148.83px;
+            left: 26.5625%; 
+            top: 69.0625%; 
+        }
+
+        #backCtn {
+            position: absolute;
+            width: 72px;
+            height: 30px;
+            left: 1.875%; 
+            top: 163.75%; 
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-align: center;
+            border: none;
+        }
