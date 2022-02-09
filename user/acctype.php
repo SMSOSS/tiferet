@@ -22,10 +22,6 @@ include "../assets/vars.php";
         }
 
         body {
-            position: relative;
-            width: 320px;
-            height: 568px;
-
             background: #F3E5F5;
         }
 
@@ -33,7 +29,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 75px;
             height: 29px;
-            left: 7px;
+            left: 2.1875%;
             top: 17px;
 
             font-family: Inter;
@@ -52,7 +48,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 168px;
             height: 19px;
-            left: 7px;
+            left: 2.1875%;
             top: 46px;
 
             font-family: Inter;
@@ -68,7 +64,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 300px;
             height: 100px;
-            left: 10px;
+            left: 3.125%;
             top: 79px;
 
             background: #E1BEE7;
@@ -79,7 +75,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 57px;
             height: 19px;
-            left: 25px;
+            left: 7.8125%;
             top: 93px;
 
             font-family: Inter;
@@ -95,7 +91,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 128px;
             height: 45px;
-            left: 25px;
+            left: 7.8125%;
             top: 112px;
 
             font-family: Inter;
@@ -111,7 +107,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 94px;
             height: 19px;
-            left: 199px;
+            left: 62.1875%;
             top: 93px;
 
             background: #CE93D8;
@@ -130,7 +126,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 300px;
             height: 100px;
-            left: 10px;
+            left: 3.125%;
             top: 193px;
 
             background: #E1BEE7;
@@ -141,7 +137,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 65px;
             height: 19px;
-            left: 25px;
+            left: 7.8125%;
             top: 207px;
 
             font-family: Inter;
@@ -157,7 +153,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 173px;
             height: 45px;
-            left: 25px;
+            left: 7.8125%;
             top: 226px;
 
             font-family: Inter;
@@ -173,7 +169,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 94px;
             height: 19px;
-            left: 199px;
+            left: 62.1875%;
             top: 207px;
 
             background: #CE93D8;
@@ -195,7 +191,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 300px;
             height: 100px;
-            left: 10px;
+            left: 3.125%;
             top: 307px;
 
             background: #E1BEE7;
@@ -206,7 +202,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 27px;
             height: 19px;
-            left: 25px;
+            left: 7.8125%;
             top: 321px;
 
             font-family: Inter;
@@ -222,7 +218,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 163px;
             height: 45px;
-            left: 25px;
+            left: 7.8125%;
             top: 340px;
 
             font-family: Inter;
@@ -238,7 +234,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 94px;
             height: 19px;
-            left: 199px;
+            left: 62.1875%;
             top: 321px;
 
             background: #CE93D8;
@@ -256,7 +252,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 211px;
             height: 15px;
-            left: 54px;
+            left: 16.875%;
             top: 464px;
 
             font-family: Inter;

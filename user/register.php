@@ -38,7 +38,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 75px;
             height: 29px;
-            left: 7px;
+            left: 2.1875%;
             top: 17px;
 
             font-family: Inter;
@@ -57,7 +57,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 74px;
             height: 22px;
-            left: 7px;
+            left: 2.1875%;
             top: 46px;
 
             font-family: Inter;
@@ -75,7 +75,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 32px;
             height: 15px;
-            left: 25px;
+            left: 7.8125%;
             top: 110px;
 
             font-family: Inter;
@@ -93,7 +93,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 301px;
             height: 33px;
-            left: 10px;
+            left: 3.125%;
             top: 128px;
 
             background: #E1BEE7;
@@ -111,7 +111,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 61px;
             height: 15px;
-            left: 24px;
+            left: 7.8125%;
             top: 166px;
 
             font-family: Inter;
@@ -130,7 +130,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 301px;
             height: 33px;
-            left: 10px;
+            left: 3.125%;
             top: 183px;
 
             background: #E1BEE7;
@@ -148,7 +148,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 58px;
             height: 15px;
-            left: 24px;
+            left: 7.8125%;
             top: 221px;
 
             font-family: Inter;
@@ -167,7 +167,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 301px;
             height: 33px;
-            left: 10px;
+            left: 3.125%;
             top: 238px;
 
             background: #E1BEE7;
@@ -179,7 +179,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 102px;
             height: 15px;
-            left: 24px;
+            left: 7.8125%;
             top: 276px;
 
             font-family: Inter;
@@ -198,7 +198,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 301px;
             height: 33px;
-            left: 10px;
+            left: 3.125%;
             top: 296px;
 
             background: #E1BEE7;
@@ -210,7 +210,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 79px;
             height: 38px;
-            left: 120px;
+            left: 37.5%;
             top: 346px;
 
             background: #BA68C8;
@@ -228,7 +228,7 @@ if (isset($_SESSION['loggedin'])) {
             position: absolute;
             width: 142px;
             height: 15px;
-            left: 86px;
+            left: 26.875%;
             top: 427px;
 
             font-family: Inter;
