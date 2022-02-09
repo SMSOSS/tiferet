@@ -5,17 +5,17 @@
 
 from os import rename # switch temp file back to css
 
-css_file = open('') # open old css file 
+css_file = open('finish.css') # open old css file 
 temp_file = open('temp.txt','a') # open temp file for storing code
 
 for line in css_file:
     if line.find("left") != -1: # find keyword
-        line = line.replace("px","").replace("left: " , "").replace(" ","") # remove other words
+        line = line.replace("px;","").replace("left: " , "").replace(" ","") # remove other words
         line = float(line)/320*100 # transfer from pixel to percentage
         temp_file.write(f"            left: {line}%; \n") # write new code to temp file
 
     elif line.find("top") != -1: # find keyword
-        line = line.replace("px","").replace("top: " , "").replace(" ","") # remove other words
+        line = line.replace("px;","").replace("top: " , "").replace(" ","") # remove other words
         line = float(line)/320*100 # transfer from pixel to percentage
         temp_file.write(f"            top: {line}%; \n") # write new code to temp file
     
