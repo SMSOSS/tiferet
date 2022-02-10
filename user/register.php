@@ -275,7 +275,7 @@ if (isset($_SESSION['loggedin'])) {
                         db_query("INSERT INTO `userdata`(`username`, `password`, `isdelivery`, `email`) VALUES ('$username','$password','0', '$email')");
                         $_SESSION['loggedin'] = true;
                         $_SESSION['username'] = $username;            
-                        echo "<script>location.replace('home.php');</script>";
+                        echo "<script>location.replace('/home.php');</script>";
                     } else if ($ecount == 0){
                         echo "<errMsg>Please use another username.</errMsg>";
                     } else {
