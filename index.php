@@ -9,7 +9,6 @@
 <?php
 include "assets/vars.php";
 session_start();
-db_open;
 
 if (isset($_SESSION['loggedin'])) {
     echo "<script>location.replace('/home.php');</script>";
