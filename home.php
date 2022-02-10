@@ -57,7 +57,6 @@
 
         username {
             position: absolute;
-            width: 41px;
             height: 19px;
             left: 33.7%;
             top: 46px;
