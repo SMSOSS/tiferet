@@ -27,10 +27,6 @@ if (empty($_SESSION['loggedin'])) {
         }
 
         body {
-            position: relative;
-            width: 320px;
-            height: 568px;
-
             background: #F3E5F5;
         }
 

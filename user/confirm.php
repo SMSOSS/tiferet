@@ -23,10 +23,6 @@ include "../assets/vars.php";
         }
 
         body {
-            position: relative;
-            width: 320px;
-            height: 568px;
-
             background: #F3E5F5;
         }
 

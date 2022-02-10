@@ -27,10 +27,6 @@ if (isset($_SESSION['loggedin'])) {
         }
 
         body {
-            position: relative;
-            width: 320px;
-            height: 568px;
-
             background: #F3E5F5;
         }
 
@@ -279,7 +275,7 @@ if (isset($_SESSION['loggedin'])) {
                         db_query("INSERT INTO `userdata`(`username`, `password`, `isdelivery`, `email`) VALUES ('$username','$password','0', '$email')");
                         $_SESSION['loggedin'] = true;
                         $_SESSION['username'] = $username;            
-                        header("Location: /home.php");
+                        echo "<script>location.replace('home.php');</script>";
                     } else if ($ecount == 0){
                         echo "<errMsg>Please use another username.</errMsg>";
                     } else {
