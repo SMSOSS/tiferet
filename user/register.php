@@ -87,7 +87,7 @@ if (isset($_SESSION['loggedin'])) {
 
         #ectn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
             left: 3.125%;
             top: 128px;
@@ -124,7 +124,7 @@ if (isset($_SESSION['loggedin'])) {
 
         #uctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
             left: 3.125%;
             top: 183px;
@@ -161,7 +161,7 @@ if (isset($_SESSION['loggedin'])) {
 
         #pctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
             left: 3.125%;
             top: 238px;
@@ -192,7 +192,7 @@ if (isset($_SESSION['loggedin'])) {
 
         #cctn {
             position: absolute;
-            width: 301px;
+            width: 90%;
             height: 33px;
             left: 3.125%;
             top: 296px;
