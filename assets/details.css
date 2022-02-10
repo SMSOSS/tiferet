@@ -80,8 +80,8 @@
 
         .pill {
             /* information pill */
-            width: 301px;
-            height: 5.809859154929577%; 
+            width: 90%;
+            height: 33px;
             line-height: 33px;
             left: 0.9375%; 
             top: 16.02112676056338%; 
@@ -93,7 +93,7 @@
         #rbtn {
             width: 100px;
             /* info container */
-            height: 5.809859154929577%; 
+            height: 33px;
             left: 72.8125%; 
             top: 16.02112676056338%; 
 
@@ -122,9 +122,9 @@
         od {
             /* order detail */
             position: absolute;
-            height: 2.640845070422535%; 
+            height: 15px;
             left: 2.1875%; 
-            top: 35.563380281690144%; 
+            top: 32%;
 
             font-family: Inter;
             font-style: normal;

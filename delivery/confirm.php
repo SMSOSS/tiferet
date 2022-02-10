@@ -13,7 +13,7 @@ if (empty($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="/assets/navbar.css" type="text/css" />
     <meta http-equiv="refresh" content="10">
-    <link rel="stylesheet" href="/assets/delivery/finish.css">
+    <link rel="stylesheet" href="/assets/delivery/confirm.css">
 
     <style>
         
