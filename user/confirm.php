@@ -85,10 +85,10 @@ include "../assets/vars.php";
         sb {
             /* deliver status bar */
             position: absolute;
-            left: 1.88%;
-            right: 4.06%;
-            top: 13.38%;
-            bottom: 83.98%;
+            left: 6px;
+            right: 13px;
+            height: 16px;
+            top: 76px;
 
             background: #E1BEE7;
             border-radius: 20px;
