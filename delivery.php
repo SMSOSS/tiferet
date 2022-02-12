@@ -75,6 +75,25 @@ include "assets/vars.php";
             color: #8E24AA;
         }
 
+        #payout {
+            position: absolute;
+            width: 75px;
+            height: 26px;
+            left: 72.1875%;
+            top: 20px;
+
+            background: #E1BEE7;
+            border-radius: 20px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            border: none;
+
+            color: #4A148C;
+        }
+
         .fsdvr {
             /* first divider, used to separate text and menu item */
             height: 79px;
@@ -170,7 +189,11 @@ include "assets/vars.php";
         <stext>Delivery page</stext>
     </div>
 
-<?php
+    <a href='/delivery/payout.php'>
+        <button id='payout'>Payout</button>
+    </a>
+
+    <?php
     $query = db_query("SELECT baseid, foodname, password, location, shop FROM food WHERE iscooked='1' AND isdeliver='0'");
     $count = db_num_rows($query);
     if ($count > 0) {
