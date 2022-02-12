@@ -167,37 +167,6 @@ if (empty($_SESSION['loggedin'])) {
             border: none;
         }
 
-        ctext {
-            position: absolute;
-            width: 102px;
-            height: 15px;
-            left: 24px;
-            top: 276px;
-
-            font-family: Inter;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
-            /* identical to box height */
-
-            text-align: center;
-
-            color: #4A148C;
-        }
-
-        #cctn {
-            position: absolute;
-            width: 93.75%;
-            height: 33px;
-            left: 3.125%;
-            top: 296px;
-
-            background: #E1BEE7;
-            border-radius: 20px;
-            border: none;
-        }
-
         #rbtn {
             position: absolute;
             width: 79px;
