@@ -107,7 +107,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 94px;
             height: 19px;
-            left: 62.1875%;
+            left: 68.5%;
             top: 93px;
 
             background: #CE93D8;
@@ -169,7 +169,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 94px;
             height: 19px;
-            left: 62.1875%;
+            left: 68.5%;
             top: 207px;
 
             background: #CE93D8;
@@ -234,7 +234,7 @@ include "../assets/vars.php";
             position: absolute;
             width: 94px;
             height: 19px;
-            left: 62.1875%;
+            left: 68.5%;
             top: 321px;
 
             background: #CE93D8;
