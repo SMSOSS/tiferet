@@ -85,9 +85,9 @@ if (empty($_SESSION['loggedin'])) {
 
         #opctn {
             position: absolute;
-            width: 301px;
+            width: 93.75%;
             height: 33px;
-            left: 10px;
+            left: 3.125%;
             top: 128px;
 
             background: #E1BEE7;
@@ -121,9 +121,9 @@ if (empty($_SESSION['loggedin'])) {
 
         #npctn {
             position: absolute;
-            width: 301px;
+            width: 93.75%;
             height: 33px;
-            left: 10px;
+            left: 3.125%;
             top: 183px;
 
             background: #E1BEE7;
@@ -157,9 +157,9 @@ if (empty($_SESSION['loggedin'])) {
 
         #cpctn {
             position: absolute;
-            width: 301px;
+            width: 93.75%;
             height: 33px;
-            left: 10px;
+            left: 3.125%;
             top: 238px;
 
             background: #E1BEE7;
@@ -188,9 +188,9 @@ if (empty($_SESSION['loggedin'])) {
 
         #cctn {
             position: absolute;
-            width: 301px;
+            width: 93.75%;
             height: 33px;
-            left: 10px;
+            left: 3.125%;
             top: 296px;
 
             background: #E1BEE7;
