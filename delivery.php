@@ -83,7 +83,7 @@ include "assets/vars.php";
         .fdvr {
             /* food divider, foodname container */
             line-height: 33px;
-            width: 301px;
+            width: 98.125%;
             height: 33px;
             left: 0.9375%;
             background: #E1BEE7;
