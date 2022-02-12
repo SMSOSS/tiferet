@@ -62,7 +62,7 @@ include "../assets/vars.php";
 
         nctr {
             position: absolute;
-            width: 300px;
+            width: 93.75%;
             height: 100px;
             left: 3.125%;
             top: 79px;
@@ -124,7 +124,7 @@ include "../assets/vars.php";
 
         rctr {
             position: absolute;
-            width: 300px;
+            width: 93.75%;
             height: 100px;
             left: 3.125%;
             top: 193px;
@@ -189,7 +189,7 @@ include "../assets/vars.php";
 
         vctr {
             position: absolute;
-            width: 300px;
+            width: 93.75%;
             height: 100px;
             left: 3.125%;
             top: 307px;
