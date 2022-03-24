@@ -75,7 +75,7 @@
         $isdeliver = $_SESSION['isdeliver'];
 
         if ($isdeliver == 1) {
-            echo "<a href='/deliver/home.php'>";
+            echo "<a href='/delivery/home.php'>";
         } else {
             echo "<a href='/user/home.php'>";
         }
