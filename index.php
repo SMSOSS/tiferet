@@ -106,11 +106,20 @@
     <welcome>Hello!</welcome>
     <acc-ques>Do you have a tiferet account?</acc-ques>
 
-    <div id="yes">
-        <yestext><bold>Yes</bold>, I do!<br>Let’s get you up and running after you log in.</yestext>
-    </div>
+    <a href="/setup/login.php">
+        <div id="yes">
+            <yestext>
+                <bold>Yes</bold>, I do!<br>Let’s get you up and running after you log in.
+            </yestext>
+        </div>
+    </a>
 
-    <div id="no">
-        <notext><bold>No</bold>, I don’t :( <br>Don’t fret. Let’s get you ready by making an account!</notext>
-    </div>
+    <a href="/setup/welcome.php">
+        <div id="no">
+            <notext>
+                <bold>No</bold>, I don’t :( <br>Don’t fret. Let’s get you ready by making an account!
+            </notext>
+        </div>
+    </a>
+
 </body>
