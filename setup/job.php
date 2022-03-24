@@ -72,8 +72,8 @@
 
         foodie-text {
             position: absolute;
-            left: 11.47%;
-            right: 11.2%;
+            left: 13.6%;
+            right: 16.8%;
             top: 33.25%;
             bottom: 60.1%;
 
@@ -124,7 +124,7 @@
     <form method="post">
 
         <input type=submit id="foodie" name="foodie" value="">
-        <foodie-text>I'm a <bold>foodie</bold>.<br>I will use tiferet to deal with my deliveries<br>from other takeaway platforms.</foodie-text>
+        <foodie-text>I'm a <bold>foodie</bold>.<br>I will use tiferet to deliver my food <br> from other takeaway platforms.</foodie-text>
 
         <input type=submit id="deliver" name="deliver" value="">
 
