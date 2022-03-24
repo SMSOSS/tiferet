@@ -95,6 +95,10 @@
 
             color: #000000;
         }
+
+        bold {
+            font-weight: 700;
+        }
     </style>
 </head>
 
@@ -103,10 +107,10 @@
     <acc-ques>Do you have a tiferet account?</acc-ques>
 
     <div id="yes">
-        <yestext><b>Yes</b>, I do!<br>Let’s get you up and running after you log in.</yestext>
+        <yestext><bold>Yes</bold>, I do!<br>Let’s get you up and running after you log in.</yestext>
     </div>
 
     <div id="no">
-        <notext><b>No</b>, I don’t :( <br>Don’t fret. Let’s get you ready by making an account!</notext>
+        <notext><bold>No</bold>, I don’t :( <br>Don’t fret. Let’s get you ready by making an account!</notext>
     </div>
 </body>
