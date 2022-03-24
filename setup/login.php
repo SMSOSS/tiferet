@@ -145,10 +145,20 @@
         if (isset($_POST['login'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $valid = db_num_rows(db_query("SELECT email, password FROM userdata WHERE email='$email' AND password='$password'"));
+            $query = db_query("SELECT isdeliver FROM userdata WHERE email='$email' AND password='$password'");
+            $valid = db_num_rows($query);
+
+            while ($row = $query->fetch_assoc()) {
+                $isdeliver = $row['isdeliver'];
+            }
 
             if ($valid == 1) {
-                /* TODO: legit homepage */
+                $_SESSION['isdeliver'] = $isdeliver;
+                if ($isdeliver == 1 ) {
+                    echo "<script>window.location.href = '/delivery/home.php';</script>";
+                } else {
+                    echo "<script>window.location.href = '/user/home.php';</script>";
+                }
             } else {
                 echo "<error>Wrong username / password.</error>";
             }
