@@ -227,16 +227,20 @@
 
         $existing = db_num_rows(db_query("SELECT * FROM userdata WHERE email='$email'"));
 
-        if ($existing == 0) {
-            if ($pass === $confirm) {
-                db_query("INSERT INTO `userdata`(`email`, `password`, `username`) VALUES ('$email','$pass','$name') ");
-                $_SESSION['email'] = $email;
-                echo "<script>window.location.href = '/setup/job.php';</script>";
+        if (!empty($email) && !empty($name) && !empty($pass) && !empty($confirm)) {
+            if ($existing == 0) {
+                if ($pass === $confirm) {
+                    db_query("INSERT INTO `userdata`(`email`, `password`, `username`) VALUES ('$email','$pass','$name') ");
+                    $_SESSION['email'] = $email;
+                    echo "<script>window.location.href = '/setup/job.php';</script>";
+                } else {
+                    echo "<error>Passwords doesn't match.</error>";
+                }
             } else {
-                echo "<error>Passwords doesn't match.</error>";
+                echo "<error>Account already exists.<br>Please login instead.</error>";
             }
         } else {
-            echo "<error>Account already exists.<br>Please login instead.</error>";
+            echo "<error>Please fill in all blanks.</error>";
         }
     }
     ?>
