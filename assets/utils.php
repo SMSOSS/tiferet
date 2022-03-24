@@ -6,7 +6,8 @@
 
 <head>
     <?php
-        include("/assets/db.php");
+        include("db.php");
         session_start();
+        db_open();
     ?>
 </head>
