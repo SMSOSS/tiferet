@@ -102,10 +102,18 @@
     </style>
 </head>
 
+<script>
+    /* call andriod app to send notification*/
+    function test(){
+        message = "msg for notification"
+        Android.send_notification(message);
+    }
+</script>
+
 <body>
     <welcome>Hello!</welcome>
     <acc-ques>Do you have a tiferet account?</acc-ques>
-
+    <button onclick="test()">notify!</button>
     <a href="/setup/login.php">
         <div id="yes">
             <yestext>
